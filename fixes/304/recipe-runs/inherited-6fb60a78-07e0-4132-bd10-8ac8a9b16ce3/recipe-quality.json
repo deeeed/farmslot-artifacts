@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "verdict": "pass",
+  "compact": {
+    "verdict": "PASS",
+    "reasons": [
+      "Recipe drives real Command Center UI navigation and presses through CDP.",
+      "Trace evidence covers default, selected, and disabled passive observation policies.",
+      "Screenshots were visually inspected and show the claimed before/after UI surfaces."
+    ],
+    "better_version_guidance": [
+      "A native full-run recorder should replace the screenshot-derived MP4 when capture-helper or CDP screencast is reliable in the sandbox."
+    ]
+  },
+  "dimensions": {
+    "coverage": {
+      "status": "pass",
+      "reason": "Every acceptance criterion is mapped in recipe-coverage.md.",
+      "evidence": [
+        "artifacts/recipe-coverage.md",
+        "artifacts/recipe-run/trace.json"
+      ]
+    },
+    "evidence": {
+      "status": "warn",
+      "reason": "Recipe screenshots and trace are strong; video is screenshot-derived because both live recorders failed in this sandbox.",
+      "evidence": [
+        "artifacts/before-passive-observations.png",
+        "artifacts/after-passive-observations.png",
+        "artifacts/after.mp4"
+      ]
+    },
+    "flow": {
+      "status": "pass",
+      "reason": "The recipe uses manifest-declared actions and real UI interactions.",
+      "evidence": [
+        "artifacts/recipe.json"
+      ]
+    }
+  },
+  "structural_findings": [],
+  "contextual_findings": [
+    {
+      "code": "recorder_fallback",
+      "dimension": "evidence",
+      "message": "Native capture-helper did not create the expected MP4 and CDP screencast captured zero frames; MP4 was generated from real recipe screenshots.",
+      "evidence": [
+        "artifacts/evidence-manifest.json"
+      ]
+    }
+  ],
+  "suggested_recipe_delta": [
+    "Use a reliable full-run recorder when available so the video captures live motion instead of screenshot frames."
+  ],
+  "training_fields": {
+    "proof_mode": "mixed",
+    "task_type": "feature",
+    "claim_is_visual": true,
+    "good_patterns": [
+      "Real CDP UI navigation and presses",
+      "Trace assertions for passive observation fields",
+      "Before/after screenshot inspection"
+    ],
+    "anti_patterns": [
+      "Recorder fallback means video should not be treated as full live capture"
+    ]
+  },
+  "meta": {
+    "producer": "worker",
+    "fallback_used": false,
+    "legacy_task": false,
+    "artifact_required": true,
+    "source_signals": [
+      "recipe.json",
+      "recipe-coverage.md",
+      "trace.json",
+      "screenshots"
+    ]
+  }
+}

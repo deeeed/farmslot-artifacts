@@ -1,0 +1,130 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "schema_version": 1,
+  "title": "Recipe UI passive observations proof",
+  "description": "Drives Command Center UI links and records passive observation policies for Recipe v1 UI nodes.",
+  "validate": {
+    "workflow": {
+      "pre_conditions": [
+        {
+          "id": "command_center.dev_server.ready",
+          "description": "Command Center dev server is serving the sandbox UI.",
+          "required": true
+        },
+        {
+          "id": "runtime.browser.open",
+          "description": "Chrome CDP session is available for UI recipe playback.",
+          "required": true
+        },
+        {
+          "id": "gateway.reachable",
+          "description": "Sandbox gateway is reachable for the Command Center session.",
+          "required": true
+        }
+      ],
+      "entry": "assert-observer-manifest",
+      "nodes": {
+        "assert-observer-manifest": {
+          "action": "command",
+          "cmd": "node -e \"const fs=require('fs'); const manifest=JSON.parse(fs.readFileSync('/Users/deeeed/dev/farmslot-wt/farmslot-3/docs/examples/recipes/farmslot-v1.action-manifest.json','utf8')); const refs=new Set((manifest.observers||[]).map((entry)=>entry.ref)); if(!refs.has('ui.screen')||!refs.has('ui.visible')) { console.error('missing ui.screen/ui.visible observer declarations'); process.exit(1); }\"",
+          "next": "open-dev-dispatch",
+          "intent": "Verify the action manifest advertises passive UI observer discovery before driving the UI."
+        },
+        "open-dev-dispatch": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "wait-dev-index",
+          "intent": "Open the Command Center dev harness index where stable navigation links are visible."
+        },
+        "wait-dev-index": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Dispatch Wizard",
+          "timeout_ms": 10000,
+          "next": "before-passive-observations",
+          "intent": "Verify the dev harness navigation links are visible before pressing them."
+        },
+        "before-passive-observations": {
+          "action": "ui.screenshot",
+          "path": "screenshots/before-passive-observations.png",
+          "label": "Before passive observation link presses",
+          "next": "press-default-observe",
+          "intent": "Capture the visible dev harness links before exercising passive observation policies."
+        },
+        "press-default-observe": {
+          "action": "ui.press",
+          "text": "Ready Workspace",
+          "next": "wait-ready-workspace",
+          "intent": "Press a visible navigation link with default passive observations enabled."
+        },
+        "wait-ready-workspace": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Ready Workspace",
+          "timeout_ms": 10000,
+          "next": "open-dev-dispatch-again",
+          "intent": "Verify the default observation press reached the Ready Workspace dev surface."
+        },
+        "open-dev-dispatch-again": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "press-visible-only",
+          "intent": "Return to the dev harness index for the selected-observer press."
+        },
+        "press-visible-only": {
+          "action": "ui.press",
+          "text": "Review Workspace",
+          "observe": [
+            "ui.visible"
+          ],
+          "next": "wait-review-workspace",
+          "intent": "Press a visible navigation link while requesting only the visible-target observer."
+        },
+        "wait-review-workspace": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Review Workspace",
+          "timeout_ms": 10000,
+          "next": "open-dev-dispatch-final",
+          "intent": "Verify the selected observation press reached the Review Workspace dev surface."
+        },
+        "open-dev-dispatch-final": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "press-observe-false",
+          "intent": "Return to the dev harness index for the observation opt-out press."
+        },
+        "press-observe-false": {
+          "action": "ui.press",
+          "text": "Runs",
+          "observe": false,
+          "next": "wait-runs",
+          "intent": "Press a visible navigation link with passive observations disabled for this node."
+        },
+        "wait-runs": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Runs",
+          "timeout_ms": 10000,
+          "next": "after-passive-observations",
+          "intent": "Verify the observation opt-out press still follows normal action control flow."
+        },
+        "after-passive-observations": {
+          "action": "ui.screenshot",
+          "path": "screenshots/after-passive-observations.png",
+          "label": "After passive observation link presses",
+          "next": "done",
+          "intent": "Capture the UI after link presses that exercised default, selected, and disabled observations."
+        },
+        "done": {
+          "action": "end",
+          "status": "pass"
+        }
+      },
+      "playback": {
+        "mode": "auto",
+        "slow_ms": 1000
+      }
+    }
+  }
+}

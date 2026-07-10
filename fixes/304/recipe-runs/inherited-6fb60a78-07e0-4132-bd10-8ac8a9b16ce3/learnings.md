@@ -1,0 +1,4 @@
+- The validation wrapper runs the primary checkout runner against the slot worktree, so worktree-local recipe runner changes need a direct local replay before publication.
+- UI transport decorators must forward optional capabilities like `observe`; otherwise the base transport can support a feature while wrappers silently drop it.
+- Capture-helper and CDP screencast can both fail in tmux/CDP sandbox conditions; evidence manifests should be explicit when fallback media is generated from real screenshots.
+- Keeping observations out of `output` made the no-control-flow-mutation tests straightforward and prevented accidental graph coupling.

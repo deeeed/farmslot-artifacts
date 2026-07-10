@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "verdict": "pass",
+  "compact": {
+    "verdict": "PASS",
+    "reasons": [
+      "Inherited recipe drives real Command Center UI navigation and presses through CDP.",
+      "Inherited trace evidence covers default, selected, and disabled passive observation policies.",
+      "Inherited screenshots were visually inspected and show the claimed before/after UI surfaces."
+    ],
+    "better_version_guidance": [
+      "A native full-run recorder should replace the screenshot-derived MP4 when capture-helper or CDP screencast is reliable in the sandbox."
+    ]
+  },
+  "dimensions": {
+    "coverage": {
+      "status": "pass",
+      "reason": "Every acceptance criterion is mapped in recipe-coverage.md.",
+      "evidence": [
+        "artifacts/recipe-coverage.md",
+        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3"
+      ]
+    },
+    "evidence": {
+      "status": "warn",
+      "reason": "Inherited recipe screenshots and trace are strong; video is screenshot-derived because both live recorders failed in the original sandbox.",
+      "evidence": [
+        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/before-passive-observations.png",
+        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/after-passive-observations.png",
+        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/after.mp4"
+      ]
+    },
+    "flow": {
+      "status": "pass",
+      "reason": "The inherited recipe uses manifest-declared actions and real UI interactions.",
+      "evidence": [
+        "artifacts/recipe.json"
+      ]
+    }
+  },
+  "structural_findings": [],
+  "contextual_findings": [
+    {
+      "code": "inherited_evidence",
+      "dimension": "evidence",
+      "message": "This merge-main follow-up reuses inherited passing recipe evidence; no new UI recipe proof was run for the merge-only task.",
+      "evidence": [
+        "inputs/inherited/recipe-quality.json",
+        "artifacts/evidence-manifest.json"
+      ]
+    }
+  ],
+  "suggested_recipe_delta": [
+    "Use a reliable full-run recorder when available so the video captures live motion instead of screenshot frames."
+  ],
+  "training_fields": {
+    "proof_mode": "mixed",
+    "task_type": "fix",
+    "claim_is_visual": true,
+    "good_patterns": [
+      "Inherited real CDP UI navigation and presses",
+      "Inherited trace assertions for passive observation fields",
+      "Before/after screenshot inspection"
+    ],
+    "anti_patterns": [
+      "Recorder fallback means video should not be treated as full live capture"
+    ]
+  },
+  "meta": {
+    "producer": "worker",
+    "fallback_used": false,
+    "legacy_task": false,
+    "artifact_required": true,
+    "source_signals": [
+      "inputs/inherited/recipe-quality.json",
+      "recipe.json",
+      "recipe-coverage.md",
+      "evidence-manifest.json"
+    ]
+  }
+}
