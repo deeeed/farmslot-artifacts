@@ -1,0 +1,4 @@
+- The branch already had `origin/main` merged at HEAD, so this follow-up was verification rather than conflict resolution.
+- Task-local `.sandbox` status and artifact edits are ignored by Git, which kept source status clean during the merge check.
+- The inherited recipe-quality artifact is useful context for merge-main follow-ups because it states exactly what UI proof is being reused.
+- The focused gateway test glob currently executes a small test surface in this environment; typecheck remains the broader validation signal for the Command Center workspace.

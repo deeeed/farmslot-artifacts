@@ -1,4 +1,4 @@
-- The branch already had `origin/main` merged at HEAD, so this follow-up was verification rather than conflict resolution.
-- Task-local `.sandbox` status and artifact edits are ignored by Git, which kept source status clean during the merge check.
-- The inherited recipe-quality artifact is useful context for merge-main follow-ups because it states exactly what UI proof is being reused.
-- The focused gateway test glob currently executes a small test surface in this environment; typecheck remains the broader validation signal for the Command Center workspace.
+- Merge-main follow-up was already represented in branch history; rerunning `git merge origin/main` confirmed there was no remaining merge fallout.
+- Validation stayed clean after confirming the merge target: Command Center typecheck passed and the focused gateway test command passed.
+- Inherited recipe-quality evidence remains relevant for this merge-only task, but no new UI recipe proof was necessary because no UI source changed in this pass.
+- The task-local `.sandbox` artifacts are not reflected in root `git status`, so the report must explicitly document their paths.

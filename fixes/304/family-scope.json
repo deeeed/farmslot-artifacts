@@ -2,5 +2,5 @@
   "originalFamilyScopeSummary": "Recipe UI passive observations for node-by-node authoring",
   "currentTriggerSummary": "merge-main: Recipe UI passive observations for node-by-node authoring",
   "scopeVerdict": "full-scope-addressed",
-  "notes": "The merge-main follow-up confirmed feat/manual-000011-recipe-ui-passive-observations is already up to date with origin/main and validation passed. Inherited context at inputs/inherited-context.json and recipe-quality evidence at inputs/inherited/recipe-quality.json indicate the original UI recipe scope already had passing proof, with this run limited to merge fallout verification."
+  "notes": "This follow-up scope was limited to main-branch merge fallout for MANUAL-000011. The PR branch feat/manual-000011-recipe-ui-passive-observations was already up to date with origin/main, no conflicts or tracked source changes were produced in this pass, and the required Command Center typecheck plus focused gateway tests passed."
 }

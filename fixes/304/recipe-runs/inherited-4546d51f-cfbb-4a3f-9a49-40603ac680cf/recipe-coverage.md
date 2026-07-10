@@ -3,7 +3,7 @@
 Recipe: `artifacts/recipe.json`
 Inherited run package: `inputs/inherited/evidence-manifest.json`
 
-This merge-main follow-up did not author a new recipe or rerun UI proof. The task inherited the original feature run coverage and recipe quality artifacts, then validated the merged branch with typecheck and focused gateway tests.
+This merge-main follow-up did not author a new recipe or rerun UI proof. It reused the inherited recipe evidence for the original feature scope, confirmed the PR branch was already up to date with `origin/main`, and validated the merged branch with typecheck plus focused gateway tests.
 
 | AC | Proof mode | Status | Evidence |
 | --- | --- | --- | --- |
@@ -20,4 +20,4 @@ This merge-main follow-up did not author a new recipe or rerun UI proof. The tas
 Merge follow-up validation:
 
 - `cd apps/command-center && yarn typecheck`: pass.
-- `cd apps/command-center && yarn exec tsx ../../services/gateway/src/*.test.ts`: pass after `yarn workspace @farmslot/protocol build` refreshed local generated protocol dist.
+- `cd apps/command-center && yarn exec tsx ../../services/gateway/src/*.test.ts`: pass.
