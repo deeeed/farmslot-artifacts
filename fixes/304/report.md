@@ -2,16 +2,18 @@
 
 ## Conflicts resolved
 
-- Fetched `origin/main` and ran `git merge origin/main` on `feat/manual-000011-recipe-ui-passive-observations`.
+- Confirmed PR `000011` / branch `feat/manual-000011-recipe-ui-passive-observations`.
+- Ran `git fetch origin main && git merge origin/main`.
 - Git reported `Already up to date.`
-- No conflicts were encountered or resolved during this follow-up pass.
-- Current branch HEAD is `a8be1026 chore: merge main into recipe UI passive observations`, which already contains the prior merge-main work.
+- No merge conflicts were encountered or resolved in this pass.
+- Current branch HEAD is `a8be1026 chore: merge main into recipe UI passive observations`.
 
 ## Files changed
 
-- No tracked source files changed during this pass.
-- Task-local evidence artifacts were written under `.sandbox/farmslot-farm/worker-task/fix/manual-000011-0710-153524/artifacts/`.
-- Branch remains ahead of `origin/feat/manual-000011-recipe-ui-passive-observations` by 6 commits.
+- No tracked source files changed during this merge-main pass.
+- The branch remains ahead of `origin/feat/manual-000011-recipe-ui-passive-observations` by 6 commits.
+- The branch diff against `origin/main` still includes the existing recipe passive observation changes across Command Center scripts, recipe protocol/schema docs, protocol tests, and recipe-harness runtime/tests.
+- Task-local evidence artifacts were written under `.sandbox/farmslot-farm/worker-task/fix/manual-000011-0710-161125/artifacts/`.
 
 ## Validation results
 
@@ -21,6 +23,6 @@
 
 ## Recipe quality context
 
-- Read the worker recipe-quality guidance at `projects/farmslot-farm/fixtures/runtime/recipe-quality.md`.
 - Read inherited recipe quality artifact: `inputs/inherited/recipe-quality.json`.
-- Inherited recipe-quality verdict is `pass`; it notes this merge-main follow-up reuses inherited UI recipe evidence rather than running a new UI recipe proof.
+- Inherited recipe-quality verdict is `pass`.
+- The inherited quality artifact notes this merge-main follow-up reuses inherited UI recipe evidence rather than running a new UI recipe proof.

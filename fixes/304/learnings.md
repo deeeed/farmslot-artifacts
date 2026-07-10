@@ -1,4 +1,4 @@
-- Merge-main follow-up was already represented in branch history; rerunning `git merge origin/main` confirmed there was no remaining merge fallout.
-- Validation stayed clean after confirming the merge target: Command Center typecheck passed and the focused gateway test command passed.
-- Inherited recipe-quality evidence remains relevant for this merge-only task, but no new UI recipe proof was necessary because no UI source changed in this pass.
-- The task-local `.sandbox` artifacts are not reflected in root `git status`, so the report must explicitly document their paths.
+- The PR branch was already on `feat/manual-000011-recipe-ui-passive-observations` and already contained the previous merge-main commit.
+- Fetching and merging `origin/main` produced `Already up to date`, so this run had no conflict resolution work.
+- Required validation stayed green with Command Center typecheck and the focused gateway test glob.
+- Inherited recipe-quality evidence was sufficient for this merge-only follow-up, with the known caveat that no new UI recipe proof was run here.
