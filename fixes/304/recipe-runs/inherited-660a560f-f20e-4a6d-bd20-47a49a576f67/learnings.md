@@ -1,0 +1,4 @@
+- Merge-main fallout was limited to a changelog conflict; preserving all Unreleased bullets kept both feature and main-line release notes intact.
+- The focused gateway test command can fail against stale local `@farmslot/protocol` dist even when source exports are correct; rebuilding the protocol package fixed the runtime import surface.
+- The inherited recipe evidence already covered the original passive-observation feature scope, so this follow-up only needed merge reconciliation plus typecheck and gateway test validation.
+- The merge commit pulled in broad main-line reviewer/runtime-recovery changes, but no additional source edits were needed beyond the changelog conflict resolution.

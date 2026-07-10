@@ -2,21 +2,23 @@
 
 ## Conflicts resolved
 
-- Merged `origin/main` into `feat/manual-000011-recipe-ui-passive-observations`.
-- Resolved one content conflict in `packages/protocol/CHANGELOG.md` by preserving all Unreleased entries:
-  - Recipe Protocol v1 passive UI observation fields.
-  - Reviewer context protocol types and exports.
-  - Tmux runtime recovery RPC contracts.
+- Fetched `origin/main` and ran `git merge origin/main` on `feat/manual-000011-recipe-ui-passive-observations`.
+- Git reported `Already up to date.`
+- No new conflicts were encountered or resolved during this follow-up pass.
+- Current branch HEAD is `a8be1026 chore: merge main into recipe UI passive observations`, which already contains the prior merge-main work.
 
 ## Files changed
 
-- Merge commit: `a8be1026 chore: merge main into recipe UI passive observations`.
-- Merge brought in 90 changed files from `origin/main` with 3,954 insertions and 293 deletions.
-- Direct conflict-resolution edit was limited to `packages/protocol/CHANGELOG.md`.
+- No tracked source files changed during this pass.
+- Task-local evidence artifacts were written under `.sandbox/farmslot-farm/worker-task/fix/manual-000011-0710-152947/artifacts/`.
+- Branch remains ahead of `origin/feat/manual-000011-recipe-ui-passive-observations` by 6 commits.
 
 ## Validation results
 
 - `cd apps/command-center && yarn typecheck`: pass.
-- `cd apps/command-center && yarn exec tsx ../../services/gateway/src/*.test.ts`: initially failed because local `@farmslot/protocol` dist was stale and did not export `isReviewerWindowName`.
-- `yarn workspace @farmslot/protocol build`: pass; refreshed local generated protocol dist.
 - `cd apps/command-center && yarn exec tsx ../../services/gateway/src/*.test.ts`: pass.
+
+## Recipe quality context
+
+- Read inherited recipe quality artifact: `inputs/inherited/recipe-quality.json`.
+- Inherited recipe-quality verdict is `pass`; it notes this merge-main follow-up reuses inherited UI recipe evidence rather than running a new UI recipe proof.
