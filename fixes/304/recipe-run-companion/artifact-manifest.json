@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "runStatus": "pass",
+  "provenance": {
+    "runner": {
+      "source": "@farmslot/expo-recipe",
+      "git_ref": "package",
+      "name": "@farmslot/expo-recipe"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "recipe.json",
+      "type": "recipe",
+      "label": "Executed recipe",
+      "category": "system"
+    },
+    {
+      "path": "summary.json",
+      "type": "summary",
+      "label": "Run summary",
+      "category": "system"
+    },
+    {
+      "path": "trace.json",
+      "type": "trace",
+      "label": "Execution trace",
+      "category": "system"
+    }
+  ]
+}

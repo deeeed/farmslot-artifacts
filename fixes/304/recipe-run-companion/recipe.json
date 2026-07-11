@@ -1,0 +1,30 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "schema_version": 1,
+  "title": "Companion passive UI observeUi bridge proof",
+  "description": "Fresh PR-complete proof for the repo-supported Farmslot companion recipe bridge path.",
+  "validate": {
+    "workflow": {
+      "entry": "bridge-status-with-observe",
+      "nodes": {
+        "bridge-status-with-observe": {
+          "action": "app.status",
+          "observe": true,
+          "intent": "Confirm the companion recipe bridge is reachable and request passive ui.screen/ui.visible observations through observeUi.",
+          "timeout_ms": 30000,
+          "next": "show-hud"
+        },
+        "show-hud": {
+          "action": "app.hud",
+          "intent": "Show a concise PASS marker on the companion HUD after observeUi succeeds.",
+          "status": "pass",
+          "next": "done"
+        },
+        "done": {
+          "action": "end",
+          "status": "pass"
+        }
+      }
+    }
+  }
+}

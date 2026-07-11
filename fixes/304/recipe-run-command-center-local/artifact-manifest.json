@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "runStatus": "pass",
+  "artifacts": [
+    {
+      "path": "recipe.json",
+      "type": "recipe",
+      "label": "Executed recipe",
+      "category": "system"
+    },
+    {
+      "path": "screenshots/before-command-center-observations.png",
+      "type": "screenshot",
+      "nodeId": "before-command-center-observations",
+      "label": "Before Command Center passive observation presses",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "screenshots/after-command-center-observations.png",
+      "type": "screenshot",
+      "nodeId": "after-command-center-observations",
+      "label": "After Command Center passive observation presses",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "summary.json",
+      "type": "summary",
+      "label": "Run summary",
+      "category": "system"
+    },
+    {
+      "path": "trace.json",
+      "type": "trace",
+      "label": "Execution trace",
+      "category": "system"
+    }
+  ]
+}

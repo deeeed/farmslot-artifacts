@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "runner": {
+      "source": "@farmslot/expo-recipe",
+      "git_ref": "package",
+      "name": "@farmslot/expo-recipe"
+    }
+  },
+  "entries": [
+    {
+      "nodeId": "bridge-status-with-observe",
+      "action": "app.status",
+      "intent": "Confirm the companion recipe bridge is reachable and request passive ui.screen/ui.visible observations through observeUi.",
+      "startedAt": "2026-07-11T05:58:39.138Z",
+      "endedAt": "2026-07-11T05:58:39.169Z",
+      "durationMs": 31,
+      "ok": true,
+      "next": "show-hud",
+      "output": {
+        "ok": true,
+        "bridge": "@farmslot/companion",
+        "platform": "ios",
+        "hud": true
+      },
+      "observations": {
+        "ui.screen": {
+          "provider": "@farmslot/companion",
+          "name": "ReactNativeApp",
+          "platform": "ios"
+        },
+        "ui.visible": {
+          "provider": "@farmslot/companion",
+          "items": [],
+          "hidden_or_offscreen": [],
+          "truncated": false,
+          "viewport": {
+            "width": 402,
+            "height": 874
+          },
+          "hints": [
+            "Provide RecipeBridgeProvider.observeUi to expose app-specific Pressable/TextInput handles."
+          ]
+        }
+      }
+    },
+    {
+      "nodeId": "show-hud",
+      "action": "app.hud",
+      "intent": "Show a concise PASS marker on the companion HUD after observeUi succeeds.",
+      "startedAt": "2026-07-11T05:58:39.169Z",
+      "endedAt": "2026-07-11T05:58:39.172Z",
+      "durationMs": 3,
+      "ok": true,
+      "next": "done",
+      "output": {
+        "ok": true
+      }
+    },
+    {
+      "nodeId": "done",
+      "action": "end",
+      "startedAt": "2026-07-11T05:58:39.172Z",
+      "endedAt": "2026-07-11T05:58:39.172Z",
+      "durationMs": 0,
+      "ok": true,
+      "status": "pass"
+    }
+  ]
+}

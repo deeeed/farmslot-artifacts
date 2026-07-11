@@ -4,66 +4,68 @@
   "compact": {
     "verdict": "PASS",
     "reasons": [
-      "Inherited recipe drives real Command Center UI navigation and presses through CDP.",
-      "Inherited trace evidence covers default, selected, and disabled passive observation policies.",
-      "Inherited screenshots were visually inspected and show the claimed before/after UI surfaces."
+      "Fresh Command Center recipe trace proves default, selected, and disabled passive observation policies through real CDP UI actions.",
+      "Fresh Companion recipe trace proves the supported Expo observeUi bridge path on simulator fs-3 after the app is launched.",
+      "The remaining Companion ui.press/observe:false parity gap is explicitly documented rather than hidden behind screenshots."
     ],
     "better_version_guidance": [
-      "A native full-run recorder should replace the screenshot-derived MP4 when capture-helper or CDP screencast is reliable in the sandbox."
+      "Add repo-supported Companion ui.press and observe:false recipe actions if React Native UI-action parity becomes part of the acceptance bar.",
+      "Make bridge recipes launch the companion app automatically, not only warm Metro and the simulator."
     ]
   },
   "dimensions": {
     "coverage": {
       "status": "pass",
-      "reason": "Every acceptance criterion is mapped in recipe-coverage.md.",
+      "reason": "recipe-coverage.md maps the Command Center policy proof and Companion bridge proof to concrete trace artifacts.",
       "evidence": [
         "artifacts/recipe-coverage.md",
-        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3"
+        "artifacts/recipe-run-command-center-local/trace.json",
+        "artifacts/recipe-run-companion/trace.json"
       ]
     },
     "evidence": {
-      "status": "warn",
-      "reason": "Inherited recipe screenshots and trace are strong; video is screenshot-derived because both live recorders failed in the original sandbox.",
+      "status": "pass",
+      "reason": "Trace/output, not screenshots, proves the passive observation behavior requested for this pass.",
       "evidence": [
-        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/before-passive-observations.png",
-        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/after-passive-observations.png",
-        "artifacts/recipe-runs/inherited-6fb60a78-07e0-4132-bd10-8ac8a9b16ce3/after.mp4"
+        "artifacts/evidence-manifest.json",
+        "artifacts/recipe-run-command-center-local/summary.json",
+        "artifacts/recipe-run-companion/summary.json"
       ]
     },
     "flow": {
-      "status": "pass",
-      "reason": "The inherited recipe uses manifest-declared actions and real UI interactions.",
+      "status": "warn",
+      "reason": "Companion currently validates observeUi through app.status; it does not expose ui.press/observe:false parity actions.",
       "evidence": [
-        "artifacts/recipe.json"
+        "apps/companion/scripts/agentic/recipe/action-manifest.json"
       ]
     }
   },
   "structural_findings": [],
   "contextual_findings": [
     {
-      "code": "inherited_evidence",
-      "dimension": "evidence",
-      "message": "This merge-main follow-up reuses inherited passing recipe evidence; no new UI recipe proof was run for the merge-only task.",
+      "code": "companion-ui-action-gap",
+      "dimension": "flow",
+      "message": "Companion recipe coverage cannot yet mirror the Command Center ui.press observe matrix because its manifest does not expose ui.press, ui.wait_for, ui.screenshot, or observer declarations.",
       "evidence": [
-        "inputs/inherited/recipe-quality.json",
-        "artifacts/evidence-manifest.json"
+        "artifacts/recipe-coverage.md"
       ]
     }
   ],
   "suggested_recipe_delta": [
-    "Use a reliable full-run recorder when available so the video captures live motion instead of screenshot frames."
+    "Add a Companion recipe that exercises ui.press default observe, selected observe refs, and observe:false once those actions are supported."
   ],
   "training_fields": {
-    "proof_mode": "mixed",
-    "task_type": "fix",
-    "claim_is_visual": true,
+    "proof_mode": "trace",
+    "task_type": "pr-complete",
+    "claim_is_visual": false,
     "good_patterns": [
-      "Inherited real CDP UI navigation and presses",
-      "Inherited trace assertions for passive observation fields",
-      "Before/after screenshot inspection"
+      "Trace assertions over screenshot-only claims",
+      "Worktree-local runner for unmerged recipe runner changes",
+      "Dedicated simulator fs-3 for Companion validation"
     ],
     "anti_patterns": [
-      "Recorder fallback means video should not be treated as full live capture"
+      "Warm Metro-only prepare when the recipe bridge requires a running app",
+      "Listing local artifact paths as PR evidence"
     ]
   },
   "meta": {
@@ -72,10 +74,11 @@
     "legacy_task": false,
     "artifact_required": true,
     "source_signals": [
-      "inputs/inherited/recipe-quality.json",
-      "recipe.json",
+      "recipe-quality.json",
       "recipe-coverage.md",
-      "evidence-manifest.json"
+      "evidence-manifest.json",
+      "recipe-run-command-center-local/trace.json",
+      "recipe-run-companion/trace.json"
     ]
   }
 }

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "schema_version": 1,
+  "title": "Command Center passive UI observations proof",
+  "description": "Fresh PR-complete proof for Recipe v1 passive observations on the Command Center CDP/gateway path.",
+  "validate": {
+    "workflow": {
+      "pre_conditions": [
+        {
+          "id": "command_center.dev_server.ready",
+          "description": "Command Center sandbox UI is serving the target route.",
+          "required": true
+        },
+        {
+          "id": "runtime.browser.open",
+          "description": "Chrome CDP session is available for UI recipe playback.",
+          "required": true
+        },
+        {
+          "id": "gateway.reachable",
+          "description": "Sandbox gateway is reachable for the Command Center session.",
+          "required": true
+        }
+      ],
+      "entry": "assert-observer-manifest",
+      "nodes": {
+        "assert-observer-manifest": {
+          "action": "command",
+          "cmd": "node -e \"const fs=require('fs'); const manifest=JSON.parse(fs.readFileSync('docs/examples/recipes/farmslot-v1.action-manifest.json','utf8')); const refs=new Set((manifest.observers||[]).map((entry)=>entry.ref)); if(!refs.has('ui.screen')||!refs.has('ui.visible')) { console.error('missing ui.screen/ui.visible observer declarations'); process.exit(1); }\"",
+          "next": "open-dev-dispatch",
+          "intent": "Verify the action manifest advertises ui.screen and ui.visible observers."
+        },
+        "open-dev-dispatch": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "wait-dev-dispatch",
+          "intent": "Open the Command Center dispatch dev harness through CDP."
+        },
+        "wait-dev-dispatch": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Dispatch Wizard",
+          "timeout_ms": 10000,
+          "next": "before-command-center-observations",
+          "intent": "Verify the Command Center route is visible before pressing navigation targets."
+        },
+        "before-command-center-observations": {
+          "action": "ui.screenshot",
+          "path": "screenshots/before-command-center-observations.png",
+          "label": "Before Command Center passive observation presses",
+          "next": "press-default-observe",
+          "intent": "Capture the visible Command Center harness before observation policy checks."
+        },
+        "press-default-observe": {
+          "action": "ui.press",
+          "text": "Ready Workspace",
+          "next": "wait-ready-workspace",
+          "intent": "Press a visible link with default passive ui.screen and ui.visible observations."
+        },
+        "wait-ready-workspace": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Ready Workspace",
+          "timeout_ms": 10000,
+          "next": "open-dev-dispatch-again",
+          "intent": "Verify the default-observe press followed normal control flow."
+        },
+        "open-dev-dispatch-again": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "press-visible-only",
+          "intent": "Return to the dispatch harness for selected-observer proof."
+        },
+        "press-visible-only": {
+          "action": "ui.press",
+          "text": "Review Workspace",
+          "observe": [
+            "ui.visible"
+          ],
+          "next": "wait-review-workspace",
+          "intent": "Press a visible link while requesting only the ui.visible observer."
+        },
+        "wait-review-workspace": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Review Workspace",
+          "timeout_ms": 10000,
+          "next": "open-dev-dispatch-final",
+          "intent": "Verify selected-observer press followed normal control flow."
+        },
+        "open-dev-dispatch-final": {
+          "action": "ui.navigate",
+          "target": "#dev/dispatch",
+          "next": "press-observe-false",
+          "intent": "Return to the dispatch harness for observe:false proof."
+        },
+        "press-observe-false": {
+          "action": "ui.press",
+          "text": "Runs",
+          "observe": false,
+          "next": "wait-runs",
+          "intent": "Press a visible link with passive observations disabled for this node."
+        },
+        "wait-runs": {
+          "action": "ui.wait_for",
+          "selector": "body",
+          "text": "Runs",
+          "timeout_ms": 10000,
+          "next": "after-command-center-observations",
+          "intent": "Verify observe:false did not alter normal action control flow."
+        },
+        "after-command-center-observations": {
+          "action": "ui.screenshot",
+          "path": "screenshots/after-command-center-observations.png",
+          "label": "After Command Center passive observation presses",
+          "next": "done",
+          "intent": "Capture the Command Center UI after the observation policy checks."
+        },
+        "done": {
+          "action": "end",
+          "status": "pass"
+        }
+      },
+      "playback": {
+        "mode": "auto",
+        "slow_ms": 1000
+      }
+    }
+  }
+}

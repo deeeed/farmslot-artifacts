@@ -1,4 +1,6 @@
-- The PR branch was already on `feat/manual-000011-recipe-ui-passive-observations` and already contained the previous merge-main commit.
-- Fetching and merging `origin/main` produced `Already up to date`, so this run had no conflict resolution work.
-- Required validation stayed green with Command Center typecheck and the focused gateway test glob.
-- Inherited recipe-quality evidence was sufficient for this merge-only follow-up, with the known caveat that no new UI recipe proof was run here.
+- PR-complete for this feature requires fresh recipe output on both Command Center and companion surfaces; inherited Command Center evidence is not sufficient.
+- The project `validate-recipe.sh` wrapper can execute the primary checkout runner, so PR-branch recipe proof must use the worktree-local runner when validating unmerged recipe-runner changes.
+- Command Center passive observations were proven in fresh trace output: default `ui.press` recorded `ui.screen` and `ui.visible`, selected observe recorded only `ui.visible`, and `observe:false` recorded no observations.
+- Companion bridge proof requires the app/dev client to be launched, not only warm Metro/simulator readiness; after `prepare-profile.sh full`, `fs-3` polled the bridge and the recipe passed.
+- Direct Metro probes use bridge-level command names such as `status`; recipe documents use official action names such as `app.status`, which the React Native bridge transport maps before sending.
+- The current companion action manifest does not expose `ui.press`/`observe:false` as repo-supported recipe actions, so companion coverage validates `observeUi` but cannot yet mirror the Command Center observation policy proof.

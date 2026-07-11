@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "total": 17,
+  "passed": 17,
+  "failed": 0,
+  "startedAt": "2026-07-10T21:01:53.489Z",
+  "endedAt": "2026-07-10T21:01:54.053Z",
+  "durationMs": 564,
+  "harness": {
+    "name": "@farmslot/recipe-harness",
+    "version": "0.1.0",
+    "runner_protocol_version": 1,
+    "action_registry_version": 1
+  }
+}

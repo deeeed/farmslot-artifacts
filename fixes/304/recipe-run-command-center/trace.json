@@ -1,0 +1,253 @@
+[
+  {
+    "nodeId": "pre_conditions:command_center.dev_server.ready",
+    "action": "pre_condition",
+    "startedAt": "2026-07-10T21:01:53.492Z",
+    "endedAt": "2026-07-10T21:01:53.516Z",
+    "durationMs": 24,
+    "ok": true
+  },
+  {
+    "nodeId": "pre_conditions:runtime.browser.open",
+    "action": "pre_condition",
+    "startedAt": "2026-07-10T21:01:53.516Z",
+    "endedAt": "2026-07-10T21:01:53.519Z",
+    "durationMs": 3,
+    "ok": true
+  },
+  {
+    "nodeId": "pre_conditions:gateway.reachable",
+    "action": "pre_condition",
+    "startedAt": "2026-07-10T21:01:53.519Z",
+    "endedAt": "2026-07-10T21:01:53.521Z",
+    "durationMs": 2,
+    "ok": true
+  },
+  {
+    "nodeId": "assert-observer-manifest",
+    "action": "command",
+    "intent": "Verify the action manifest advertises ui.screen and ui.visible observers.",
+    "startedAt": "2026-07-10T21:01:53.521Z",
+    "endedAt": "2026-07-10T21:01:53.601Z",
+    "durationMs": 80,
+    "ok": true,
+    "next": "open-dev-dispatch",
+    "output": {
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "open-dev-dispatch",
+    "action": "ui.navigate",
+    "intent": "Open the Command Center dispatch dev harness through CDP.",
+    "startedAt": "2026-07-10T21:01:53.606Z",
+    "endedAt": "2026-07-10T21:01:53.613Z",
+    "durationMs": 7,
+    "ok": true,
+    "next": "wait-dev-dispatch",
+    "output": {
+      "frameId": "410754C08F8CA361BD858DC36FCFFAF5",
+      "isDownload": false
+    }
+  },
+  {
+    "nodeId": "wait-dev-dispatch",
+    "action": "ui.wait_for",
+    "intent": "Verify the Command Center route is visible before pressing navigation targets.",
+    "startedAt": "2026-07-10T21:01:53.618Z",
+    "endedAt": "2026-07-10T21:01:53.731Z",
+    "durationMs": 113,
+    "ok": true,
+    "next": "before-command-center-observations",
+    "output": {
+      "matched": true
+    }
+  },
+  {
+    "nodeId": "before-command-center-observations",
+    "action": "ui.screenshot",
+    "intent": "Capture the visible Command Center harness before observation policy checks.",
+    "artifacts": [
+      {
+        "path": "screenshots/before-command-center-observations.png",
+        "type": "screenshot",
+        "nodeId": "before-command-center-observations",
+        "label": "Before Command Center passive observation presses",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-07-10T21:01:53.736Z",
+    "endedAt": "2026-07-10T21:01:53.834Z",
+    "durationMs": 98,
+    "ok": true,
+    "next": "press-default-observe",
+    "output": {
+      "captured": true,
+      "path": "screenshots/before-command-center-observations.png",
+      "artifact": {
+        "path": "screenshots/before-command-center-observations.png",
+        "type": "screenshot",
+        "nodeId": "before-command-center-observations",
+        "label": "Before Command Center passive observation presses",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "press-default-observe",
+    "action": "ui.press",
+    "intent": "Press a visible link with default passive ui.screen and ui.visible observations.",
+    "startedAt": "2026-07-10T21:01:53.839Z",
+    "endedAt": "2026-07-10T21:01:53.855Z",
+    "durationMs": 16,
+    "ok": true,
+    "next": "wait-ready-workspace",
+    "output": {
+      "clicked": true,
+      "text": "Ready Workspace",
+      "tagName": "A"
+    }
+  },
+  {
+    "nodeId": "wait-ready-workspace",
+    "action": "ui.wait_for",
+    "intent": "Verify the default-observe press followed normal control flow.",
+    "startedAt": "2026-07-10T21:01:53.860Z",
+    "endedAt": "2026-07-10T21:01:53.868Z",
+    "durationMs": 8,
+    "ok": true,
+    "next": "open-dev-dispatch-again",
+    "output": {
+      "matched": true
+    }
+  },
+  {
+    "nodeId": "open-dev-dispatch-again",
+    "action": "ui.navigate",
+    "intent": "Return to the dispatch harness for selected-observer proof.",
+    "startedAt": "2026-07-10T21:01:53.874Z",
+    "endedAt": "2026-07-10T21:01:53.881Z",
+    "durationMs": 7,
+    "ok": true,
+    "next": "press-visible-only",
+    "output": {
+      "frameId": "410754C08F8CA361BD858DC36FCFFAF5",
+      "isDownload": false
+    }
+  },
+  {
+    "nodeId": "press-visible-only",
+    "action": "ui.press",
+    "intent": "Press a visible link while requesting only the ui.visible observer.",
+    "startedAt": "2026-07-10T21:01:53.886Z",
+    "endedAt": "2026-07-10T21:01:53.898Z",
+    "durationMs": 12,
+    "ok": true,
+    "next": "wait-review-workspace",
+    "output": {
+      "clicked": true,
+      "text": "Review Workspace",
+      "tagName": "A"
+    }
+  },
+  {
+    "nodeId": "wait-review-workspace",
+    "action": "ui.wait_for",
+    "intent": "Verify selected-observer press followed normal control flow.",
+    "startedAt": "2026-07-10T21:01:53.902Z",
+    "endedAt": "2026-07-10T21:01:53.909Z",
+    "durationMs": 7,
+    "ok": true,
+    "next": "open-dev-dispatch-final",
+    "output": {
+      "matched": true
+    }
+  },
+  {
+    "nodeId": "open-dev-dispatch-final",
+    "action": "ui.navigate",
+    "intent": "Return to the dispatch harness for observe:false proof.",
+    "startedAt": "2026-07-10T21:01:53.914Z",
+    "endedAt": "2026-07-10T21:01:53.921Z",
+    "durationMs": 7,
+    "ok": true,
+    "next": "press-observe-false",
+    "output": {
+      "frameId": "410754C08F8CA361BD858DC36FCFFAF5",
+      "isDownload": false
+    }
+  },
+  {
+    "nodeId": "press-observe-false",
+    "action": "ui.press",
+    "intent": "Press a visible link with passive observations disabled for this node.",
+    "startedAt": "2026-07-10T21:01:53.925Z",
+    "endedAt": "2026-07-10T21:01:53.939Z",
+    "durationMs": 14,
+    "ok": true,
+    "next": "wait-runs",
+    "output": {
+      "clicked": true,
+      "text": "Runs",
+      "tagName": "A"
+    }
+  },
+  {
+    "nodeId": "wait-runs",
+    "action": "ui.wait_for",
+    "intent": "Verify observe:false did not alter normal action control flow.",
+    "startedAt": "2026-07-10T21:01:53.943Z",
+    "endedAt": "2026-07-10T21:01:53.951Z",
+    "durationMs": 8,
+    "ok": true,
+    "next": "after-command-center-observations",
+    "output": {
+      "matched": true
+    }
+  },
+  {
+    "nodeId": "after-command-center-observations",
+    "action": "ui.screenshot",
+    "intent": "Capture the Command Center UI after the observation policy checks.",
+    "artifacts": [
+      {
+        "path": "screenshots/after-command-center-observations.png",
+        "type": "screenshot",
+        "nodeId": "after-command-center-observations",
+        "label": "After Command Center passive observation presses",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-07-10T21:01:53.955Z",
+    "endedAt": "2026-07-10T21:01:54.037Z",
+    "durationMs": 82,
+    "ok": true,
+    "next": "done",
+    "output": {
+      "captured": true,
+      "path": "screenshots/after-command-center-observations.png",
+      "artifact": {
+        "path": "screenshots/after-command-center-observations.png",
+        "type": "screenshot",
+        "nodeId": "after-command-center-observations",
+        "label": "After Command Center passive observation presses",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "done",
+    "action": "end",
+    "startedAt": "2026-07-10T21:01:54.042Z",
+    "endedAt": "2026-07-10T21:01:54.045Z",
+    "durationMs": 3,
+    "ok": true,
+    "status": "pass"
+  }
+]

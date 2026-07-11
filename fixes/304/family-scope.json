@@ -1,6 +1,6 @@
 {
   "originalFamilyScopeSummary": "Recipe UI passive observations for node-by-node authoring",
-  "currentTriggerSummary": "merge-main: Recipe UI passive observations for node-by-node authoring",
+  "currentTriggerSummary": "pr-complete: feat: recipe UI passive observations for node-by-node authoring",
   "scopeVerdict": "full-scope-addressed",
-  "notes": "This follow-up was limited to main-branch merge fallout. The PR branch was already up to date with origin/main, no conflicts were present, required validation passed, and inherited recipe-quality evidence for the original passive-observations scope has a pass verdict."
+  "notes": "Fresh Command Center recipe evidence from macwork-ff-3 passed and shows ui.screen/ui.visible default observations plus observe:false suppression in trace.json. Fresh companion evidence passed on fs-3 after a full iOS app launch and shows app.status plus passive ui.screen/ui.visible observations through observeUi. The current companion action manifest still does not expose ui.press/observe:false recipe actions, so full RN UI-action parity is a documented follow-up rather than evidence produced by this PR-complete pass."
 }

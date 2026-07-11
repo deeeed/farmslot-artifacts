@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "startedAt": "2026-07-11T05:58:39.136Z",
+  "endedAt": "2026-07-11T05:58:39.173Z",
+  "durationMs": 37,
+  "harness": {
+    "name": "@farmslot/recipe-harness",
+    "version": "0.1.0",
+    "runner_protocol_version": 1,
+    "action_registry_version": 1
+  },
+  "runner": {
+    "source": "@farmslot/expo-recipe",
+    "git_ref": "package",
+    "name": "@farmslot/expo-recipe"
+  }
+}

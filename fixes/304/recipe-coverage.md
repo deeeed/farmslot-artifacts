@@ -1,23 +1,27 @@
 # Recipe Coverage
 
-Recipe: `artifacts/recipe.json`
-Inherited run package: `inputs/inherited/evidence-manifest.json`
+## Command Center
 
-This merge-main follow-up did not author a new recipe or rerun UI proof. It reused the inherited recipe evidence for the original feature scope, confirmed the PR branch was already up to date with `origin/main`, and validated the merged branch with typecheck plus focused gateway tests.
+- Surface: Command Center browser UI on slot `macwork-ff-3`.
+- Recipe: `command-center-passive-observations.recipe.json`.
+- Runner: worktree-local `apps/command-center/scripts/agentic/run-recipe.mjs` from PR #304 branch.
+- Result: `recipe-run-command-center-local/summary.json` reports `status=pass`, `passed=17`, `failed=0`.
+- Covered behavior:
+  - Default `observe: true` for `ui.press` records `ui.screen` and `ui.visible`.
+  - Node-level `observe: ["ui.visible"]` records only `ui.visible`.
+  - Node-level `observe: false` records no observations and no observation warnings.
 
-| AC | Proof mode | Status | Evidence |
-| --- | --- | --- | --- |
-| Default `ui.press` records bounded `ui.screen` and `ui.visible` | mixed | pass | Inherited `inputs/inherited/recipe-coverage.md` reports `trace.json` entry `press-default-observe` with both observer keys and bounded `ui.visible.items`. |
-| `observe: false` disables passive observations | state | pass | Inherited `inputs/inherited/recipe-coverage.md` reports `press-observe-false` has no `observations` or `observationWarnings`. |
-| `observe: ["ui.visible"]` records only requested observer | state | pass | Inherited `inputs/inherited/recipe-coverage.md` reports `press-visible-only` has only `ui.visible`. |
-| Observation failures are warnings and do not fail the action | state | pass | Inherited coverage cites `packages/recipe-harness/src/core/observations.test.ts`. |
-| Observations never alter `next`, `status`, `case`, artifacts, or branches | state | pass | Inherited coverage reports authored `next` values retained and tests guarding status/case/artifacts. |
-| `ui.visible.items` exposes stable handles and stays bounded | mixed | pass | Inherited coverage reports labels, roles, selectors, enabled state, bounds, `limits`, and `truncated`. |
-| Manifest metadata advertises observer support | state | pass | Inherited coverage cites `docs/examples/recipes/farmslot-v1.action-manifest.json` and protocol validation tests. |
-| Expo/RN bridge returns visible actionable targets | state | pass | Inherited coverage cites `RecipeBridgeProvider` handling `observeUi` and returning `ui.screen` / `ui.visible`. |
-| Documentation states observations are passive context, not proof | state | pass | Inherited coverage cites `apps/docs/docs/reference/recipe-protocol-v1.md` and `apps/docs/docs/guides/write-a-recipe.md`. |
+## Companion
 
-Merge follow-up validation:
+- Surface: Farmslot Companion iOS dev client on simulator `fs-3`, Metro `:8880`.
+- Recipe: `companion-passive-observations.recipe.json`.
+- Runner: repo-supported `apps/companion/scripts/agentic/validate-recipe.sh`.
+- Result: `recipe-run-companion/summary.json` reports `status=pass`, `passed=3`, `failed=0`.
+- Covered behavior:
+  - Official recipe action `app.status` maps to bridge command `status` and confirms the app-side bridge is reachable.
+  - `observe: true` records passive `ui.screen` and `ui.visible` observations through the companion `observeUi` bridge path.
 
-- `cd apps/command-center && yarn typecheck`: pass.
-- `cd apps/command-center && yarn exec tsx ../../services/gateway/src/*.test.ts`: pass.
+## Explicit Gap
+
+- Companion does not currently expose repo-supported `ui.press`, `ui.wait_for`, `ui.screenshot`, or observer declarations in `apps/companion/scripts/agentic/recipe/action-manifest.json`.
+- The companion proof validates supported `observeUi` behavior, not full React Native UI-action parity with the Command Center `ui.press` default/selected/`observe:false` matrix.

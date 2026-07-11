@@ -1,0 +1,47 @@
+{
+  "runner_protocol_version": 1,
+  "status": "pass",
+  "checks": [
+    {
+      "id": "command_center.dev_server.ready",
+      "status": "pass",
+      "message": "http://localhost:5877/ OK"
+    },
+    {
+      "id": "gateway.reachable",
+      "status": "pass",
+      "message": "http://127.0.0.1:8810/health OK"
+    },
+    {
+      "id": "runtime.browser.open",
+      "status": "pass",
+      "message": "CDP :9326 has 1 page target(s)"
+    },
+    {
+      "id": "capture_helper.doctor",
+      "status": "pass",
+      "message": "capture-helper 0.2.2 ready"
+    },
+    {
+      "id": "capture_helper.window.on_screen",
+      "status": "pass",
+      "message": "Chrome window off-screen (Farmslot Command Center); using CDP screencast; CDP Page.captureScreenshot ready (360622 bytes probe; capture-helper fallback)."
+    },
+    {
+      "id": "recipe.action_manifest.present",
+      "status": "pass",
+      "message": "/Users/deeeed/dev/farmslot-wt/farmslot-3/docs/examples/recipes/farmslot-v1.action-manifest.json"
+    },
+    {
+      "id": "project.recipe_run.ui_supported",
+      "status": "pass",
+      "message": "/Users/deeeed/dev/farmslot-wt/farmslot-3/apps/command-center/scripts/agentic/run-recipe.mjs"
+    }
+  ],
+  "ui_url": "http://localhost:5877",
+  "cdp_port": 9326,
+  "gateway_port": "8810",
+  "slot_id": "macwork-ff-3",
+  "slot_project_root": "/Users/deeeed/dev/farmslot-wt/farmslot-3",
+  "farmslot_root": "/Users/deeeed/dev/farmslot-wt/farmslot-3"
+}

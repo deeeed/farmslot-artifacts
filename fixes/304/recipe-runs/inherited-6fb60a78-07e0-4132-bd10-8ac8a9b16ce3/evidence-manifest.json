@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "preferred_mode": "screenshots",
+  "summary": "Command Center recipe proof shows visible dev-harness targets before and the Runs surface after real UI presses; trace.json records passive observations for the press nodes.",
+  "before_after_pairs": [
+    {
+      "label": "Passive observation UI link presses",
+      "covers": ["ac1", "ac2", "ac3", "ac5", "ac6", "ac8"],
+      "before": "artifacts/before-passive-observations.png",
+      "after": "artifacts/after-passive-observations.png"
+    }
+  ],
+  "videos": {
+    "after": "artifacts/after.mp4",
+    "preferred": true,
+    "note": "Review MP4 generated from the recipe screenshots because capture-helper failed to produce the expected file and CDP screencast captured zero frames in this sandbox; trace and screenshots come from passing worktree-local recipe replay."
+  }
+}
