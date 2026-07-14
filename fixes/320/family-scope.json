@@ -2,5 +2,5 @@
   "originalFamilyScopeSummary": "Rename branch-maintenance flow to update-branch and prefer rebase",
   "currentTriggerSummary": "merge-main: Rename branch-maintenance flow to update-branch and prefer rebase",
   "scopeVerdict": "full-scope-addressed",
-  "notes": "This run's scope is the merge-main fallout task only: bring feat/manual-000014-rename-branch-maintenance-flow up to date with origin/main and resolve conflicts. origin/main merged cleanly except two changelog Unreleased bullet collisions, both resolved keep-both. Typecheck exit 0; server-globals 1/1 and runs/store 37/37 tests pass (incl. the branch's new merge-main->update-branch template migration test). No unresolved conflicts; the branch's rename-flow work is intact. The merge-fallout scope is fully addressed."
+  "notes": "origin/main is already an ancestor of HEAD (merge landed at 2fdcd8ab); no unmerged upstream commits and no conflicts outstanding. The branch's rename-flow fallout (merge-main -> update-branch normalization in store.ts, backfill-orphan-runs.mjs, and the update-branch BRANCH_UPDATE_STRATEGY doc var) is present and validated: yarn typecheck EXIT 0 and gateway store tests 37/37 pass including the new merge-main.md -> update-branch.md migration test. Merge-main scope for this branch is fully integrated and green."
 }

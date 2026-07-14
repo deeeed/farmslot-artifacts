@@ -1,50 +1,41 @@
-# Merge-Main Report — PR #320
+# Merge-Main Report — PR #320 / feat/manual-000014-rename-branch-maintenance-flow
 
-**Branch:** `feat/manual-000014-rename-branch-maintenance-flow`
-**Merged:** `origin/main` (branch was 5 behind, 2 ahead of merge-base)
-**Merge commit:** `2fdcd8ab`
+## Merge status
 
-## Pre-merge state
+`origin/main` was fetched and is already a **direct ancestor of HEAD** — the merge
+landed earlier at commit `2fdcd8ab` ("Merge remote-tracking branch 'origin/main'").
+No new upstream commits remained to integrate, so no additional merge commit or
+conflict resolution was required in this run.
 
-Working tree carried 7 uncommitted files (in-progress rename-flow work, matching
-PR #320 scope — `merge-main` → `update-branch`). None overlapped with main's
-changed files (main touched `packages/handoff/**`, `services/gateway/src/self-review/**`,
-`scripts/dev.sh`, `projects/farmslot-farm/project.json`, `schemas/**`), so the
-uncommitted work was stashed → merge → popped clean with no conflict on those files.
+- `git merge-base --is-ancestor FETCH_HEAD HEAD` → true (main fully merged).
+- Branch ahead of origin by 6 commits; no `MERGE_HEAD` / no in-progress merge.
 
-## Conflicts resolved (2)
+## Conflicts resolved
 
-Both were "Unreleased" changelog sections where each side appended a new bullet.
-Resolution: keep **both** bullets (no content lost).
+None during this run. The merge itself was already resolved at `2fdcd8ab`.
 
-- `apps/command-center/CHANGELOG.md` — HEAD `update-branch` backfill rename bullet + main `yarn dev` node co-launch bullet.
-- `services/gateway/CHANGELOG.md` — HEAD chained CI-watch `update-branch` bullet + main self-review issue-parsing bullet.
+## Working-tree changes present (merge fallout, uncommitted)
 
-## Files changed by the merge
+The working tree carries post-merge rename-flow fixes (merge-main → update-branch)
+left from prior work on this branch. Validated, not committed (no commit step in
+checklist; auto-commit disallowed):
 
-Merge pulled in main's 5 commits (handoff package tests/validation, self-review
-issue parsing, dev.sh node co-launch, project.json/schema tweaks). The only
-manual conflict edits were the two CHANGELOG files above.
+| File | Change |
+| --- | --- |
+| `services/gateway/src/runs/store.ts` | Normalize persisted `taskTemplate.fileName` `merge-main*` → `update-branch*` on load so legacy runs don't wedge on a deleted template. |
+| `services/gateway/src/runs/store.test.ts` | New test: `loadAllRuns` migrates a persisted `merge-main.md` template to `update-branch.md`. |
+| `services/gateway/src/methods/run.ts` | Harden chained CI-watch run: don't swallow `loadProjectVars` failure; `validateTicketRef` on the chained ref since `createRun` bypasses `runCreate` validation. |
+| `apps/command-center/scripts/backfill-orphan-runs.mjs` | Add `normalizeFlowType` (`merge-main`→`update-branch`, `feature`→`dev`) mirroring protocol so orphan backfill maps legacy flow ids correctly. |
+| `scripts/docs/template-variable-catalog.mjs` | Add `update-branch` scope var `BRANCH_UPDATE_STRATEGY` to catalog. |
+| `docs/reference/template-variables.md` + `apps/docs/.../template-variables.generated.md` | Regenerated docs for the new `BRANCH_UPDATE_STRATEGY` var. |
 
-## Post-merge working tree (restored uncommitted work, unchanged by merge)
+## Validation results
 
-- `apps/command-center/scripts/backfill-orphan-runs.mjs`
-- `apps/docs/docs/reference/template-variables.generated.md`
-- `docs/reference/template-variables.md`
-- `scripts/docs/template-variable-catalog.mjs`
-- `services/gateway/src/methods/run.ts`
-- `services/gateway/src/runs/store.test.ts`
-- `services/gateway/src/runs/store.ts`
+- `cd apps/command-center && yarn typecheck` → **EXIT 0**.
+- `yarn exec tsx ../../services/gateway/src/runs/store.test.ts` → **37/37 pass** (incl. new `merge-main.md`→`update-branch.md` migration test).
+- `yarn exec tsx ../../services/gateway/src/*.test.ts` (server-globals) → **1/1 pass**.
 
-## Validation
+## Verdict
 
-- `cd apps/command-center && yarn typecheck` → **exit 0** (clean).
-- `yarn exec tsx --test services/gateway/src/*.test.ts` → **1/1 pass** (server-globals).
-- `yarn exec tsx --test services/gateway/src/runs/store.test.ts` → **37/37 pass**, incl. new
-  `loadAllRuns migrates a persisted merge-main.md worker template to update-branch.md`.
-
-## Notes
-
-- Merge commit contains only the resolved changelogs + main's incoming changes.
-- Uncommitted rename-flow work was preserved as working-tree changes (not committed —
-  no explicit commit instruction for it); typecheck + tests run against the full tree.
+Merge-main fallout for the branch rename is fully integrated and green. No unmerged
+upstream work; no conflicts outstanding.

@@ -1,11 +1,6 @@
-# Learnings — merge-main PR #320
+# Learnings — merge-main #320
 
-- Branch had 7 uncommitted in-progress files at start; stashing before merge and
-  popping after kept them intact and avoided an unwanted auto-commit — cleaner than
-  merging into a dirty tree.
-- Both merge conflicts were changelog "Unreleased" bullet collisions; correct
-  resolution is keep-both (never drop a peer's release note).
-- Uncommitted files vs main's changed files had zero path overlap, so the stash
-  pop applied without conflict — worth checking overlap up front to predict risk.
-- `cd` state persists across Bash calls in this session; a relative `cd` after
-  already being in the target dir fails — use absolute paths or verify `pwd` first.
+- `origin/main` was already an ancestor of HEAD (merge landed at `2fdcd8ab`); the "merge" step was a no-op — verified with `git merge-base --is-ancestor` before assuming work was needed.
+- Working tree carried uncommitted rename-flow fallout fixes from prior work; treated them as the artifact under validation rather than reverting, since they are coherent and test-backed.
+- The rename (`merge-main` → `update-branch`) needs legacy normalization in three places: `store.ts` (persisted template filename), `backfill-orphan-runs.mjs` (flow-id mapping), and protocol `normalizeFlowType` — a partial rename would wedge resuming runs at write-task against deleted templates.
+- `yarn typecheck` first run returned empty output; re-ran with explicit `echo EXIT` to confirm EXIT 0 rather than assuming success from silence.

@@ -1,23 +1,23 @@
 {
   "version": 1,
   "preferred_mode": "screenshots",
-  "summary": "Command Center flow-graph exposes the branch-maintenance flow as `update-branch` (renamed from `merge-main`), including the executor-lane 'Update Branch' label and the CI-watch conflict chain node.",
+  "summary": "merge-main follow-up: no runtime behavior change, so visual evidence is inherited from the parent recipe run. Command Center flow-graph exposes the branch-maintenance flow as `update-branch` (renamed from `merge-main`), including the executor-lane 'Update Branch' label and the CI-watch conflict chain node.",
   "before_after_pairs": [
     {
       "label": "Flow-type selector: previous name renamed to update-branch",
       "covers": ["ac1", "ac3"],
-      "before": "artifacts/before-flow-selector.png",
-      "after": "artifacts/after-flow-selector.png"
+      "before": "artifacts/recipe-runs/inherited-0de2c8ae-e3e3-42fe-9bb4-40a589450f9b/before-flow-selector.png",
+      "after": "artifacts/recipe-runs/inherited-0de2c8ae-e3e3-42fe-9bb4-40a589450f9b/after-flow-selector.png"
     },
     {
       "label": "update-branch pipeline with 'Update Branch' executor-lane label and CI-watch chain node",
       "covers": ["ac1"],
-      "before": "artifacts/before-flow-selector.png",
-      "after": "artifacts/after-update-branch-graph.png"
+      "before": "artifacts/recipe-runs/inherited-0de2c8ae-e3e3-42fe-9bb4-40a589450f9b/before-flow-selector.png",
+      "after": "artifacts/recipe-runs/inherited-0de2c8ae-e3e3-42fe-9bb4-40a589450f9b/after-update-branch-graph.png"
     }
   ],
   "videos": {
-    "after": "artifacts/after.mp4",
+    "after": "artifacts/recipe-runs/inherited-0de2c8ae-e3e3-42fe-9bb4-40a589450f9b/after.mp4",
     "preferred": true,
     "note": "Full recipe replay at 2s slow playback: flow-graph selector shows update-branch (no merge-main), executor lane renders the 'Update Branch' label."
   }
