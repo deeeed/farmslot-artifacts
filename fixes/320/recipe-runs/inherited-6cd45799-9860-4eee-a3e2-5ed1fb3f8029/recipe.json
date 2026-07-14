@@ -1,0 +1,100 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "schema_version": 1,
+  "title": "branch-maintenance flow rename — Command Center flow graph",
+  "description": "Proves the branch-maintenance follow-up flow is exposed under its renamed id in the Command Center flow-graph selector and executor-lane label. Fails on pre-rename code where the flow renders under its previous name.",
+  "inputs": {
+    "ui_url": "http://localhost:5875",
+    "gateway_url": "ws://localhost:8808/ws",
+    "cdp_port": 9328,
+    "slot_id": "macwork-ff-1"
+  },
+  "validate": {
+    "workflow": {
+      "pre_conditions": [
+        {
+          "id": "command_center.dev_server.ready",
+          "description": "Command Center dev server is serving the flow-graph dev harness.",
+          "required": true
+        },
+        {
+          "id": "runtime.browser.open",
+          "description": "CDP-controlled Chrome is available on the recipe port.",
+          "required": true
+        }
+      ],
+      "setup": [],
+      "entry": "open-flow-graph",
+      "nodes": {
+        "open-flow-graph": {
+          "action": "ui.navigate",
+          "next": "capture-selector",
+          "target": "#dev/flow-graph",
+          "intent": "Open the flow-graph dev harness which renders the flow-type selector for every flow, independent of live run data."
+        },
+        "capture-selector": {
+          "action": "ui.screenshot",
+          "path": "screenshots/after-flow-selector.png",
+          "next": "assert-renamed-pill",
+          "label": "Flow selector exposing the renamed branch-maintenance flow",
+          "intent": "Capture the flow selector before assertions so reviewers see the renamed flow pill in the flow-type list."
+        },
+        "assert-renamed-pill": {
+          "action": "ui.wait_for",
+          "next": "assert-legacy-label-absent",
+          "selector": "flow-graph",
+          "text": "update-branch",
+          "expected": "visible",
+          "timeout_ms": 10000,
+          "intent": "Verify the flow selector exposes the renamed branch-maintenance flow pill. On pre-rename code this pill reads under its previous id and this assertion times out."
+        },
+        "assert-legacy-label-absent": {
+          "action": "ui.wait_for",
+          "next": "select-executor-lane",
+          "selector": "flow-graph",
+          "text": "Merge Main",
+          "expected": "absent",
+          "timeout_ms": 10000,
+          "intent": "Verify the previous human-readable flow label is no longer rendered in the flow graph surface."
+        },
+        "select-executor-lane": {
+          "action": "ui.press",
+          "next": "select-renamed-flow",
+          "text": "executor",
+          "intent": "Switch to the executor lane so the monitor node renders the human-readable flow label."
+        },
+        "select-renamed-flow": {
+          "action": "ui.press",
+          "next": "assert-renamed-label",
+          "text": "update-branch",
+          "intent": "Select the renamed branch-maintenance flow to render its pipeline and human-readable label."
+        },
+        "assert-renamed-label": {
+          "action": "ui.wait_for",
+          "next": "capture-graph",
+          "selector": "flow-graph",
+          "text": "Update Branch",
+          "expected": "visible",
+          "timeout_ms": 10000,
+          "intent": "Verify the selected flow renders the renamed human-readable label. Fails on pre-rename code, which shows the previous label."
+        },
+        "capture-graph": {
+          "action": "ui.screenshot",
+          "path": "screenshots/after-update-branch-graph.png",
+          "next": "done",
+          "label": "Renamed flow pipeline with its human-readable label",
+          "intent": "Capture the renamed flow pipeline with its human-readable label for the PR evidence."
+        },
+        "done": {
+          "action": "end",
+          "status": "pass"
+        }
+      },
+      "teardown": [],
+      "playback": {
+        "mode": "auto",
+        "slow_ms": 2000
+      }
+    }
+  }
+}

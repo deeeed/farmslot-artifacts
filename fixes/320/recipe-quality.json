@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "verdict": "pass",
+  "compact": {
+    "verdict": "PASS",
+    "reasons": [
+      "Recipe drives the real Command Center flow-graph via CDP (no store/DOM injection) and asserts the renamed update-branch flow pill + executor-lane label.",
+      "Baseline with pre-rename source stashed fails at the update-branch pill assertion; fixed code passes — the recipe genuinely gates the change.",
+      "Visual evidence captured: before/after flow-selector screenshots plus after.mp4 full-run video (moov present)."
+    ],
+    "better_version_guidance": [
+      "Could add explicit run-list and dispatch-wizard flow-filter assertions once those surfaces are reachable without live run data."
+    ]
+  },
+  "dimensions": {
+    "reproduces_bug": {
+      "status": "pass",
+      "reason": "Baseline (stashed rename) fails at assert-renamed-pill; fixed code passes.",
+      "evidence": ["artifacts/recipe-run-baseline/summary.json", "artifacts/before-flow-selector.png"]
+    },
+    "asserts_real_behavior": {
+      "status": "pass",
+      "reason": "ui.wait_for asserts update-branch pill visible and Merge Main absent on the real flow-graph component; ui.press selects the flow.",
+      "evidence": ["artifacts/recipe.json", "artifacts/after-flow-selector.png", "artifacts/after-update-branch-graph.png"]
+    },
+    "no_injection": {
+      "status": "pass",
+      "reason": "All interactions are real CDP navigation/press/wait_for; no store or DOM state is injected.",
+      "evidence": ["artifacts/recipe.json"]
+    },
+    "visual_proof": {
+      "status": "pass",
+      "reason": "Before/after screenshots and full-run video promoted into artifacts.",
+      "evidence": ["artifacts/after.mp4", "artifacts/after-update-branch-graph.png"]
+    }
+  },
+  "structural_findings": [],
+  "contextual_findings": [],
+  "suggested_recipe_delta": [],
+  "training_fields": {
+    "farm": "farmslot-farm",
+    "project": "farmslot-farm",
+    "task_type": "rename-with-strategy",
+    "claim_is_visual": true,
+    "proof_mode": "mixed",
+    "anti_patterns": [],
+    "good_patterns": [
+      "baseline-fails-fixed-passes",
+      "real-cdp-flow-no-injection",
+      "before-after-video-evidence"
+    ]
+  },
+  "meta": {
+    "producer": "worker",
+    "fallback_used": false,
+    "legacy_task": false,
+    "artifact_required": true,
+    "source_signals": ["recipe.json", "recipe-coverage.md", "evidence-manifest.json"]
+  }
+}
