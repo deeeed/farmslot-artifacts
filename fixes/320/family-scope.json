@@ -2,5 +2,5 @@
   "originalFamilyScopeSummary": "Rename branch-maintenance flow to update-branch and prefer rebase",
   "currentTriggerSummary": "merge-main: Rename branch-maintenance flow to update-branch and prefer rebase",
   "scopeVerdict": "full-scope-addressed",
-  "notes": "origin/main is already an ancestor of HEAD (merge landed at 2fdcd8ab); no unmerged upstream commits and no conflicts outstanding. The branch's rename-flow fallout (merge-main -> update-branch normalization in store.ts, backfill-orphan-runs.mjs, and the update-branch BRANCH_UPDATE_STRATEGY doc var) is present and validated: yarn typecheck EXIT 0 and gateway store tests 37/37 pass including the new merge-main.md -> update-branch.md migration test. Merge-main scope for this branch is fully integrated and green."
+  "notes": "Main already merged into HEAD (2fdcd8ab), no conflicts. Carried second-round review fixes committed and pushed: run.ts no longer swallows loadProjectVars failure and validates the chained ticket ref; store.ts migrates legacy merge-main.md templates to update-branch.md (new test). Typecheck exit 0; store.test.ts 37/37 pass. Branch published to origin including the merge commit."
 }

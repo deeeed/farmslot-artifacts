@@ -1,6 +1,6 @@
-# Learnings — merge-main #320
+# Learnings — merge-main PR #320
 
-- `origin/main` was already an ancestor of HEAD (merge landed at `2fdcd8ab`); the "merge" step was a no-op — verified with `git merge-base --is-ancestor` before assuming work was needed.
-- Working tree carried uncommitted rename-flow fallout fixes from prior work; treated them as the artifact under validation rather than reverting, since they are coherent and test-backed.
-- The rename (`merge-main` → `update-branch`) needs legacy normalization in three places: `store.ts` (persisted template filename), `backfill-orphan-runs.mjs` (flow-id mapping), and protocol `normalizeFlowType` — a partial rename would wedge resuming runs at write-task against deleted templates.
-- `yarn typecheck` first run returned empty output; re-ran with explicit `echo EXIT` to confirm EXIT 0 rather than assuming success from silence.
+- Main was already merged (`2fdcd8ab`) — no conflicts; task reduced to committing carried-over second-round review fixes and publishing.
+- Checklist omitted a publish step; operator supplied it mid-run. Confirmed branch tracks its origin counterpart and the local merge commit was absent on origin before pushing.
+- The review fixes hit a real correctness path: `run.ts` was swallowing a `loadProjectVars` failure, which would let a chained PR-bound flow proceed with an unresolved MANUAL-*/PROJ- ref and wedge at write-task. Fix now fails hard via `validateTicketRef`.
+- `store.ts` migration keeps legacy `merge-main.md` runs resumable after the template rename to `update-branch.md`; covered by a new test.
