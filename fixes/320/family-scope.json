@@ -1,6 +1,6 @@
 {
   "originalFamilyScopeSummary": "Rename branch-maintenance flow to update-branch and prefer rebase",
-  "currentTriggerSummary": "pr-complete: address the 4 confirmed second-round (cross-model) review findings on PR #320",
+  "currentTriggerSummary": "merge-main: Rename branch-maintenance flow to update-branch and prefer rebase",
   "scopeVerdict": "full-scope-addressed",
-  "notes": "All 4 confirmed findings from the round-2 review at HEAD 24eda26e were fixed: (1) recovery chain path in run.ts no longer swallows loadProjectVars errors and now validates the chained ref before createRun; (2) store.ts load migration normalizes persisted taskTemplate.fileName merge-main.md -> update-branch.md, covered by a new test; (3) backfill-orphan-runs.mjs runs flowType through a normalizeFlowType mirror before FLOW_STEPS lookup; (4) BRANCH_UPDATE_STRATEGY added to the template-variable catalog and generated references regenerated. The two explicitly-waived items were left unchanged by design. Validation: typecheck pass, full gateway node:test suite 174 files 0 failures (incl. new migration test), lint ratchet 0 new, format clean, changelog guard passed. No UI surface touched, so CDP validation is N/A."
+  "notes": "This run's scope is the merge-main fallout task only: bring feat/manual-000014-rename-branch-maintenance-flow up to date with origin/main and resolve conflicts. origin/main merged cleanly except two changelog Unreleased bullet collisions, both resolved keep-both. Typecheck exit 0; server-globals 1/1 and runs/store 37/37 tests pass (incl. the branch's new merge-main->update-branch template migration test). No unresolved conflicts; the branch's rename-flow work is intact. The merge-fallout scope is fully addressed."
 }
