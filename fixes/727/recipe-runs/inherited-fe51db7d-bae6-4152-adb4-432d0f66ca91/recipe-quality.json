@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "verdict": "warn",
+  "compact": {
+    "verdict": "WARN",
+    "reasons": [
+      "Recipe drives the worktree Command Center runner against real Chrome over CDP and asserts each run's trace/summary for ui.scroll_to, split ui.scroll, stop-after-node with teardown, and every real-page SCROLL_* code; the baseline run failed.",
+      "Gateway QA refusal of partial packages is proven only by services/gateway/src/qa/completion.test.ts; driving QA completion needs a control-plane QA run this worker cannot reach.",
+      "Full-run video unavailable (ScreenCaptureKit -3805); evidence is CDP screenshots."
+    ],
+    "better_version_guidance": []
+  },
+  "dimensions": {},
+  "structural_findings": [
+    {
+      "code": "unit-only-proof",
+      "message": "Gateway QA partial-run rejection has no recipe node.",
+      "evidence": [
+        "artifacts/recipe-coverage.md"
+      ]
+    }
+  ],
+  "contextual_findings": [],
+  "suggested_recipe_delta": [
+    "Add a QA-completion node once a control-plane QA run can be dispatched from the slot."
+  ],
+  "training_fields": {
+    "proof_mode": "mixed",
+    "project": "farmslot-farm",
+    "flow_type": "fix-bug"
+  },
+  "meta": {
+    "producer": "worker",
+    "fallback_used": false,
+    "legacy_task": false,
+    "artifact_required": true,
+    "source_signals": [
+      "recipe-quality.json"
+    ]
+  }
+}

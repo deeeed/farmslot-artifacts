@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "preferred_mode": "screenshots",
+  "summary": "ui.scroll_to on a real Chrome page through the Command Center CDP runner: a far row and a flattened text node end centred in the HUD-safe viewport.",
+  "before_after_pairs": [
+    {
+      "label": "History proof row off-screen, then centred above the HUD by ui.scroll_to",
+      "covers": ["ac3", "ac4"],
+      "before": "artifacts/before-scroll-to-history.png",
+      "after": "artifacts/after-scroll-to-history.png"
+    }
+  ],
+  "standalone": [
+    {
+      "label": "Flattened text target revealed through its measurable anchor row",
+      "covers": ["ac4"],
+      "file": "artifacts/after-scroll-to-flat-text.png"
+    }
+  ],
+  "videos": {
+    "preferred": false,
+    "note": "Full-run video unavailable: capture-helper native ScreenCaptureKit stream was interrupted twice (SCStreamErrorDomain -3805). Screenshots sourced from CDP Page.captureScreenshot during the recipe run."
+  }
+}

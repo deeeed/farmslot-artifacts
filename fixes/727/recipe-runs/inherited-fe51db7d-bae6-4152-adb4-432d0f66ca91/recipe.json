@@ -1,0 +1,141 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "title": "MANUAL-000110 canonical scroll-to-visible contract",
+  "description": "Proves ui.scroll_to, split ui.scroll inputs, stop-after-node partial execution, and stable harness scroll error codes by driving the worktree Command Center recipe runner (real CDP transport, real Chrome, real HUD) against the scroll-to-visible fixture and asserting each run's trace.json and summary.json.",
+  "workflow": {
+    "entry": "canonical-scroll-to",
+    "nodes": {
+      "canonical-scroll-to": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/happy; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-proof.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/happy --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2  > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/happy.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs happy /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/happy",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "ui.scroll_to reveals a far row, no-ops when it is already visible, reaches flattened text via its anchor, and ui.scroll keeps relative and absolute movement apart on a real Chrome page.",
+        "next": "canonical-scroll-to-ok"
+      },
+      "canonical-scroll-to-ok": {
+        "action": "assert_output",
+        "source": "canonical-scroll-to",
+        "contains": "PROOF_OK happy",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "stop-after-node"
+      },
+      "stop-after-node": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-after; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-proof.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-after --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2 --stop-after-node reveal-history > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-after.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs stop-after /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-after",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "The runner stops after the named scroll node and still runs the declared teardown, without editing the graph.",
+        "next": "stop-after-node-ok"
+      },
+      "stop-after-node-ok": {
+        "action": "assert_output",
+        "source": "stop-after-node",
+        "contains": "PROOF_OK stop-after",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "surface-missing"
+      },
+      "surface-missing": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/surface-missing; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-failure.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/surface-missing --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2 --input surface_test_id=no-such-surface --input target_test_id=history-proof > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/surface-missing.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs failure:SCROLL_SURFACE_MISSING /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/surface-missing",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "A missing scroll surface fails as a harness error with a stable code.",
+        "next": "surface-missing-ok"
+      },
+      "surface-missing-ok": {
+        "action": "assert_output",
+        "source": "surface-missing",
+        "contains": "PROOF_OK failure:SCROLL_SURFACE_MISSING",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "target-missing"
+      },
+      "target-missing": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/target-missing; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-failure.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/target-missing --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2 --input surface_test_id=scroll-surface --input target_test_id=no-such-target > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/target-missing.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs failure:SCROLL_TARGET_MISSING /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/target-missing",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "A missing proof target fails as a harness error with a stable code and the observed geometry.",
+        "next": "target-missing-ok"
+      },
+      "target-missing-ok": {
+        "action": "assert_output",
+        "source": "target-missing",
+        "contains": "PROOF_OK failure:SCROLL_TARGET_MISSING",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "target-not-measurable"
+      },
+      "target-not-measurable": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/not-measurable; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-failure.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/not-measurable --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2 --input surface_test_id=scroll-surface --input target_test_id=flat-text > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/not-measurable.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs failure:SCROLL_TARGET_NOT_MEASURABLE /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/not-measurable",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "A flattened text target without a measurable anchor fails instead of being guessed visible.",
+        "next": "target-not-measurable-ok"
+      },
+      "target-not-measurable-ok": {
+        "action": "assert_output",
+        "source": "target-not-measurable",
+        "contains": "PROOF_OK failure:SCROLL_TARGET_NOT_MEASURABLE",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "settlement-timeout"
+      },
+      "settlement-timeout": {
+        "action": "command",
+        "cmd": "rm -rf /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/settlement-timeout; mkdir -p /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-failure.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/settlement-timeout --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --gateway-port 8809 --slot-id macpro-ff-2 --input surface_test_id=scroll-surface --input target_test_id=jitter-target --input settle_timeout_ms=800 --input fixture_query=?jitter=1 > /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/settlement-timeout.log 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/verify-trace.mjs failure:SCROLL_SETTLEMENT_TIMEOUT /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/settlement-timeout",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "A target below continuously changing layout fails with a settlement timeout rather than a silent pass.",
+        "next": "settlement-timeout-ok"
+      },
+      "settlement-timeout-ok": {
+        "action": "assert_output",
+        "source": "settlement-timeout",
+        "contains": "PROOF_OK failure:SCROLL_SETTLEMENT_TIMEOUT",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "conformance-suite"
+      },
+      "conformance-suite": {
+        "action": "command",
+        "cmd": "cd /Users/deeeed/dev/farmslot-wt/farmslot-2/packages/recipe-harness && yarn tsx --tsconfig tsconfig.json --test test/scroll-to-visible.test.ts 2>&1 | tail -12",
+        "timeout_ms": 240000,
+        "allow_failure": true,
+        "intent": "Provider-neutral conformance tests cover live layout, HUD occlusion, retained-session reuse and every failure code.",
+        "next": "conformance-suite-ok"
+      },
+      "conformance-suite-ok": {
+        "action": "assert_output",
+        "source": "conformance-suite",
+        "contains": "# fail 0",
+        "intent": "The proof script confirmed every claim for this run.",
+        "next": "stop-after-node-rejected"
+      },
+      "done": {
+        "action": "end",
+        "status": "pass"
+      },
+      "stop-after-node-rejected": {
+        "action": "command",
+        "cmd": "node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-proof.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-terminal --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --project-root /Users/deeeed/dev/farmslot-wt/farmslot-2 --cdp-port 9332 --stop-after-node done 2>&1; node /Users/deeeed/dev/farmslot-wt/farmslot-2/apps/command-center/scripts/agentic/run-recipe.mjs /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/proof/scroll-proof.recipe.json --artifacts-dir /Users/deeeed/dev/farmslot-wt/farmslot-2/.sandbox/farmslot-farm/worker-task/fix/manual-000110-0923-101346/artifacts/recipe-proof-runs/stop-empty --action-manifest /Users/deeeed/dev/farmslot-wt/farmslot-2/docs/examples/recipes/farmslot-v1.action-manifest.json --stop-after-node 2>&1; true",
+        "timeout_ms": 120000,
+        "allow_failure": true,
+        "intent": "Partial runs refuse a terminal stop node or a missing node id instead of silently running the whole graph.",
+        "next": "stop-terminal-ok"
+      },
+      "stop-terminal-ok": {
+        "action": "assert_output",
+        "source": "stop-after-node-rejected",
+        "contains": "stop-after-node done is not a non-terminal node reachable from workflow.entry.",
+        "intent": "The runner named the terminal node it refused.",
+        "next": "stop-empty-ok"
+      },
+      "stop-empty-ok": {
+        "action": "assert_output",
+        "source": "stop-after-node-rejected",
+        "contains": "--stop-after-node requires a node id.",
+        "intent": "The runner refused a stop flag without a node id.",
+        "next": "done"
+      }
+    }
+  }
+}

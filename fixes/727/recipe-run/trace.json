@@ -1,0 +1,266 @@
+[
+  {
+    "nodeId": "canonical-scroll-to",
+    "action": "command",
+    "intent": "ui.scroll_to reveals a far row, no-ops when it is already visible, reaches flattened text via its anchor, and ui.scroll keeps relative and absolute movement apart on a real Chrome page.",
+    "startedAt": "2026-09-23T04:44:42.496Z",
+    "endedAt": "2026-09-23T04:44:45.017Z",
+    "durationMs": 2521,
+    "ok": true,
+    "next": "canonical-scroll-to-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK happy\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "canonical-scroll-to-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:44:45.018Z",
+    "endedAt": "2026-09-23T04:44:45.018Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "stop-after-node",
+    "output": {
+      "source": "canonical-scroll-to",
+      "stream": "stdout",
+      "contains": "PROOF_OK happy"
+    }
+  },
+  {
+    "nodeId": "stop-after-node",
+    "action": "command",
+    "intent": "The runner stops after the named scroll node and still runs the declared teardown, without editing the graph.",
+    "startedAt": "2026-09-23T04:44:45.018Z",
+    "endedAt": "2026-09-23T04:44:46.372Z",
+    "durationMs": 1354,
+    "ok": true,
+    "next": "stop-after-node-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK stop-after\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "stop-after-node-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:44:46.372Z",
+    "endedAt": "2026-09-23T04:44:46.372Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "surface-missing",
+    "output": {
+      "source": "stop-after-node",
+      "stream": "stdout",
+      "contains": "PROOF_OK stop-after"
+    }
+  },
+  {
+    "nodeId": "surface-missing",
+    "action": "command",
+    "intent": "A missing scroll surface fails as a harness error with a stable code.",
+    "startedAt": "2026-09-23T04:44:46.372Z",
+    "endedAt": "2026-09-23T04:44:47.260Z",
+    "durationMs": 888,
+    "ok": true,
+    "next": "surface-missing-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK failure:SCROLL_SURFACE_MISSING\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "surface-missing-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:44:47.260Z",
+    "endedAt": "2026-09-23T04:44:47.260Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "target-missing",
+    "output": {
+      "source": "surface-missing",
+      "stream": "stdout",
+      "contains": "PROOF_OK failure:SCROLL_SURFACE_MISSING"
+    }
+  },
+  {
+    "nodeId": "target-missing",
+    "action": "command",
+    "intent": "A missing proof target fails as a harness error with a stable code and the observed geometry.",
+    "startedAt": "2026-09-23T04:44:47.260Z",
+    "endedAt": "2026-09-23T04:44:48.189Z",
+    "durationMs": 929,
+    "ok": true,
+    "next": "target-missing-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK failure:SCROLL_TARGET_MISSING\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "target-missing-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:44:48.189Z",
+    "endedAt": "2026-09-23T04:44:48.190Z",
+    "durationMs": 1,
+    "ok": true,
+    "next": "target-not-measurable",
+    "output": {
+      "source": "target-missing",
+      "stream": "stdout",
+      "contains": "PROOF_OK failure:SCROLL_TARGET_MISSING"
+    }
+  },
+  {
+    "nodeId": "target-not-measurable",
+    "action": "command",
+    "intent": "A flattened text target without a measurable anchor fails instead of being guessed visible.",
+    "startedAt": "2026-09-23T04:44:48.190Z",
+    "endedAt": "2026-09-23T04:44:49.105Z",
+    "durationMs": 915,
+    "ok": true,
+    "next": "target-not-measurable-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK failure:SCROLL_TARGET_NOT_MEASURABLE\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "target-not-measurable-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:44:49.105Z",
+    "endedAt": "2026-09-23T04:44:49.105Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "settlement-timeout",
+    "output": {
+      "source": "target-not-measurable",
+      "stream": "stdout",
+      "contains": "PROOF_OK failure:SCROLL_TARGET_NOT_MEASURABLE"
+    }
+  },
+  {
+    "nodeId": "settlement-timeout",
+    "action": "command",
+    "intent": "A target below continuously changing layout fails with a settlement timeout rather than a silent pass.",
+    "startedAt": "2026-09-23T04:44:49.105Z",
+    "endedAt": "2026-09-23T04:45:10.253Z",
+    "durationMs": 21148,
+    "ok": true,
+    "next": "settlement-timeout-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "PROOF_OK failure:SCROLL_SETTLEMENT_TIMEOUT\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "settlement-timeout-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:45:10.253Z",
+    "endedAt": "2026-09-23T04:45:10.253Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "conformance-suite",
+    "output": {
+      "source": "settlement-timeout",
+      "stream": "stdout",
+      "contains": "PROOF_OK failure:SCROLL_SETTLEMENT_TIMEOUT"
+    }
+  },
+  {
+    "nodeId": "conformance-suite",
+    "action": "command",
+    "intent": "Provider-neutral conformance tests cover live layout, HUD occlusion, retained-session reuse and every failure code.",
+    "startedAt": "2026-09-23T04:45:10.253Z",
+    "endedAt": "2026-09-23T04:45:11.236Z",
+    "durationMs": 983,
+    "ok": true,
+    "next": "conformance-suite-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "  duration_ms: 6.973083\n  type: 'test'\n  ...\n1..22\n# tests 22\n# suites 0\n# pass 22\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 598.639333\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "conformance-suite-ok",
+    "action": "assert_output",
+    "intent": "The proof script confirmed every claim for this run.",
+    "startedAt": "2026-09-23T04:45:11.236Z",
+    "endedAt": "2026-09-23T04:45:11.236Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "stop-after-node-rejected",
+    "output": {
+      "source": "conformance-suite",
+      "stream": "stdout",
+      "contains": "# fail 0"
+    }
+  },
+  {
+    "nodeId": "stop-after-node-rejected",
+    "action": "command",
+    "intent": "Partial runs refuse a terminal stop node or a missing node id instead of silently running the whole graph.",
+    "startedAt": "2026-09-23T04:45:11.236Z",
+    "endedAt": "2026-09-23T04:45:11.514Z",
+    "durationMs": 278,
+    "ok": true,
+    "next": "stop-terminal-ok",
+    "output": {
+      "exitCode": 0,
+      "stdout": "stop-after-node done is not a non-terminal node reachable from workflow.entry.\n--stop-after-node requires a node id.\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "stop-terminal-ok",
+    "action": "assert_output",
+    "intent": "The runner named the terminal node it refused.",
+    "startedAt": "2026-09-23T04:45:11.514Z",
+    "endedAt": "2026-09-23T04:45:11.514Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "stop-empty-ok",
+    "output": {
+      "source": "stop-after-node-rejected",
+      "stream": "stdout",
+      "contains": "stop-after-node done is not a non-terminal node reachable from workflow.entry."
+    }
+  },
+  {
+    "nodeId": "stop-empty-ok",
+    "action": "assert_output",
+    "intent": "The runner refused a stop flag without a node id.",
+    "startedAt": "2026-09-23T04:45:11.514Z",
+    "endedAt": "2026-09-23T04:45:11.514Z",
+    "durationMs": 0,
+    "ok": true,
+    "next": "done",
+    "output": {
+      "source": "stop-after-node-rejected",
+      "stream": "stdout",
+      "contains": "--stop-after-node requires a node id."
+    }
+  },
+  {
+    "nodeId": "done",
+    "action": "end",
+    "startedAt": "2026-09-23T04:45:11.514Z",
+    "endedAt": "2026-09-23T04:45:11.514Z",
+    "durationMs": 0,
+    "ok": true,
+    "status": "pass"
+  }
+]

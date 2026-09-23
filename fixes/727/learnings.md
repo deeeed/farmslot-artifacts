@@ -1,0 +1,4 @@
+- Update-branch conflicts on this PR were only in changelog Unreleased sections, where both sides add bullets; keep both, PR bullet first.
+- Rebasing a branch that carries an earlier `merge origin/main` commit drops that merge commit cleanly; compare the pre-rebase tree with `main`'s own delta to confirm no PR content was lost.
+- The checklist's `yarn exec tsx ../../services/gateway/src/*.test.ts` runs only the first file and lacks `--experimental-test-module-mocks`; use `tsx --experimental-test-module-mocks --test` as the repo runner does.
+- `gh pr view` reported stale mergeability for a few seconds after the force-push; poll until `headRefOid` matches the pushed SHA.

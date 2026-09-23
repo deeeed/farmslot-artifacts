@@ -1,0 +1,5 @@
+- The first attempt blocked on leases: the worker probed `ws://macwork.local:7777`, but the control plane lives at `:7801/ws` and the operator acquires leases for this worker. Next time, ask the operator for lease state instead of probing ports.
+- The real-browser run caught a false pass that unit tests could not: a fixture block toggling every 30 ms aliased with the ~60 ms settlement sampling and looked settled. The fixture now changes on every frame, and the aliasing limit is documented.
+- Four Codex rounds each found a real geometry edge case in the corner-card clearance logic (unreachable offsets, stacked cards, horizontal position, side panels). Classifying occlusions by shape (horizontal bar, vertical bar, card) ended the churn better than patching the move search.
+- `yarn node --test <file>.ts` (as written in the ACs) fails on Node 22.15; use the repo's tsx runner. Protocol/harness changes reach `run-recipe.mjs` only after `yarn build` (dist exports).
+- Full-run video failed twice with ScreenCaptureKit -3805 on this host; evidence falls back to CDP screenshots, noted in the manifest.

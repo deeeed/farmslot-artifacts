@@ -1,0 +1,6 @@
+{
+  "originalFamilyScopeSummary": "Establish canonical scroll-to-visible contract and node observability gate for recipe runtime adapters",
+  "currentTriggerSummary": "update-branch: PR #727 was CONFLICTING/DIRTY against main; rebase onto main, resolve fallout, keep CI green.",
+  "scopeVerdict": "full-scope-addressed",
+  "notes": "Rebased onto origin/main b95e58af with only changelog conflicts (both sides kept). The PR diff against main is the same 38 files as before, and no PR content was lost. Typecheck, gateway top-level tests and focused protocol/harness/expo/run-recipe/gateway-QA suites pass. GitHub now reports MERGEABLE; CI was pending at write time."
+}
