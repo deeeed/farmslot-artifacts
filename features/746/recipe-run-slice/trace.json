@@ -1,0 +1,6093 @@
+[
+  {
+    "nodeId": "catalog-codex",
+    "action": "command",
+    "intent": "Read the Codex model catalog through the sandbox gateway.",
+    "startedAt": "2026-09-26T08:19:51.266Z",
+    "endedAt": "2026-09-26T08:19:53.585Z",
+    "durationMs": 2319,
+    "ok": true,
+    "next": "assert-codex-catalog",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runner\": \"codex\",\n  \"status\": \"ready\",\n  \"source\": \"structured-file\",\n  \"models\": [\n    {\n      \"id\": \"gpt-6-astra\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\",\n        \"ultra\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-6-sol\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\",\n        \"ultra\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-6-luna\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-reserve\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.6-sol\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\",\n        \"ultra\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-5.6-terra\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\",\n        \"ultra\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-5.6-luna\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"gpt-5.5\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": true\n    },\n    {\n      \"id\": \"codex-auto-review\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\",\n        \"max\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.2\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.3-codex\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.3-codex-spark\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.4\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": false\n    },\n    {\n      \"id\": \"gpt-5.4-mini\",\n      \"reasoningModes\": [\n        \"low\",\n        \"medium\",\n        \"high\",\n        \"xhigh\"\n      ],\n      \"listed\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-codex-catalog",
+    "action": "assert_output",
+    "intent": "The Codex catalog is ready from its structured file.",
+    "startedAt": "2026-09-26T08:19:55.629Z",
+    "endedAt": "2026-09-26T08:19:57.644Z",
+    "durationMs": 2015,
+    "ok": true,
+    "next": "assert-codex-model",
+    "output": {
+      "source": "catalog-codex",
+      "stream": "stdout",
+      "contains": "\"status\": \"ready\""
+    }
+  },
+  {
+    "nodeId": "assert-codex-model",
+    "action": "assert_output",
+    "intent": "The catalog includes the runner-reported Astra model.",
+    "startedAt": "2026-09-26T08:19:59.661Z",
+    "endedAt": "2026-09-26T08:20:01.685Z",
+    "durationMs": 2024,
+    "ok": true,
+    "next": "assert-codex-reasoning",
+    "output": {
+      "source": "catalog-codex",
+      "stream": "stdout",
+      "contains": "\"id\": \"gpt-6-astra\""
+    }
+  },
+  {
+    "nodeId": "assert-codex-reasoning",
+    "action": "assert_output",
+    "intent": "Astra's structured reasoning modes include ultra.",
+    "startedAt": "2026-09-26T08:20:03.699Z",
+    "endedAt": "2026-09-26T08:20:05.714Z",
+    "durationMs": 2015,
+    "ok": true,
+    "next": "assert-codex-source",
+    "output": {
+      "source": "catalog-codex",
+      "stream": "stdout",
+      "contains": "\"ultra\""
+    }
+  },
+  {
+    "nodeId": "assert-codex-source",
+    "action": "assert_output",
+    "intent": "The catalog came from a structured file, not runner text.",
+    "startedAt": "2026-09-26T08:20:07.729Z",
+    "endedAt": "2026-09-26T08:20:09.841Z",
+    "durationMs": 2112,
+    "ok": true,
+    "next": "catalog-claude",
+    "output": {
+      "source": "catalog-codex",
+      "stream": "stdout",
+      "contains": "\"source\": \"structured-file\""
+    }
+  },
+  {
+    "nodeId": "catalog-claude",
+    "action": "command",
+    "intent": "Ask for a catalog from a runner that does not declare one.",
+    "startedAt": "2026-09-26T08:20:11.882Z",
+    "endedAt": "2026-09-26T08:20:13.980Z",
+    "durationMs": 2098,
+    "ok": true,
+    "next": "assert-claude-unsupported",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runner\": \"claude\",\n  \"status\": \"unsupported\",\n  \"source\": \"unsupported\",\n  \"detail\": \"This runner does not report a model catalog.\",\n  \"models\": []\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-claude-unsupported",
+    "action": "assert_output",
+    "intent": "Claude is reported unsupported instead of a guessed model list.",
+    "startedAt": "2026-09-26T08:20:15.994Z",
+    "endedAt": "2026-09-26T08:20:18.011Z",
+    "durationMs": 2017,
+    "ok": true,
+    "next": "catalog-pi-unavailable",
+    "output": {
+      "source": "catalog-claude",
+      "stream": "stdout",
+      "contains": "\"status\": \"unsupported\""
+    }
+  },
+  {
+    "nodeId": "catalog-pi-unavailable",
+    "action": "command",
+    "intent": "Hide the Pi structured catalog for one read and ask the gateway again.",
+    "startedAt": "2026-09-26T08:20:20.034Z",
+    "endedAt": "2026-09-26T08:20:22.159Z",
+    "durationMs": 2125,
+    "ok": true,
+    "next": "assert-pi-unavailable",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runner\": \"pi\",\n  \"status\": \"unavailable\",\n  \"source\": \"structured-file\",\n  \"detail\": \"Structured model catalog is not readable (ENOENT).\",\n  \"models\": []\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-pi-unavailable",
+    "action": "assert_output",
+    "intent": "A missing structured catalog is unavailable and is not replaced from runner text.",
+    "startedAt": "2026-09-26T08:20:24.170Z",
+    "endedAt": "2026-09-26T08:20:26.182Z",
+    "durationMs": 2012,
+    "ok": true,
+    "next": "snapshot-runs",
+    "output": {
+      "source": "catalog-pi-unavailable",
+      "stream": "stdout",
+      "contains": "\"status\": \"unavailable\""
+    }
+  },
+  {
+    "nodeId": "snapshot-runs",
+    "action": "command",
+    "intent": "Record the sandbox run list before changing visible models.",
+    "startedAt": "2026-09-26T08:20:28.197Z",
+    "endedAt": "2026-09-26T08:20:30.342Z",
+    "durationMs": 2145,
+    "ok": true,
+    "next": "set-visible-codex",
+    "output": {
+      "exitCode": 0,
+      "stdout": "     241\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "set-visible-codex",
+    "action": "command",
+    "intent": "Save a Codex visible-default list that omits the current Astra selection.",
+    "startedAt": "2026-09-26T08:20:32.355Z",
+    "endedAt": "2026-09-26T08:20:34.448Z",
+    "durationMs": 2093,
+    "ok": true,
+    "next": "assert-visible-saved",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"runner\": {\n    \"runner\": \"codex\",\n    \"configured\": true,\n    \"models\": [\n      \"gpt-5.4\"\n    ],\n    \"pickerModels\": [\n      \"gpt-5.4\"\n    ]\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-visible-saved",
+    "action": "assert_output",
+    "intent": "The gateway stored the operator's visible defaults.",
+    "startedAt": "2026-09-26T08:20:36.461Z",
+    "endedAt": "2026-09-26T08:20:38.478Z",
+    "durationMs": 2017,
+    "ok": true,
+    "next": "read-retained-choice",
+    "output": {
+      "source": "set-visible-codex",
+      "stream": "stdout",
+      "contains": "\"configured\": true"
+    }
+  },
+  {
+    "nodeId": "read-retained-choice",
+    "action": "command",
+    "intent": "Read the visible set while an older Astra selection is still explicit.",
+    "startedAt": "2026-09-26T08:20:40.508Z",
+    "endedAt": "2026-09-26T08:20:42.720Z",
+    "durationMs": 2212,
+    "ok": true,
+    "next": "assert-retained-model",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runners\": [\n    {\n      \"runner\": \"codex\",\n      \"configured\": true,\n      \"models\": [\n        \"gpt-5.4\"\n      ],\n      \"pickerModels\": [\n        \"gpt-5.4\",\n        \"gpt-6-astra\"\n      ],\n      \"retainedModel\": \"gpt-6-astra\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-retained-model",
+    "action": "assert_output",
+    "intent": "The explicit Astra selection stays valid outside the saved visible set.",
+    "startedAt": "2026-09-26T08:20:44.729Z",
+    "endedAt": "2026-09-26T08:20:46.745Z",
+    "durationMs": 2016,
+    "ok": true,
+    "next": "compare-runs",
+    "output": {
+      "source": "read-retained-choice",
+      "stream": "stdout",
+      "contains": "\"retainedModel\": \"gpt-6-astra\""
+    }
+  },
+  {
+    "nodeId": "compare-runs",
+    "action": "command",
+    "intent": "Read the run list again after the visible-model write.",
+    "startedAt": "2026-09-26T08:20:48.761Z",
+    "endedAt": "2026-09-26T08:20:50.994Z",
+    "durationMs": 2233,
+    "ok": true,
+    "next": "assert-runs-unchanged",
+    "output": {
+      "exitCode": 0,
+      "stdout": "RUNS_UNCHANGED\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-runs-unchanged",
+    "action": "assert_output",
+    "intent": "Stored runs still have the same payload, including any historical model.",
+    "startedAt": "2026-09-26T08:20:53.013Z",
+    "endedAt": "2026-09-26T08:20:55.031Z",
+    "durationMs": 2018,
+    "ok": true,
+    "next": "read-seed-pi",
+    "output": {
+      "source": "compare-runs",
+      "stream": "stdout",
+      "contains": "RUNS_UNCHANGED"
+    }
+  },
+  {
+    "nodeId": "read-seed-pi",
+    "action": "command",
+    "intent": "Read Pi's visible models before any Pi set is saved.",
+    "startedAt": "2026-09-26T08:20:57.168Z",
+    "endedAt": "2026-09-26T08:20:59.372Z",
+    "durationMs": 2204,
+    "ok": true,
+    "next": "assert-seed-pi-unsaved",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runners\": [\n    {\n      \"runner\": \"pi\",\n      \"configured\": false,\n      \"models\": [\n        \"grok-4.6\",\n        \"anthropic/claude-opus-5\",\n        \"anthropic/claude-sonnet-5\",\n        \"anthropic/claude-haiku-4-5\",\n        \"anthropic/claude-fable-5-1\"\n      ],\n      \"pickerModels\": [\n        \"grok-4.6\",\n        \"anthropic/claude-opus-5\",\n        \"anthropic/claude-sonnet-5\",\n        \"anthropic/claude-haiku-4-5\",\n        \"anthropic/claude-fable-5-1\"\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-seed-pi-unsaved",
+    "action": "assert_output",
+    "intent": "Pi has no saved visible set on this gateway.",
+    "startedAt": "2026-09-26T08:21:01.398Z",
+    "endedAt": "2026-09-26T08:21:03.417Z",
+    "durationMs": 2019,
+    "ok": true,
+    "next": "assert-seed-pi-anthropic",
+    "output": {
+      "source": "read-seed-pi",
+      "stream": "stdout",
+      "contains": "\"configured\": false"
+    }
+  },
+  {
+    "nodeId": "assert-seed-pi-anthropic",
+    "action": "assert_output",
+    "intent": "Unsaved Pi keeps the picker's Anthropic models.",
+    "startedAt": "2026-09-26T08:21:05.435Z",
+    "endedAt": "2026-09-26T08:21:07.446Z",
+    "durationMs": 2011,
+    "ok": true,
+    "next": "read-seed-cursor",
+    "output": {
+      "source": "read-seed-pi",
+      "stream": "stdout",
+      "contains": "anthropic/claude-opus-5"
+    }
+  },
+  {
+    "nodeId": "read-seed-cursor",
+    "action": "command",
+    "intent": "Read Cursor's visible models before any Cursor set is saved.",
+    "startedAt": "2026-09-26T08:21:09.467Z",
+    "endedAt": "2026-09-26T08:21:11.588Z",
+    "durationMs": 2121,
+    "ok": true,
+    "next": "assert-seed-cursor",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runners\": [\n    {\n      \"runner\": \"cursor\",\n      \"configured\": false,\n      \"models\": [\n        \"cursor-grok-4.6-high-fast\",\n        \"composer-2.5\",\n        \"composer-2.5-fast\",\n        \"cursor-grok-4.6-high\",\n        \"cursor-grok-4.6-xhigh\",\n        \"grok-4.7-high\",\n        \"grok-4.7-xhigh\",\n        \"gpt-5.6-sol-medium\",\n        \"gpt-5.6-sol-high\",\n        \"gpt-5.6-sol-max\"\n      ],\n      \"pickerModels\": [\n        \"cursor-grok-4.6-high-fast\",\n        \"composer-2.5\",\n        \"composer-2.5-fast\",\n        \"cursor-grok-4.6-high\",\n        \"cursor-grok-4.6-xhigh\",\n        \"grok-4.7-high\",\n        \"grok-4.7-xhigh\",\n        \"gpt-5.6-sol-medium\",\n        \"gpt-5.6-sol-high\",\n        \"gpt-5.6-sol-max\"\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-seed-cursor",
+    "action": "assert_output",
+    "intent": "Unsaved Cursor keeps the picker models the native list lacks.",
+    "startedAt": "2026-09-26T08:21:13.606Z",
+    "endedAt": "2026-09-26T08:21:15.633Z",
+    "durationMs": 2027,
+    "ok": true,
+    "next": "read-native-catalog",
+    "output": {
+      "source": "read-seed-cursor",
+      "stream": "stdout",
+      "contains": "composer-2.5-fast"
+    }
+  },
+  {
+    "nodeId": "read-native-catalog",
+    "action": "command",
+    "intent": "Read the native session catalog while Codex visibility omits its default model.",
+    "startedAt": "2026-09-26T08:21:17.645Z",
+    "endedAt": "2026-09-26T08:21:19.775Z",
+    "durationMs": 2130,
+    "ok": true,
+    "next": "assert-native-default",
+    "output": {
+      "exitCode": 0,
+      "stdout": "NATIVE_DEFAULT_SELECTABLE gpt-6-astra in gpt-6-astra,gpt-5.4\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-native-default",
+    "action": "assert_output",
+    "intent": "A new native Codex session's default model is still in its picker.",
+    "startedAt": "2026-09-26T08:21:21.800Z",
+    "endedAt": "2026-09-26T08:21:23.815Z",
+    "durationMs": 2015,
+    "ok": true,
+    "next": "open-dispatch",
+    "output": {
+      "source": "read-native-catalog",
+      "stream": "stdout",
+      "contains": "NATIVE_DEFAULT_SELECTABLE gpt-6-astra"
+    }
+  },
+  {
+    "nodeId": "open-dispatch",
+    "action": "ui.navigate",
+    "intent": "Open the dispatch wizard where the operator picks a runner model.",
+    "startedAt": "2026-09-26T08:21:25.829Z",
+    "endedAt": "2026-09-26T08:21:30.626Z",
+    "durationMs": 4797,
+    "ok": true,
+    "next": "dismiss-whats-new",
+    "output": {
+      "frameId": "97EFAB9BE58AC4FC853AF3DC7C739222",
+      "loaderId": "181E60E7EC38D5E690BCA1E84E92CF80",
+      "isDownload": false
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 8,
+              "width": 36,
+              "height": 27
+            }
+          },
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 41,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 77,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 113,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 149,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 185,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 221,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 258,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 294,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 330,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 366,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 402,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 438,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 475,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 511,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 547,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 583,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 621,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 643,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 679,
+              "width": 36,
+              "height": 34
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 669,
+              "width": 85,
+              "height": 27
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Messages, tools and approvals in Farmslot",
+            "enabled": true,
+            "bounds": {
+              "x": 155,
+              "y": 669,
+              "width": 115,
+              "height": 27
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 765,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 886,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 886,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-claude",
+            "selector": "[data-testid=\"runner-option-claude\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 591,
+              "width": 58,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-codex",
+            "selector": "[data-testid=\"runner-option-codex\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 126,
+              "y": 591,
+              "width": 52,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-cursor",
+            "selector": "[data-testid=\"runner-option-cursor\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 182,
+              "y": 591,
+              "width": 58,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-grok",
+            "selector": "[data-testid=\"runner-option-grok\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 245,
+              "y": 591,
+              "width": 46,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-pi",
+            "selector": "[data-testid=\"runner-option-pi\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 294,
+              "y": 591,
+              "width": 33,
+              "height": 23
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "dismiss-whats-new",
+    "action": "command",
+    "intent": "Clear the What's new overlay so the model picker can be clicked.",
+    "startedAt": "2026-09-26T08:21:32.649Z",
+    "endedAt": "2026-09-26T08:21:34.848Z",
+    "durationMs": 2199,
+    "ok": true,
+    "next": "wait-dispatch",
+    "output": {
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "no CDP tab matching hash=fleet\n"
+    }
+  },
+  {
+    "nodeId": "wait-dispatch",
+    "action": "ui.wait_for",
+    "intent": "The dispatch form is ready for a model choice.",
+    "startedAt": "2026-09-26T08:21:36.864Z",
+    "endedAt": "2026-09-26T08:21:41.220Z",
+    "durationMs": 4356,
+    "ok": true,
+    "next": "open-execution-options",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 8,
+              "width": 36,
+              "height": 27
+            }
+          },
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 41,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 77,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 113,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 149,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 185,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 221,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 258,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 294,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 330,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 366,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 402,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 438,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 475,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 511,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 547,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 583,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 621,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 643,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 679,
+              "width": 36,
+              "height": 34
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 669,
+              "width": 85,
+              "height": 27
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Messages, tools and approvals in Farmslot",
+            "enabled": true,
+            "bounds": {
+              "x": 155,
+              "y": 669,
+              "width": 115,
+              "height": 27
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 765,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 886,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 886,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-claude",
+            "selector": "[data-testid=\"runner-option-claude\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 591,
+              "width": 58,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-codex",
+            "selector": "[data-testid=\"runner-option-codex\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 126,
+              "y": 591,
+              "width": 52,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-cursor",
+            "selector": "[data-testid=\"runner-option-cursor\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 182,
+              "y": 591,
+              "width": 58,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-grok",
+            "selector": "[data-testid=\"runner-option-grok\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 245,
+              "y": 591,
+              "width": 46,
+              "height": 23
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "test_id": "runner-option-pi",
+            "selector": "[data-testid=\"runner-option-pi\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 294,
+              "y": 591,
+              "width": 33,
+              "height": 23
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "open-execution-options",
+    "action": "command",
+    "intent": "Open the execution options so the model choices are in the page flow.",
+    "startedAt": "2026-09-26T08:21:43.235Z",
+    "endedAt": "2026-09-26T08:21:45.410Z",
+    "durationMs": 2175,
+    "ok": true,
+    "next": "choose-claude",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"open\": true\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "choose-claude",
+    "action": "command",
+    "intent": "Select Claude so the proof starts from that runner's visible models.",
+    "startedAt": "2026-09-26T08:21:47.417Z",
+    "endedAt": "2026-09-26T08:21:49.573Z",
+    "durationMs": 2156,
+    "ok": true,
+    "next": "wait-models-ready",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-option-claude\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "wait-models-ready",
+    "action": "ui.wait_for",
+    "intent": "The Claude model choices have loaded from the gateway.",
+    "startedAt": "2026-09-26T08:21:51.585Z",
+    "endedAt": "2026-09-26T08:21:55.987Z",
+    "durationMs": 4402,
+    "ok": true,
+    "next": "scroll-claude-models",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 763,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 763,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 413,
+              "width": 220,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Sort by Rank",
+            "enabled": true,
+            "bounds": {
+              "x": 74,
+              "y": 668,
+              "width": 44,
+              "height": 12
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Sort by Slot",
+            "enabled": true,
+            "bounds": {
+              "x": 128,
+              "y": 668,
+              "width": 132,
+              "height": 12
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Sort by Branch / task",
+            "enabled": true,
+            "bounds": {
+              "x": 270,
+              "y": 668,
+              "width": 250,
+              "height": 12
+            },
+            "reason": "offscreen"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "scroll-claude-models",
+    "action": "ui.scroll",
+    "intent": "The Claude model choices sit in the operator's view.",
+    "startedAt": "2026-09-26T08:21:58.005Z",
+    "endedAt": "2026-09-26T08:22:02.347Z",
+    "durationMs": 4342,
+    "ok": true,
+    "next": "shot-before-visible",
+    "output": {
+      "scrolled": true,
+      "selector": "[data-testid=\"runner-model-opus\"], [data-test-id=\"runner-model-opus\"], [data-test=\"runner-model-opus\"]",
+      "intoView": true
+    }
+  },
+  {
+    "nodeId": "shot-before-visible",
+    "action": "ui.screenshot",
+    "intent": "Record the Claude model choices the operator sees before a catalog is opened.",
+    "artifacts": [
+      {
+        "path": "screenshots/before-visible-models.png",
+        "type": "screenshot",
+        "nodeId": "shot-before-visible",
+        "label": "Claude visible models before catalog",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-09-26T08:22:04.354Z",
+    "endedAt": "2026-09-26T08:22:08.458Z",
+    "durationMs": 4104,
+    "ok": true,
+    "next": "open-claude-catalog",
+    "output": {
+      "captured": true,
+      "path": "screenshots/before-visible-models.png",
+      "artifact": {
+        "path": "screenshots/before-visible-models.png",
+        "type": "screenshot",
+        "nodeId": "shot-before-visible",
+        "label": "Claude visible models before catalog",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "open-claude-catalog",
+    "action": "command",
+    "intent": "Ask the picker to load Claude's catalog.",
+    "startedAt": "2026-09-26T08:22:10.467Z",
+    "endedAt": "2026-09-26T08:22:12.649Z",
+    "durationMs": 2182,
+    "ok": true,
+    "next": "wait-unsupported",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-model-catalog-toggle\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "wait-unsupported",
+    "action": "ui.wait_for",
+    "intent": "The picker states that this runner has no catalog capability.",
+    "startedAt": "2026-09-26T08:22:14.669Z",
+    "endedAt": "2026-09-26T08:22:19.045Z",
+    "durationMs": 4376,
+    "ok": true,
+    "next": "shot-unsupported",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 54,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 199,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 235,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 271,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 416,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 452,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 488,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 584,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 620,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -83,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -83,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 696,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 817,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 817,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 418,
+              "width": 282,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Start this checkout's gateway and Companion Metro on their slot-configured ports for cross-surface tasks.",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 654,
+              "width": 243,
+              "height": 26
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Run no preparation at all — operator owns slot state",
+            "enabled": true,
+            "bounds": {
+              "x": 313,
+              "y": 654,
+              "width": 107,
+              "height": 26
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "shot-unsupported",
+    "action": "ui.screenshot",
+    "intent": "Record the message that this runner has no model catalog.",
+    "artifacts": [
+      {
+        "path": "screenshots/after-unsupported-catalog.png",
+        "type": "screenshot",
+        "nodeId": "shot-unsupported",
+        "label": "Unsupported runner catalog",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-09-26T08:22:21.078Z",
+    "endedAt": "2026-09-26T08:22:25.179Z",
+    "durationMs": 4101,
+    "ok": true,
+    "next": "choose-codex",
+    "output": {
+      "captured": true,
+      "path": "screenshots/after-unsupported-catalog.png",
+      "artifact": {
+        "path": "screenshots/after-unsupported-catalog.png",
+        "type": "screenshot",
+        "nodeId": "shot-unsupported",
+        "label": "Unsupported runner catalog",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "choose-codex",
+    "action": "command",
+    "intent": "Switch the picker to Codex after the visible defaults were narrowed.",
+    "startedAt": "2026-09-26T08:22:27.189Z",
+    "endedAt": "2026-09-26T08:22:29.347Z",
+    "durationMs": 2158,
+    "ok": true,
+    "next": "wait-codex-models",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-option-codex\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "wait-codex-models",
+    "action": "ui.wait_for",
+    "intent": "The Codex choices have loaded the saved visible defaults.",
+    "startedAt": "2026-09-26T08:22:31.360Z",
+    "endedAt": "2026-09-26T08:22:35.775Z",
+    "durationMs": 4415,
+    "ok": true,
+    "next": "scroll-codex-models",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 691,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 812,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 812,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 413,
+              "width": 180,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Start this checkout's gateway and Companion Metro on their slot-configured ports for cross-surface tasks.",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 650,
+              "width": 243,
+              "height": 26
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Run no preparation at all — operator owns slot state",
+            "enabled": true,
+            "bounds": {
+              "x": 313,
+              "y": 650,
+              "width": 107,
+              "height": 26
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "scroll-codex-models",
+    "action": "ui.scroll",
+    "intent": "The saved Codex default sits in the operator's view.",
+    "startedAt": "2026-09-26T08:22:37.781Z",
+    "endedAt": "2026-09-26T08:22:42.120Z",
+    "durationMs": 4339,
+    "ok": true,
+    "next": "wait-visible-default",
+    "output": {
+      "scrolled": true,
+      "selector": "[data-testid=\"runner-model-gpt-5.4\"], [data-test-id=\"runner-model-gpt-5.4\"], [data-test=\"runner-model-gpt-5.4\"]",
+      "intoView": true
+    }
+  },
+  {
+    "nodeId": "wait-visible-default",
+    "action": "ui.wait_for",
+    "intent": "The saved visible default gpt-5.4 is on screen.",
+    "startedAt": "2026-09-26T08:22:44.133Z",
+    "endedAt": "2026-09-26T08:22:48.482Z",
+    "durationMs": 4349,
+    "ok": true,
+    "next": "wait-retained-astra",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 691,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 812,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 812,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 413,
+              "width": 180,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Start this checkout's gateway and Companion Metro on their slot-configured ports for cross-surface tasks.",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 650,
+              "width": 243,
+              "height": 26
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Run no preparation at all — operator owns slot state",
+            "enabled": true,
+            "bounds": {
+              "x": 313,
+              "y": 650,
+              "width": 107,
+              "height": 26
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "wait-retained-astra",
+    "action": "ui.wait_for",
+    "intent": "The current Astra selection stays visible even though it is not a saved default.",
+    "startedAt": "2026-09-26T08:22:50.489Z",
+    "endedAt": "2026-09-26T08:22:54.846Z",
+    "durationMs": 4357,
+    "ok": true,
+    "next": "wait-seed-hidden",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 691,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 812,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 812,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 413,
+              "width": 180,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Start this checkout's gateway and Companion Metro on their slot-configured ports for cross-surface tasks.",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 650,
+              "width": 243,
+              "height": 26
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Run no preparation at all — operator owns slot state",
+            "enabled": true,
+            "bounds": {
+              "x": 313,
+              "y": 650,
+              "width": 107,
+              "height": 26
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "wait-seed-hidden",
+    "action": "ui.wait_for",
+    "intent": "A model that is neither saved nor selected is not shown as a default.",
+    "startedAt": "2026-09-26T08:22:56.859Z",
+    "endedAt": "2026-09-26T08:23:01.209Z",
+    "durationMs": 4350,
+    "ok": true,
+    "next": "shot-visible-defaults",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 691,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 812,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 812,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "Custom model",
+            "test_id": "runner-custom-model",
+            "selector": "[data-testid=\"runner-custom-model\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 335,
+              "y": 413,
+              "width": 180,
+              "height": 34
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Start this checkout's gateway and Companion Metro on their slot-configured ports for cross-surface tasks.",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 650,
+              "width": 243,
+              "height": 26
+            },
+            "reason": "covered"
+          },
+          {
+            "role": "button",
+            "label": "Run no preparation at all — operator owns slot state",
+            "enabled": true,
+            "bounds": {
+              "x": 313,
+              "y": 650,
+              "width": 107,
+              "height": 26
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "shot-visible-defaults",
+    "action": "ui.screenshot",
+    "intent": "Record the narrowed Codex choices with the older Astra selection still present.",
+    "artifacts": [
+      {
+        "path": "screenshots/after-visible-defaults.png",
+        "type": "screenshot",
+        "nodeId": "shot-visible-defaults",
+        "label": "Saved visible defaults plus retained selection",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-09-26T08:23:03.216Z",
+    "endedAt": "2026-09-26T08:23:07.311Z",
+    "durationMs": 4095,
+    "ok": true,
+    "next": "open-codex-catalog",
+    "output": {
+      "captured": true,
+      "path": "screenshots/after-visible-defaults.png",
+      "artifact": {
+        "path": "screenshots/after-visible-defaults.png",
+        "type": "screenshot",
+        "nodeId": "shot-visible-defaults",
+        "label": "Saved visible defaults plus retained selection",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "open-codex-catalog",
+    "action": "command",
+    "intent": "Load the full Codex catalog on demand.",
+    "startedAt": "2026-09-26T08:23:09.333Z",
+    "endedAt": "2026-09-26T08:23:11.466Z",
+    "durationMs": 2133,
+    "ok": true,
+    "next": "wait-catalog-model",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-model-catalog-toggle\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "wait-catalog-model",
+    "action": "ui.wait_for",
+    "intent": "The runner-reported Astra model is offered in the full catalog.",
+    "startedAt": "2026-09-26T08:23:13.479Z",
+    "endedAt": "2026-09-26T08:23:17.838Z",
+    "durationMs": 4359,
+    "ok": true,
+    "next": "select-astra-default",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 54,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 199,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 235,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 271,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 416,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 452,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 488,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 584,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 620,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -83,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -83,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Terminal",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 1389,
+              "width": 85,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Messages, tools and approvals in Farmslot",
+            "enabled": true,
+            "bounds": {
+              "x": 155,
+              "y": 1389,
+              "width": 115,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 1608,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 1729,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 1729,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "test_id": "runner-catalog-default-gpt-5.6-sol",
+            "selector": "[data-testid=\"runner-catalog-default-gpt-5.6-sol\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 339,
+              "y": 651,
+              "width": 200,
+              "height": 13
+            },
+            "reason": "covered"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "select-astra-default",
+    "action": "command",
+    "intent": "Include Astra in the models shown by default.",
+    "startedAt": "2026-09-26T08:23:19.849Z",
+    "endedAt": "2026-09-26T08:23:22.046Z",
+    "durationMs": 2197,
+    "ok": true,
+    "next": "save-visible-defaults",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-catalog-default-gpt-6-astra\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "save-visible-defaults",
+    "action": "command",
+    "intent": "Save the visible-default selection from the picker.",
+    "startedAt": "2026-09-26T08:23:24.055Z",
+    "endedAt": "2026-09-26T08:23:26.273Z",
+    "durationMs": 2218,
+    "ok": true,
+    "next": "wait-saved",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-visible-models-save\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "wait-saved",
+    "action": "ui.wait_for",
+    "intent": "The picker confirms the visible defaults were saved.",
+    "startedAt": "2026-09-26T08:23:28.289Z",
+    "endedAt": "2026-09-26T08:23:32.667Z",
+    "durationMs": 4378,
+    "ok": true,
+    "next": "shot-catalog",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 18,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 54,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 199,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 235,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 271,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 416,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 452,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 488,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 584,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 620,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -1017,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -1017,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "PROJ-2368, PR #123, or paste Jira/GitHub URL",
+            "test_id": "dispatch-ticket",
+            "selector": "[data-testid=\"dispatch-ticket\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -881,
+              "width": 680,
+              "height": 34
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Fix BugB",
+            "test_id": "dispatch-flow-fix-bug",
+            "selector": "[data-testid=\"dispatch-flow-fix-bug\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -815,
+              "width": 87,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "ReviewR",
+            "test_id": "dispatch-flow-review-pr",
+            "selector": "[data-testid=\"dispatch-flow-review-pr\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 157,
+              "y": -815,
+              "width": 80,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "QAQ",
+            "test_id": "dispatch-flow-qa",
+            "selector": "[data-testid=\"dispatch-flow-qa\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 243,
+              "y": -815,
+              "width": 50,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "DevD",
+            "test_id": "dispatch-flow-dev",
+            "selector": "[data-testid=\"dispatch-flow-dev\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 299,
+              "y": -815,
+              "width": 58,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "PR CompleteC",
+            "test_id": "dispatch-flow-pr-complete",
+            "selector": "[data-testid=\"dispatch-flow-pr-complete\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 363,
+              "y": -815,
+              "width": 117,
+              "height": 27
+            },
+            "reason": "offscreen"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "shot-catalog",
+    "action": "ui.screenshot",
+    "intent": "Record the Codex catalog after Astra is added to the visible defaults.",
+    "artifacts": [
+      {
+        "path": "screenshots/after-runner-catalog.png",
+        "type": "screenshot",
+        "nodeId": "shot-catalog",
+        "label": "Codex catalog and saved visible defaults",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-09-26T08:23:34.680Z",
+    "endedAt": "2026-09-26T08:23:38.776Z",
+    "durationMs": 4096,
+    "ok": true,
+    "next": "read-saved-visible",
+    "output": {
+      "captured": true,
+      "path": "screenshots/after-runner-catalog.png",
+      "artifact": {
+        "path": "screenshots/after-runner-catalog.png",
+        "type": "screenshot",
+        "nodeId": "shot-catalog",
+        "label": "Codex catalog and saved visible defaults",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "read-saved-visible",
+    "action": "command",
+    "intent": "Read back the visible defaults after the picker save.",
+    "startedAt": "2026-09-26T08:23:40.786Z",
+    "endedAt": "2026-09-26T08:23:42.969Z",
+    "durationMs": 2183,
+    "ok": true,
+    "next": "assert-ui-saved-astra",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"runners\": [\n    {\n      \"runner\": \"codex\",\n      \"configured\": true,\n      \"models\": [\n        \"gpt-5.4\",\n        \"gpt-6-astra\"\n      ],\n      \"pickerModels\": [\n        \"gpt-5.4\",\n        \"gpt-6-astra\"\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-ui-saved-astra",
+    "action": "assert_output",
+    "intent": "The picker save persisted Astra as a visible default.",
+    "startedAt": "2026-09-26T08:23:44.981Z",
+    "endedAt": "2026-09-26T08:23:46.987Z",
+    "durationMs": 2006,
+    "ok": true,
+    "next": "select-luna-default",
+    "output": {
+      "source": "read-saved-visible",
+      "stream": "stdout",
+      "contains": "gpt-6-astra"
+    }
+  },
+  {
+    "nodeId": "select-luna-default",
+    "action": "command",
+    "intent": "Add the catalog-only Luna model to the visible defaults.",
+    "startedAt": "2026-09-26T08:23:48.994Z",
+    "endedAt": "2026-09-26T08:23:51.120Z",
+    "durationMs": 2126,
+    "ok": true,
+    "next": "save-luna-default",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-catalog-default-gpt-6-luna\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "save-luna-default",
+    "action": "command",
+    "intent": "Save the visible defaults with Luna included.",
+    "startedAt": "2026-09-26T08:23:53.128Z",
+    "endedAt": "2026-09-26T08:23:55.296Z",
+    "durationMs": 2168,
+    "ok": true,
+    "next": "scroll-luna-pill",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-visible-models-save\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "scroll-luna-pill",
+    "action": "ui.scroll",
+    "intent": "The operator sees the saved model choices again after working in the long catalog list.",
+    "startedAt": "2026-09-26T08:23:57.302Z",
+    "endedAt": "2026-09-26T08:24:01.645Z",
+    "durationMs": 4343,
+    "ok": true,
+    "next": "wait-luna-pill",
+    "output": {
+      "scrolled": true,
+      "selector": "[data-testid=\"runner-model-gpt-6-luna\"], [data-test-id=\"runner-model-gpt-6-luna\"], [data-test=\"runner-model-gpt-6-luna\"]",
+      "intoView": true
+    }
+  },
+  {
+    "nodeId": "wait-luna-pill",
+    "action": "ui.wait_for",
+    "intent": "Luna is now a model choice.",
+    "startedAt": "2026-09-26T08:24:03.653Z",
+    "endedAt": "2026-09-26T08:24:07.999Z",
+    "durationMs": 4346,
+    "ok": true,
+    "next": "choose-luna",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -59,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -59,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Terminal",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": 1427,
+              "width": 85,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Messages, tools and approvals in Farmslot",
+            "enabled": true,
+            "bounds": {
+              "x": 155,
+              "y": 1427,
+              "width": 115,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Recheck slot availability on each host",
+            "enabled": true,
+            "bounds": {
+              "x": 680,
+              "y": 1646,
+              "width": 64,
+              "height": 18
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch",
+            "test_id": "dispatch-submit",
+            "selector": "[data-testid=\"dispatch-submit\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 64,
+              "y": 1767,
+              "width": 97,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Select a flow type",
+            "test_id": "dispatch-queue",
+            "selector": "[data-testid=\"dispatch-queue\"]",
+            "enabled": false,
+            "bounds": {
+              "x": 169,
+              "y": 1767,
+              "width": 75,
+              "height": 31
+            },
+            "reason": "offscreen"
+          },
+          {
+            "test_id": "runner-catalog-default-gpt-5.6-sol",
+            "selector": "[data-testid=\"runner-catalog-default-gpt-5.6-sol\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 339,
+              "y": 675,
+              "width": 200,
+              "height": 13
+            },
+            "reason": "offscreen"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "choose-luna",
+    "action": "command",
+    "intent": "Pick the catalog-only Luna model while its catalog modes are loaded.",
+    "startedAt": "2026-09-26T08:24:10.006Z",
+    "endedAt": "2026-09-26T08:24:12.128Z",
+    "durationMs": 2122,
+    "ok": true,
+    "next": "scroll-luna-efforts",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"clicked\": \"[data-testid=\\\"runner-model-gpt-6-luna\\\"]\"\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "scroll-luna-efforts",
+    "action": "ui.scroll",
+    "intent": "The operator sees Luna's effort choices below the open catalog list.",
+    "startedAt": "2026-09-26T08:24:14.135Z",
+    "endedAt": "2026-09-26T08:24:18.485Z",
+    "durationMs": 4350,
+    "ok": true,
+    "next": "wait-luna-xhigh",
+    "output": {
+      "scrolled": true,
+      "selector": "[data-testid=\"runner-effort-xhigh\"], [data-test-id=\"runner-effort-xhigh\"], [data-test=\"runner-effort-xhigh\"]",
+      "intoView": true
+    }
+  },
+  {
+    "nodeId": "wait-luna-xhigh",
+    "action": "ui.wait_for",
+    "intent": "Luna offers xhigh, which launch validation accepts.",
+    "startedAt": "2026-09-26T08:24:20.510Z",
+    "endedAt": "2026-09-26T08:24:24.892Z",
+    "durationMs": 4382,
+    "ok": true,
+    "next": "wait-luna-max-hidden",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -1102,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -1102,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "PROJ-2368, PR #123, or paste Jira/GitHub URL",
+            "test_id": "dispatch-ticket",
+            "selector": "[data-testid=\"dispatch-ticket\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -966,
+              "width": 680,
+              "height": 34
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Fix BugB",
+            "test_id": "dispatch-flow-fix-bug",
+            "selector": "[data-testid=\"dispatch-flow-fix-bug\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -900,
+              "width": 87,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "ReviewR",
+            "test_id": "dispatch-flow-review-pr",
+            "selector": "[data-testid=\"dispatch-flow-review-pr\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 157,
+              "y": -900,
+              "width": 80,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "QAQ",
+            "test_id": "dispatch-flow-qa",
+            "selector": "[data-testid=\"dispatch-flow-qa\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 243,
+              "y": -900,
+              "width": 50,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "DevD",
+            "test_id": "dispatch-flow-dev",
+            "selector": "[data-testid=\"dispatch-flow-dev\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 299,
+              "y": -900,
+              "width": 58,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "PR CompleteC",
+            "test_id": "dispatch-flow-pr-complete",
+            "selector": "[data-testid=\"dispatch-flow-pr-complete\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 363,
+              "y": -900,
+              "width": 117,
+              "height": 27
+            },
+            "reason": "offscreen"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "wait-luna-max-hidden",
+    "action": "ui.wait_for",
+    "intent": "The catalog's max mode is not offered because launch validation rejects it for Luna.",
+    "startedAt": "2026-09-26T08:24:26.898Z",
+    "endedAt": "2026-09-26T08:24:31.252Z",
+    "durationMs": 4354,
+    "ok": true,
+    "next": "shot-luna-efforts",
+    "output": {
+      "matched": true
+    },
+    "observations": {
+      "ui.screen": {
+        "provider": "cdp-web",
+        "name": "Farmslot Command Center",
+        "title": "Farmslot Command Center",
+        "route": "#dispatch",
+        "url": "http://localhost:5881/"
+      },
+      "ui.visible": {
+        "provider": "cdp-web",
+        "items": [
+          {
+            "role": "link",
+            "label": "Fleet",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -17,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Terminals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 19,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Devices",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 55,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dispatch",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(4)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 91,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Roadmap",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(5)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 127,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Backlog",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(6)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 163,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Graphs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(7)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 200,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "PRs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(8)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 236,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Decisions",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(9)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 272,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Runs",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(10)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 308,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Intelligence",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(11)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 344,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Analytics",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(12)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 380,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Evals",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(13)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 417,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Finetune",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(14)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 453,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Config",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(15)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 489,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Doctor",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(16)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 525,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "Command Center v0.16.0 · ccceaa5d · main. Open version details.",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(2)",
+            "enabled": true,
+            "bounds": {
+              "x": -2,
+              "y": 563,
+              "width": 51,
+              "height": 15
+            }
+          },
+          {
+            "role": "button",
+            "label": "Co-Pilot (Cmd+K)",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(3)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 585,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "link",
+            "label": "Dev Harness",
+            "selector": "html > body > farm-app > nav > a:nth-of-type(17)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": 621,
+              "width": 36,
+              "height": 34
+            }
+          },
+          {
+            "role": "button",
+            "label": "farmslot-farm",
+            "test_id": "global-filter-projects-farmslot-farm",
+            "selector": "[data-testid=\"global-filter-projects-farmslot-farm\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 133,
+              "y": -16,
+              "width": 81,
+              "height": 23
+            }
+          }
+        ],
+        "hidden_or_offscreen": [
+          {
+            "role": "button",
+            "label": "Expand sidebar",
+            "selector": "html > body > farm-app > nav > button:nth-of-type(1)",
+            "enabled": true,
+            "bounds": {
+              "x": 6,
+              "y": -50,
+              "width": 36,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Gateway connected · no auth · ws://localhost:5881/ws · click for connection and companion pairing",
+            "enabled": true,
+            "bounds": {
+              "x": 892,
+              "y": -53,
+              "width": 308,
+              "height": 25
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Start a fresh root run for a ticket or PR. No link to an existing comparison family.",
+            "test_id": "dispatch-intent-new-run",
+            "selector": "[data-testid=\"dispatch-intent-new-run\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -1102,
+              "width": 144,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Dispatch another runner or model on the same ticket alongside an existing run. Pick the baseline run first; siblings sta",
+            "test_id": "dispatch-intent-comparison",
+            "selector": "[data-testid=\"dispatch-intent-comparison\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 214,
+              "y": -1102,
+              "width": 159,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "label": "PROJ-2368, PR #123, or paste Jira/GitHub URL",
+            "test_id": "dispatch-ticket",
+            "selector": "[data-testid=\"dispatch-ticket\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -966,
+              "width": 680,
+              "height": 34
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "Fix BugB",
+            "test_id": "dispatch-flow-fix-bug",
+            "selector": "[data-testid=\"dispatch-flow-fix-bug\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 64,
+              "y": -900,
+              "width": 87,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "ReviewR",
+            "test_id": "dispatch-flow-review-pr",
+            "selector": "[data-testid=\"dispatch-flow-review-pr\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 157,
+              "y": -900,
+              "width": 80,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "QAQ",
+            "test_id": "dispatch-flow-qa",
+            "selector": "[data-testid=\"dispatch-flow-qa\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 243,
+              "y": -900,
+              "width": 50,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "DevD",
+            "test_id": "dispatch-flow-dev",
+            "selector": "[data-testid=\"dispatch-flow-dev\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 299,
+              "y": -900,
+              "width": 58,
+              "height": 27
+            },
+            "reason": "offscreen"
+          },
+          {
+            "role": "button",
+            "label": "PR CompleteC",
+            "test_id": "dispatch-flow-pr-complete",
+            "selector": "[data-testid=\"dispatch-flow-pr-complete\"]",
+            "enabled": true,
+            "bounds": {
+              "x": 363,
+              "y": -900,
+              "width": 117,
+              "height": 27
+            },
+            "reason": "offscreen"
+          }
+        ],
+        "truncated": true,
+        "limits": {
+          "items": 20,
+          "hidden_or_offscreen": 10
+        }
+      }
+    }
+  },
+  {
+    "nodeId": "shot-luna-efforts",
+    "action": "ui.screenshot",
+    "intent": "Record the accepted effort choices for the catalog-only model.",
+    "artifacts": [
+      {
+        "path": "shot-luna-efforts.png",
+        "type": "screenshot",
+        "nodeId": "shot-luna-efforts",
+        "label": "after-catalog-effort-accepted",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    ],
+    "startedAt": "2026-09-26T08:24:33.264Z",
+    "endedAt": "2026-09-26T08:24:37.349Z",
+    "durationMs": 4085,
+    "ok": true,
+    "next": "probe-stale-catalog",
+    "output": {
+      "captured": true,
+      "path": "shot-luna-efforts.png",
+      "artifact": {
+        "path": "shot-luna-efforts.png",
+        "type": "screenshot",
+        "nodeId": "shot-luna-efforts",
+        "label": "after-catalog-effort-accepted",
+        "category": "evidence",
+        "mimeType": "image/png"
+      }
+    }
+  },
+  {
+    "nodeId": "probe-stale-catalog",
+    "action": "command",
+    "intent": "Start a Codex catalog read and switch to Claude before it answers.",
+    "startedAt": "2026-09-26T08:24:39.364Z",
+    "endedAt": "2026-09-26T08:24:43.539Z",
+    "durationMs": 4175,
+    "ok": true,
+    "next": "assert-stale-catalog-dropped",
+    "output": {
+      "exitCode": 0,
+      "stdout": "STALE_CATALOG_DROPPED runner=claude loaded=none\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "assert-stale-catalog-dropped",
+    "action": "assert_output",
+    "intent": "The late Codex catalog is not kept for Claude, so it cannot be saved under the wrong runner.",
+    "startedAt": "2026-09-26T08:24:45.552Z",
+    "endedAt": "2026-09-26T08:24:47.562Z",
+    "durationMs": 2010,
+    "ok": true,
+    "next": "restore-visible-seed",
+    "output": {
+      "source": "probe-stale-catalog",
+      "stream": "stdout",
+      "contains": "STALE_CATALOG_DROPPED runner=claude"
+    }
+  },
+  {
+    "nodeId": "restore-visible-seed",
+    "action": "command",
+    "intent": "Put the Codex visible defaults back to the built-in seed.",
+    "startedAt": "2026-09-26T08:24:49.569Z",
+    "endedAt": "2026-09-26T08:24:51.760Z",
+    "durationMs": 2191,
+    "ok": true,
+    "next": "done",
+    "output": {
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"runner\": {\n    \"runner\": \"codex\",\n    \"configured\": true,\n    \"models\": [\n      \"gpt-6-astra\",\n      \"gpt-6-sol\",\n      \"gpt-5.6-sol\",\n      \"gpt-5.6-terra\",\n      \"gpt-5.6-luna\",\n      \"gpt-5.5\",\n      \"gpt-5.4\"\n    ],\n    \"pickerModels\": [\n      \"gpt-6-astra\",\n      \"gpt-6-sol\",\n      \"gpt-5.6-sol\",\n      \"gpt-5.6-terra\",\n      \"gpt-5.6-luna\",\n      \"gpt-5.5\",\n      \"gpt-5.4\"\n    ]\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "nodeId": "done",
+    "action": "end",
+    "startedAt": "2026-09-26T08:24:53.777Z",
+    "endedAt": "2026-09-26T08:24:53.777Z",
+    "durationMs": 0,
+    "ok": true,
+    "status": "pass"
+  }
+]

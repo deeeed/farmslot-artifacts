@@ -1,0 +1,13 @@
+[
+  {
+    "nodeId": "catalog-codex",
+    "action": "command",
+    "intent": "Read the Codex model catalog through the sandbox gateway.",
+    "startedAt": "2026-09-26T08:05:48.727Z",
+    "endedAt": "2026-09-26T08:05:49.151Z",
+    "durationMs": 424,
+    "ok": false,
+    "cause_class": "unknown",
+    "error": "Command exited with 2: env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.modelCatalog '{\"runner\":\"codex\"}'\ncdp.mjs: {\"type\":\"res\",\"id\":\"1\",\"ok\":false,\"error\":{\"code\":\"METHOD_NOT_FOUND\",\"message\":\"Unknown method: runner.modelCatalog\"}}\n"
+  }
+]

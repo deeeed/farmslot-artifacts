@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "preferred_mode": "screenshots",
+  "summary": "PR #746 at ccceaa5d. Dispatch picker proof passes 62/62: Claude has no catalog, Codex narrows to the saved gpt-5.4 while Astra stays selected, the catalog saves defaults, and catalog-only Luna offers only accepted efforts. Direct Evals entry fails in this sandbox: the unsaved seed models are still offered, because an id-less run from the shared run store makes every Evals re-render throw.",
+  "before_after_pairs": [
+    {
+      "label": "Claude visible models vs unsupported catalog message",
+      "covers": ["dispatch-picker"],
+      "before": "artifacts/before-visible-models.png",
+      "after": "artifacts/after-unsupported-catalog.png"
+    },
+    {
+      "label": "Codex saved visible defaults with retained Astra vs catalog save",
+      "covers": ["dispatch-picker", "retained-selection"],
+      "before": "artifacts/after-visible-defaults.png",
+      "after": "artifacts/after-runner-catalog.png"
+    },
+    {
+      "label": "Astra efforts (max, ultra) vs catalog-only Luna efforts (up to xhigh)",
+      "covers": ["effort-accepted"],
+      "before": "artifacts/after-visible-defaults.png",
+      "after": "artifacts/after-catalog-effort-accepted.png"
+    },
+    {
+      "label": "Direct Evals entry after saving Codex as [gpt-5.4]: seed models still offered (failure)",
+      "covers": ["evals-direct-entry"],
+      "before": "artifacts/after-visible-defaults.png",
+      "after": "artifacts/after-evals-direct-entry-failure.png",
+      "note": "Failure evidence. Frame from artifacts/after-full-recipe-evals-failure.mp4 at 140s."
+    }
+  ],
+  "videos": {
+    "after": "artifacts/after.mp4",
+    "preferred": true,
+    "note": "Full replay of recipe-dispatch-slice.json at 2s slow playback (62/62 pass). The full recipe.json replay, which fails at wait-evals-unsaved-hidden, is artifacts/after-full-recipe-evals-failure.mp4."
+  }
+}

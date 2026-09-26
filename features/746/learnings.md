@@ -1,0 +1,5 @@
+- Control-plane capability RPCs for macpro slots only work over `ssh macwork.local` against `ws://127.0.0.1:7801/ws`. `browser-cdp` acquire outlasts the 5s default RPC timeout; set `FARMSLOT_RPC_TIMEOUT_MS=90000` and re-acquire idempotently for the receipt.
+- The sandbox gateway shares the operator `.runs` dir. `runs/store.ts` reads `runtime-capabilities-<port>.json` as a run and writes `undefined.json`. Any Evals re-render then throws on the id-less run, which masks UI fixes that depend on a re-render.
+- `ui.wait_for` needs the target in the viewport. Three nodes in the inherited recipe waited on off-screen elements, so `hidden` checks passed without proving anything. Put a `ui.scroll` before paired visible/hidden checks.
+- A `ui.screenshot` without `path` lands at the run root and is not promoted by `sync-recipe-evidence.sh`.
+- Running the baseline before fast-forwarding to the PR head gave a real `main` baseline at no extra setup cost. Rebuild `@farmslot/protocol` dist after the fast-forward.

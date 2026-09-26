@@ -1,0 +1,21 @@
+{
+  "invocationDigest": "sha256:76ac5276f9bcf8a37bb5f45a9a570ebc88ca74f9325651bc1e811d1b9b0240b2",
+  "status": "fail",
+  "total": 28,
+  "passed": 27,
+  "failed": 1,
+  "cause_counts": {
+    "subject": 0,
+    "harness": 0,
+    "environment": 0,
+    "unknown": 1
+  },
+  "startedAt": "2026-09-26T08:16:15.595Z",
+  "endedAt": "2026-09-26T08:16:49.077Z",
+  "durationMs": 33482,
+  "harness": {
+    "name": "@farmslot/recipe-harness",
+    "version": "0.18.1",
+    "action_manifest_schema": "https://farmslot.io/schemas/action-manifest-v1.schema.json"
+  }
+}

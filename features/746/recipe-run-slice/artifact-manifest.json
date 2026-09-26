@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "runStatus": "pass",
+  "artifacts": [
+    {
+      "path": "recipe.json",
+      "type": "recipe",
+      "label": "Executed recipe",
+      "category": "system"
+    },
+    {
+      "path": "recipe-invocation.json",
+      "type": "json",
+      "label": "Executed recipe parameters",
+      "category": "system"
+    },
+    {
+      "path": "recipe-resolution.json",
+      "type": "json",
+      "label": "Resolved recipe dependency graph",
+      "category": "system"
+    },
+    {
+      "path": "screenshots/before-visible-models.png",
+      "type": "screenshot",
+      "nodeId": "shot-before-visible",
+      "label": "Claude visible models before catalog",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "screenshots/after-unsupported-catalog.png",
+      "type": "screenshot",
+      "nodeId": "shot-unsupported",
+      "label": "Unsupported runner catalog",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "screenshots/after-visible-defaults.png",
+      "type": "screenshot",
+      "nodeId": "shot-visible-defaults",
+      "label": "Saved visible defaults plus retained selection",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "screenshots/after-runner-catalog.png",
+      "type": "screenshot",
+      "nodeId": "shot-catalog",
+      "label": "Codex catalog and saved visible defaults",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "shot-luna-efforts.png",
+      "type": "screenshot",
+      "nodeId": "shot-luna-efforts",
+      "label": "after-catalog-effort-accepted",
+      "category": "evidence",
+      "mimeType": "image/png"
+    },
+    {
+      "path": "summary.json",
+      "type": "summary",
+      "label": "Run summary",
+      "category": "system"
+    },
+    {
+      "path": "trace.json",
+      "type": "trace",
+      "label": "Execution trace",
+      "category": "system"
+    },
+    {
+      "path": "videos/recipe-run.mp4",
+      "type": "video",
+      "mimeType": "video/mp4",
+      "category": "proof",
+      "label": "Recipe run video",
+      "record": "full_run",
+      "recorder": {
+        "name": "capture-helper",
+        "version": "0.2.6",
+        "platform": "macos",
+        "target": {
+          "selector": "window-id",
+          "value": "6125"
+        }
+      },
+      "maxFps": 15
+    }
+  ]
+}

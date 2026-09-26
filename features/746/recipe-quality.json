@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "verdict": "warn",
+  "compact": {
+    "verdict": "WARN",
+    "reasons": [
+      "Gateway state claims (catalog status and source, retained selection, unchanged run list, seed defaults, native default) are asserted through sandbox gateway RPC; baseline on main fails at the first catalog read.",
+      "Dispatch picker claims pass 62/62 with CDP interaction, visible/hidden pairs, screenshots and video.",
+      "Direct Evals entry is not proven: wait-evals-unsaved-hidden fails because an id-less run from the shared run store makes every Evals re-render throw."
+    ],
+    "better_version_guidance": [
+      "Scroll before paired visible/hidden waits; three inherited nodes waited on off-screen targets and passed hidden checks trivially.",
+      "Give every ui.screenshot a path so sync-recipe-evidence promotes it.",
+      "Re-run the Evals nodes after the run store stops treating runtime-capabilities-<port>.json as a run."
+    ]
+  },
+  "dimensions": {},
+  "structural_findings": [],
+  "contextual_findings": [],
+  "suggested_recipe_delta": [],
+  "training_fields": {
+    "proof_mode": "mixed"
+  },
+  "meta": {
+    "producer": "worker",
+    "fallback_used": false,
+    "legacy_task": false,
+    "artifact_required": true,
+    "source_signals": [
+      "recipe-quality.json"
+    ]
+  }
+}

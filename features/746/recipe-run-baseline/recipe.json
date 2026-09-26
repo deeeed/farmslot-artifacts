@@ -1,0 +1,500 @@
+{
+  "$schema": "https://farmslot.io/schemas/recipe-v1.schema.json",
+  "title": "Configurable runner models and structured catalogs",
+  "description": "Proves the gateway reports a structured runner model catalog, keeps an explicit model when it is outside the saved visible set, leaves stored runs unchanged, reports the shared picker defaults before a save, keeps the native default selectable, and that Command Center loads saved defaults on direct Evals entry, saves visible defaults, offers only accepted efforts for a catalog-only model, and drops a stale catalog response.",
+  "paramsSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "ui_url": {
+        "type": "string",
+        "default": "http://localhost:5881"
+      }
+    }
+  },
+  "workflow": {
+    "entry": "catalog-codex",
+    "nodes": {
+      "catalog-codex": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.modelCatalog '{\"runner\":\"codex\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-codex-catalog",
+        "intent": "Read the Codex model catalog through the sandbox gateway."
+      },
+      "assert-codex-catalog": {
+        "action": "assert_output",
+        "source": "catalog-codex",
+        "stream": "stdout",
+        "contains": "\"status\": \"ready\"",
+        "next": "assert-codex-model",
+        "intent": "The Codex catalog is ready from its structured file."
+      },
+      "assert-codex-model": {
+        "action": "assert_output",
+        "source": "catalog-codex",
+        "stream": "stdout",
+        "contains": "\"id\": \"gpt-6-astra\"",
+        "next": "assert-codex-reasoning",
+        "intent": "The catalog includes the runner-reported Astra model."
+      },
+      "assert-codex-reasoning": {
+        "action": "assert_output",
+        "source": "catalog-codex",
+        "stream": "stdout",
+        "contains": "\"ultra\"",
+        "next": "assert-codex-source",
+        "intent": "Astra's structured reasoning modes include ultra."
+      },
+      "assert-codex-source": {
+        "action": "assert_output",
+        "source": "catalog-codex",
+        "stream": "stdout",
+        "contains": "\"source\": \"structured-file\"",
+        "next": "catalog-claude",
+        "intent": "The catalog came from a structured file, not runner text."
+      },
+      "catalog-claude": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.modelCatalog '{\"runner\":\"claude\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-claude-unsupported",
+        "intent": "Ask for a catalog from a runner that does not declare one."
+      },
+      "assert-claude-unsupported": {
+        "action": "assert_output",
+        "source": "catalog-claude",
+        "stream": "stdout",
+        "contains": "\"status\": \"unsupported\"",
+        "next": "catalog-pi-unavailable",
+        "intent": "Claude is reported unsupported instead of a guessed model list."
+      },
+      "catalog-pi-unavailable": {
+        "action": "command",
+        "cmd": "set -euo pipefail; src=\"$HOME/.pi/agent/models-store.json\"; bak=\"$(mktemp)\"; cp \"$src\" \"$bak\"; restore() { cp \"$bak\" \"$src\"; rm -f \"$bak\"; }; trap restore EXIT; rm \"$src\"; env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.modelCatalog '{\"runner\":\"pi\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-pi-unavailable",
+        "intent": "Hide the Pi structured catalog for one read and ask the gateway again."
+      },
+      "assert-pi-unavailable": {
+        "action": "assert_output",
+        "source": "catalog-pi-unavailable",
+        "stream": "stdout",
+        "contains": "\"status\": \"unavailable\"",
+        "next": "snapshot-runs",
+        "intent": "A missing structured catalog is unavailable and is not replaced from runner text."
+      },
+      "snapshot-runs": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway run.list '{\"limit\":20}' > /tmp/manual-000131-runs-before.json && wc -c < /tmp/manual-000131-runs-before.json",
+        "timeout_ms": 30000,
+        "next": "set-visible-codex",
+        "intent": "Record the sandbox run list before changing visible models."
+      },
+      "set-visible-codex": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.set '{\"runner\":\"codex\",\"models\":[\"gpt-5.4\"]}'",
+        "timeout_ms": 30000,
+        "next": "assert-visible-saved",
+        "intent": "Save a Codex visible-default list that omits the current Astra selection."
+      },
+      "assert-visible-saved": {
+        "action": "assert_output",
+        "source": "set-visible-codex",
+        "stream": "stdout",
+        "contains": "\"configured\": true",
+        "next": "read-retained-choice",
+        "intent": "The gateway stored the operator's visible defaults."
+      },
+      "read-retained-choice": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.get '{\"runner\":\"codex\",\"selectedModel\":\"gpt-6-astra\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-retained-model",
+        "intent": "Read the visible set while an older Astra selection is still explicit."
+      },
+      "assert-retained-model": {
+        "action": "assert_output",
+        "source": "read-retained-choice",
+        "stream": "stdout",
+        "contains": "\"retainedModel\": \"gpt-6-astra\"",
+        "next": "compare-runs",
+        "intent": "The explicit Astra selection stays valid outside the saved visible set."
+      },
+      "compare-runs": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway run.list '{\"limit\":20}' > /tmp/manual-000131-runs-after.json && cmp /tmp/manual-000131-runs-before.json /tmp/manual-000131-runs-after.json && echo RUNS_UNCHANGED",
+        "timeout_ms": 30000,
+        "next": "assert-runs-unchanged",
+        "intent": "Read the run list again after the visible-model write."
+      },
+      "assert-runs-unchanged": {
+        "action": "assert_output",
+        "source": "compare-runs",
+        "stream": "stdout",
+        "contains": "RUNS_UNCHANGED",
+        "next": "read-seed-pi",
+        "intent": "Stored runs still have the same payload, including any historical model."
+      },
+      "read-seed-pi": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.get '{\"runner\":\"pi\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-seed-pi-unsaved",
+        "intent": "Read Pi's visible models before any Pi set is saved."
+      },
+      "assert-seed-pi-unsaved": {
+        "action": "assert_output",
+        "source": "read-seed-pi",
+        "stream": "stdout",
+        "contains": "\"configured\": false",
+        "next": "assert-seed-pi-anthropic",
+        "intent": "Pi has no saved visible set on this gateway."
+      },
+      "assert-seed-pi-anthropic": {
+        "action": "assert_output",
+        "source": "read-seed-pi",
+        "stream": "stdout",
+        "contains": "anthropic/claude-opus-5",
+        "next": "read-seed-cursor",
+        "intent": "Unsaved Pi keeps the picker's Anthropic models."
+      },
+      "read-seed-cursor": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.get '{\"runner\":\"cursor\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-seed-cursor",
+        "intent": "Read Cursor's visible models before any Cursor set is saved."
+      },
+      "assert-seed-cursor": {
+        "action": "assert_output",
+        "source": "read-seed-cursor",
+        "stream": "stdout",
+        "contains": "composer-2.5-fast",
+        "next": "read-native-catalog",
+        "intent": "Unsaved Cursor keeps the picker models the native list lacks."
+      },
+      "read-native-catalog": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway native.session.catalog '{}' | node -e 'let s=\"\";process.stdin.on(\"data\",(d)=>(s+=d)).on(\"end\",()=>{const c=JSON.parse(s).runners.find((r)=>r.runner===\"codex\");console.log(c.models.includes(c.defaultModel)?\"NATIVE_DEFAULT_SELECTABLE \"+c.defaultModel+\" in \"+c.models.join(\",\"):\"NATIVE_DEFAULT_MISSING \"+c.defaultModel+\" not in \"+c.models.join(\",\"))})'",
+        "timeout_ms": 30000,
+        "next": "assert-native-default",
+        "intent": "Read the native session catalog while Codex visibility omits its default model."
+      },
+      "assert-native-default": {
+        "action": "assert_output",
+        "source": "read-native-catalog",
+        "stream": "stdout",
+        "contains": "NATIVE_DEFAULT_SELECTABLE gpt-6-astra",
+        "next": "open-evals-direct",
+        "intent": "A new native Codex session's default model is still in its picker."
+      },
+      "open-evals-direct": {
+        "action": "ui.navigate",
+        "target": "{{params.ui_url}}/?entry=evals#evals",
+        "next": "dismiss-whats-new-evals",
+        "intent": "Load Command Center fresh on the Evals page, before any dispatch picker runs."
+      },
+      "dismiss-whats-new-evals": {
+        "action": "command",
+        "cmd": "node apps/command-center/scripts/agentic/dismiss-whats-new-if-present.mjs",
+        "timeout_ms": 20000,
+        "next": "wait-evals-saved-model",
+        "intent": "Clear the What's new overlay on the Evals page."
+      },
+      "wait-evals-saved-model": {
+        "action": "ui.wait_for",
+        "test_id": "eval-candidate-model-gpt-5.4",
+        "expected": "visible",
+        "timeout_ms": 30000,
+        "next": "wait-evals-unsaved-hidden",
+        "intent": "The Evals candidate offers the saved Codex default."
+      },
+      "wait-evals-unsaved-hidden": {
+        "action": "ui.wait_for",
+        "test_id": "eval-candidate-model-gpt-5.6-sol",
+        "expected": "hidden",
+        "timeout_ms": 30000,
+        "next": "shot-evals-direct",
+        "intent": "A seed model outside the saved set is not offered on direct Evals entry."
+      },
+      "shot-evals-direct": {
+        "action": "ui.screenshot",
+        "label": "after-evals-direct-entry",
+        "next": "open-dispatch",
+        "intent": "Record the Evals candidate models after a direct page load."
+      },
+      "open-dispatch": {
+        "action": "ui.navigate",
+        "target": "{{params.ui_url}}/#dispatch",
+        "next": "dismiss-whats-new",
+        "intent": "Open the dispatch wizard where the operator picks a runner model."
+      },
+      "dismiss-whats-new": {
+        "action": "command",
+        "cmd": "node apps/command-center/scripts/agentic/dismiss-whats-new-if-present.mjs",
+        "timeout_ms": 20000,
+        "next": "wait-dispatch",
+        "intent": "Clear the What's new overlay so the model picker can be clicked."
+      },
+      "wait-dispatch": {
+        "action": "ui.wait_for",
+        "selector": "dispatch-wizard",
+        "timeout_ms": 30000,
+        "next": "open-execution-options",
+        "intent": "The dispatch form is ready for a model choice."
+      },
+      "open-execution-options": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs eval '#dispatch' --file .sandbox/farmslot-farm/worker-task/feat/746-0926-160013/artifacts/open-execution-options.js",
+        "timeout_ms": 20000,
+        "next": "choose-claude",
+        "intent": "Open the execution options so the model choices are in the page flow."
+      },
+      "choose-claude": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-option-claude\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-models-ready",
+        "intent": "Select Claude so the proof starts from that runner's visible models."
+      },
+      "wait-models-ready": {
+        "action": "ui.wait_for",
+        "test_id": "runner-models-ready",
+        "timeout_ms": 20000,
+        "next": "scroll-claude-models",
+        "intent": "The Claude model choices have loaded from the gateway."
+      },
+      "scroll-claude-models": {
+        "action": "ui.scroll",
+        "test_id": "runner-model-opus",
+        "scroll_into_view": true,
+        "next": "shot-before-visible",
+        "intent": "The Claude model choices sit in the operator's view."
+      },
+      "shot-before-visible": {
+        "action": "ui.screenshot",
+        "path": "screenshots/before-visible-models.png",
+        "label": "Claude visible models before catalog",
+        "next": "open-claude-catalog",
+        "intent": "Record the Claude model choices the operator sees before a catalog is opened."
+      },
+      "open-claude-catalog": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-model-catalog-toggle\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-unsupported",
+        "intent": "Ask the picker to load Claude's catalog."
+      },
+      "wait-unsupported": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-catalog-status",
+        "text_contains": [
+          "does not report a model catalog"
+        ],
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "shot-unsupported",
+        "intent": "The picker states that this runner has no catalog capability."
+      },
+      "shot-unsupported": {
+        "action": "ui.screenshot",
+        "path": "screenshots/after-unsupported-catalog.png",
+        "label": "Unsupported runner catalog",
+        "next": "choose-codex",
+        "intent": "Record the message that this runner has no model catalog."
+      },
+      "choose-codex": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-option-codex\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-codex-models",
+        "intent": "Switch the picker to Codex after the visible defaults were narrowed."
+      },
+      "wait-codex-models": {
+        "action": "ui.wait_for",
+        "test_id": "runner-models-ready",
+        "timeout_ms": 20000,
+        "next": "scroll-codex-models",
+        "intent": "The Codex choices have loaded the saved visible defaults."
+      },
+      "scroll-codex-models": {
+        "action": "ui.scroll",
+        "test_id": "runner-model-gpt-5.4",
+        "scroll_into_view": true,
+        "next": "wait-visible-default",
+        "intent": "The saved Codex default sits in the operator's view."
+      },
+      "wait-visible-default": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-gpt-5.4",
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "wait-retained-astra",
+        "intent": "The saved visible default gpt-5.4 is on screen."
+      },
+      "wait-retained-astra": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-gpt-6-astra",
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "wait-seed-hidden",
+        "intent": "The current Astra selection stays visible even though it is not a saved default."
+      },
+      "wait-seed-hidden": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-gpt-5.6-sol",
+        "expected": "hidden",
+        "timeout_ms": 20000,
+        "next": "shot-visible-defaults",
+        "intent": "A model that is neither saved nor selected is not shown as a default."
+      },
+      "shot-visible-defaults": {
+        "action": "ui.screenshot",
+        "path": "screenshots/after-visible-defaults.png",
+        "label": "Saved visible defaults plus retained selection",
+        "next": "open-codex-catalog",
+        "intent": "Record the narrowed Codex choices with the older Astra selection still present."
+      },
+      "open-codex-catalog": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-model-catalog-toggle\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-catalog-model",
+        "intent": "Load the full Codex catalog on demand."
+      },
+      "wait-catalog-model": {
+        "action": "ui.wait_for",
+        "test_id": "runner-catalog-default-gpt-6-astra",
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "select-astra-default",
+        "intent": "The runner-reported Astra model is offered in the full catalog."
+      },
+      "select-astra-default": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-catalog-default-gpt-6-astra\"]'",
+        "timeout_ms": 20000,
+        "next": "save-visible-defaults",
+        "intent": "Include Astra in the models shown by default."
+      },
+      "save-visible-defaults": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-visible-models-save\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-saved",
+        "intent": "Save the visible-default selection from the picker."
+      },
+      "wait-saved": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-catalog-status",
+        "text_contains": [
+          "Visible models saved"
+        ],
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "shot-catalog",
+        "intent": "The picker confirms the visible defaults were saved."
+      },
+      "shot-catalog": {
+        "action": "ui.screenshot",
+        "path": "screenshots/after-runner-catalog.png",
+        "label": "Codex catalog and saved visible defaults",
+        "next": "read-saved-visible",
+        "intent": "Record the Codex catalog after Astra is added to the visible defaults."
+      },
+      "read-saved-visible": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.get '{\"runner\":\"codex\"}'",
+        "timeout_ms": 30000,
+        "next": "assert-ui-saved-astra",
+        "intent": "Read back the visible defaults after the picker save."
+      },
+      "assert-ui-saved-astra": {
+        "action": "assert_output",
+        "source": "read-saved-visible",
+        "stream": "stdout",
+        "contains": "gpt-6-astra",
+        "next": "select-luna-default",
+        "intent": "The picker save persisted Astra as a visible default."
+      },
+      "select-luna-default": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-catalog-default-gpt-6-luna\"]'",
+        "timeout_ms": 20000,
+        "next": "save-luna-default",
+        "intent": "Add the catalog-only Luna model to the visible defaults."
+      },
+      "save-luna-default": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-visible-models-save\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-luna-pill",
+        "intent": "Save the visible defaults with Luna included."
+      },
+      "wait-luna-pill": {
+        "action": "ui.wait_for",
+        "test_id": "runner-model-gpt-6-luna",
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "choose-luna",
+        "intent": "Luna is now a model choice."
+      },
+      "choose-luna": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs click '#dispatch' '[data-testid=\"runner-model-gpt-6-luna\"]'",
+        "timeout_ms": 20000,
+        "next": "wait-luna-xhigh",
+        "intent": "Pick the catalog-only Luna model while its catalog modes are loaded."
+      },
+      "wait-luna-xhigh": {
+        "action": "ui.wait_for",
+        "test_id": "runner-effort-xhigh",
+        "expected": "visible",
+        "timeout_ms": 20000,
+        "next": "wait-luna-max-hidden",
+        "intent": "Luna offers xhigh, which launch validation accepts."
+      },
+      "wait-luna-max-hidden": {
+        "action": "ui.wait_for",
+        "test_id": "runner-effort-max",
+        "expected": "hidden",
+        "timeout_ms": 20000,
+        "next": "shot-luna-efforts",
+        "intent": "The catalog's max mode is not offered because launch validation rejects it for Luna."
+      },
+      "shot-luna-efforts": {
+        "action": "ui.screenshot",
+        "label": "after-catalog-effort-accepted",
+        "next": "probe-stale-catalog",
+        "intent": "Record the accepted effort choices for the catalog-only model."
+      },
+      "probe-stale-catalog": {
+        "action": "command",
+        "cmd": "FARMSLOT_CDP_PORT=9331 node apps/command-center/scripts/cdp.mjs eval '#dispatch' --file .sandbox/farmslot-farm/worker-task/feat/746-0926-160013/artifacts/stale-catalog-probe.js",
+        "timeout_ms": 30000,
+        "next": "assert-stale-catalog-dropped",
+        "intent": "Start a Codex catalog read and switch to Claude before it answers."
+      },
+      "assert-stale-catalog-dropped": {
+        "action": "assert_output",
+        "source": "probe-stale-catalog",
+        "stream": "stdout",
+        "contains": "STALE_CATALOG_DROPPED runner=claude",
+        "next": "restore-visible-seed",
+        "intent": "The late Codex catalog is not kept for Claude, so it cannot be saved under the wrong runner."
+      },
+      "restore-visible-seed": {
+        "action": "command",
+        "cmd": "env -u FARMSLOT_GATEWAY_TOKEN -u FARMSLOT_GATEWAY_PASSWORD -u FARMSLOT_ROOT FARMSLOT_GATEWAY=ws://127.0.0.1:8808 node apps/command-center/scripts/cdp.mjs gateway runner.visibleModels.set '{\"runner\":\"codex\",\"models\":[\"gpt-6-astra\",\"gpt-6-sol\",\"gpt-5.6-sol\",\"gpt-5.6-terra\",\"gpt-5.6-luna\",\"gpt-5.5\",\"gpt-5.4\"]}'",
+        "timeout_ms": 30000,
+        "next": "done",
+        "intent": "Put the Codex visible defaults back to the built-in seed."
+      },
+      "done": {
+        "action": "end",
+        "status": "pass"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "slotId": "macpro-ff-1",
+  "ownerRunId": "daa41c47-fe00-45bf-b98f-33dfc5818e30",
+  "ownerFamilyId": "daa41c47-fe00-45bf-b98f-33dfc5818e30",
+  "createdAt": "2026-09-26T08:10:00Z",
+  "criteria": {
+    "structured-catalog": "state — Codex ready from structured-file with Astra ultra; Claude unsupported; Pi unavailable when its file is missing",
+    "retained-selection": "state — explicit Astra kept outside the saved set; run.list unchanged",
+    "seed-defaults": "state — unsaved Pi and Cursor keep picker defaults",
+    "native-default": "state — native catalog keeps the native default when visibility omits it",
+    "evals-direct-entry": "mixed — direct Evals entry shows saved Codex visibility",
+    "dispatch-picker": "mixed — Claude unsupported message, Codex narrowed list with retained Astra, catalog save",
+    "effort-accepted": "mixed — catalog-only model offers only gateway-accepted efforts",
+    "stale-catalog": "mixed — a catalog response for a previous runner is dropped"
+  },
+  "requirements": [
+    { "capabilityId": "sandbox-gateway-ui", "reason": "Recipe RPC nodes and UI run against the slot sandbox gateway 8808 and Vite UI 5881", "mode": "mixed", "parameters": {} },
+    { "capabilityId": "browser-cdp", "reason": "Dispatch picker and Evals proof through CDP 9331 with screenshots and video", "mode": "visual", "parameters": {} }
+  ]
+}

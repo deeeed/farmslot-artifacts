@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "lease": {
+    "id": "cap-3159c50d-8e90-4669-83f6-fce34b12fe63",
+    "slotId": "macpro-ff-1",
+    "project": "farmslot-farm",
+    "capabilityId": "browser-cdp",
+    "owner": {
+      "runId": "daa41c47-fe00-45bf-b98f-33dfc5818e30",
+      "familyId": "daa41c47-fe00-45bf-b98f-33dfc5818e30"
+    },
+    "state": "acquired",
+    "referenceCount": 1,
+    "parameters": {},
+    "provenance": {
+      "project": "farmslot-farm",
+      "providerId": "browser-cdp",
+      "version": "1",
+      "digest": "7a745a8fd8787f4db86877c75cc9213cdffc40e73a6a20a6afc9cc37819e447d"
+    },
+    "health": {
+      "state": "healthy",
+      "checkedAt": "2026-09-26T08:04:56.099Z"
+    },
+    "dependencyLeaseIds": [],
+    "updatedAt": "2026-09-26T08:04:56.099Z",
+    "machine": "macpro",
+    "claims": [
+      {
+        "id": "cdp-port",
+        "access": "exclusive",
+        "scope": "slot"
+      },
+      {
+        "id": "chrome",
+        "access": "exclusive",
+        "scope": "slot"
+      }
+    ],
+    "acquiredAt": "2026-09-26T08:04:56.099Z"
+  },
+  "dependencyLeases": [],
+  "idempotent": true
+}

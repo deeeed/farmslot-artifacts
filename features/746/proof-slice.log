@@ -1,0 +1,9 @@
+Recipe run: pass
+Artifacts: /Users/deeeed/dev/farmslot-wt/farmslot-1/.sandbox/farmslot-farm/worker-task/feat/746-0926-160013/artifacts/recipe-run-slice/artifact-manifest.json
+[sync-recipe-evidence] screenshot -> artifacts/after-runner-catalog.png
+[sync-recipe-evidence] screenshot -> artifacts/after-unsupported-catalog.png
+[sync-recipe-evidence] screenshot -> artifacts/after-visible-defaults.png
+[sync-recipe-evidence] screenshot -> artifacts/before-visible-models.png
+[sync-recipe-evidence] video -> artifacts/after.mp4
+ok: .sandbox/farmslot-farm/worker-task/feat/746-0926-160013/artifacts/after.mp4 (8520161 bytes, moov present)
+[sync-recipe-evidence] done

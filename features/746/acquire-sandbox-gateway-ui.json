@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "lease": {
+    "id": "cap-5fd24801-03a6-43e9-991d-92d6790cf637",
+    "slotId": "macpro-ff-1",
+    "project": "farmslot-farm",
+    "capabilityId": "sandbox-gateway-ui",
+    "owner": {
+      "runId": "daa41c47-fe00-45bf-b98f-33dfc5818e30",
+      "familyId": "daa41c47-fe00-45bf-b98f-33dfc5818e30"
+    },
+    "state": "acquired",
+    "referenceCount": 1,
+    "parameters": {},
+    "provenance": {
+      "project": "farmslot-farm",
+      "providerId": "sandbox-gateway-ui",
+      "version": "1",
+      "digest": "f6afe1d331968f18ce08a0a0e4975a612dd6323cfd12bc58a1772b7b7d08470b"
+    },
+    "health": {
+      "state": "healthy",
+      "checkedAt": "2026-09-26T08:04:46.368Z",
+      "detail": "dev-server is running"
+    },
+    "dependencyLeaseIds": [],
+    "updatedAt": "2026-09-26T08:04:46.368Z",
+    "machine": "macpro",
+    "claims": [
+      {
+        "id": "gateway-port",
+        "access": "shared",
+        "scope": "slot"
+      },
+      {
+        "id": "vite-port",
+        "access": "shared",
+        "scope": "slot"
+      }
+    ],
+    "acquiredAt": "2026-09-26T08:04:46.368Z"
+  },
+  "dependencyLeases": [],
+  "idempotent": false
+}
