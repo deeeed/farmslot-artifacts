@@ -1,0 +1,23 @@
+{
+  "sourceHead": "3b1e69065744662c6d77cfdabb1c5bd317fe52c3",
+  "baseline": {
+    "sha": "2afef492723a5bdd4e43d2a2afdecec93cc10acd",
+    "exitCode": 0,
+    "trailerPresent": true,
+    "attributionEnabled": true
+  },
+  "candidate": {
+    "sha": "2bc0add9adb23a2e27f9c6ba4bbb10c6cbd4cec3",
+    "exitCode": 0,
+    "trailerPresent": false,
+    "attributionEnabled": false
+  },
+  "samePrompt": true,
+  "promptMentionsAttribution": false,
+  "activeGitHooks": [],
+  "identicalGitTree": "1c553985e13c6860dd403d52b68f2e008fdd1ad1",
+  "fixtureWorkingTreesClean": true,
+  "pass": true,
+  "sameCliAndModel": true,
+  "scope": "Real CLI commits through candidate gateway launch builder/executor using an existing free slot configuration and isolated repos/configs; no admitted farm run or managed checkout change."
+}
