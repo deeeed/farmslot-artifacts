@@ -1,0 +1,34 @@
+{
+  "head": "8f4d0945d512255b5decb9a386b5bc05c8ec2e27",
+  "negative": {
+    "phase": "negative",
+    "oldError": true,
+    "pendingRequests": 1,
+    "reads": 2,
+    "fixtureOnly": true,
+    "productionMutation": false
+  },
+  "positive": {
+    "phase": "positive",
+    "oldError": false,
+    "pendingRequests": 1,
+    "reads": 2,
+    "fixtureOnly": true,
+    "productionMutation": false
+  },
+  "cleanup": {
+    "ownedSimulator": "cx-capture-companion-retry-20261016",
+    "udid": "5CB8D1B9-FFBC-4554-A2F1-DFA94C8C732D",
+    "shutdown": true,
+    "deleted": true,
+    "productionMutation": false,
+    "foreign8883Untouched": true
+  },
+  "files": {
+    "before.png": "f9615224d752a7ff4ad15a23b422191adf7e3dd90b818097d04008fbe12d0123",
+    "loaded.png": "10194def12af27bc1bc5cf6905cd8ef12bedd323bf3367d0248e5f9ff4612e19",
+    "after.png": "72300ad78f271ea400d3deeffd4856d1448f7fb87ae9c4aa213451c86def1b86"
+  },
+  "readOnlyFixture": true,
+  "productionMutation": false
+}
