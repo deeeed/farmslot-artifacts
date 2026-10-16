@@ -1,0 +1,35 @@
+{
+  "sourceHead": "2fcd0b6dba0a5b39142fd2d8777d9e04ac074f0d",
+  "webShiftPx": 0,
+  "nativeShiftPx": 0.0,
+  "states": [
+    "loading",
+    "loaded",
+    "error"
+  ],
+  "webModes": [
+    "dark",
+    "light",
+    "touch width"
+  ],
+  "native": "owned iOS simulator, production gate renderer in development story",
+  "negativeControl": "Restoring the old summary sizing fails the layout assertion; restoring the fix passes.",
+  "productionMutation": false,
+  "cleanup": {
+    "ownedSimulatorDeleted": true,
+    "privateMetroStopped": true,
+    "privateAutomationDaemonStopped": true
+  },
+  "images": {
+    "dark-loaded.png": "b9be53aa40a8909c8c61485408264597efa520b1456cffc14e52b5e9291c02fb",
+    "light-error.png": "54c7120d430bfb1c68d5cdb4702ea4728a020b1433e33f63d85db9a9d4561899",
+    "light-loading.png": "68b0761b74e83afdfa86cc63959c2fc92f218a7ae5578437647ba2f8bedbe91c",
+    "native-loading.png": "4336d42df026d144eb398d2a44e1f438664ac0ca90d8868a4a4e02c6f8ade12a",
+    "native-loaded.png": "40a03e9d42937469e6de576267ac576a220149b97b29b96d94e5d5c77e00c8d5",
+    "touch-loaded.png": "29a95e70a1e71376785be3b65e1df62a14a91a1aa60c34f76e5d784b032f7fff",
+    "native-error.png": "b46c86685c526476ecb98f60ebdca04bec6844576b3801cd31a3c10aee4a1fb4",
+    "touch-loading.png": "d65c59cdb87bc96e4847016f42e9ff22baff4272f658b7cc40a94d155f9b08bf",
+    "dark-loading.png": "8ed6796dd9c759736bfc44413a2666fdea3ac56aa26898c510eae70b58ec722a",
+    "light-loaded.png": "57a933ccda3a86e32311af4347d2790c0a52fb496467c79e5309cf2566d417ac"
+  }
+}
