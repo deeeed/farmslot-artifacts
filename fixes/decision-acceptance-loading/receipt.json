@@ -1,0 +1,110 @@
+{
+  "head": "18de146b663bca567f15787386023199d0c2b20a",
+  "negativeFrames": [
+    {
+      "name": "loading",
+      "root": {
+        "width": 361,
+        "y": 432.6666564941406,
+        "x": 16,
+        "height": 82.33334350585938
+      }
+    },
+    {
+      "name": "error",
+      "root": {
+        "width": 361,
+        "y": 432.6666564941406,
+        "x": 16,
+        "height": 194.33334350585938
+      }
+    }
+  ],
+  "positiveFrames": [
+    {
+      "name": "loading",
+      "root": {
+        "height": 423.0000305175781,
+        "y": 432.6666564941406,
+        "width": 361,
+        "x": 16
+      },
+      "viewport": {
+        "y": 514.9999923706055,
+        "x": 16,
+        "height": 340.66668701171875,
+        "width": 361
+      }
+    },
+    {
+      "name": "error",
+      "root": {
+        "y": 432.6666564941406,
+        "height": 423.0000305175781,
+        "x": 16,
+        "width": 361
+      },
+      "viewport": {
+        "y": 514.9999923706055,
+        "x": 16,
+        "width": 361,
+        "height": 340.66668701171875
+      }
+    },
+    {
+      "name": "retry",
+      "root": {
+        "y": 432.6666564941406,
+        "width": 361,
+        "x": 16,
+        "height": 423.0000305175781
+      },
+      "viewport": {
+        "y": 514.9999923706055,
+        "height": 340.66668701171875,
+        "x": 16,
+        "width": 361
+      }
+    },
+    {
+      "name": "loaded",
+      "root": {
+        "x": 16,
+        "height": 423.0000305175781,
+        "width": 361,
+        "y": 432.6666564941406
+      },
+      "viewport": {
+        "x": 16,
+        "height": 340.66668701171875,
+        "width": 361,
+        "y": 514.9999923706055
+      }
+    }
+  ],
+  "negativeHeightShiftPx": 112,
+  "positiveHeightShiftPx": 0,
+  "negativeRetryAvailable": false,
+  "positiveRetryAvailable": true,
+  "retryTargetPixels": {
+    "width": 58.33,
+    "height": 44
+  },
+  "sourceRestoration": {
+    "restored": true,
+    "expectedSha256": "6befce90868b1f41af43c79c2ff18e98ae240d42e7c5844795d4386ebfd6e771",
+    "actualSha256": "6befce90868b1f41af43c79c2ff18e98ae240d42e7c5844795d4386ebfd6e771",
+    "negativeOnlyRestoredPriorConsumer": true
+  },
+  "ownedSimulatorDeleted": true,
+  "fixtureOnly": true,
+  "productionMutation": false,
+  "files": {
+    "loaded.png": "5bd395867ae5283037cb97e8040971ba37c88c064e8a1a0257985ad700f2fd0e",
+    "retry.png": "5b5eef04398ea357ee0eb9a6cc540535c4425ce782ba7dff2274c84c626c2046",
+    "before-error.png": "42e71be77d4ea9771c9404dceb12bb1d12709061cd70cb43f89b2aab5c24a4f5",
+    "error.png": "5a967c088f2377e5bbaa1cdbbe5e5eddcee09b7ec010cef3aced0eeccdb9f8ee",
+    "before-loading.png": "2a0c0711a38f0c77b39a128f53c8f9aee3e1b8b1d316b4891dc57928cbd5462e",
+    "loading.png": "5b5eef04398ea357ee0eb9a6cc540535c4425ce782ba7dff2274c84c626c2046"
+  }
+}
