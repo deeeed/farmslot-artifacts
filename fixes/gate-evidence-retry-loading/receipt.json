@@ -1,0 +1,86 @@
+{
+  "scope": "production workspace cold read Retry",
+  "negative": "aria-busy remained false after Retry",
+  "positive": "loading true until first successful response; cached refresh stays loaded",
+  "maxShiftPx": 0,
+  "readOnlyFixture": true,
+  "productionMutation": false,
+  "files": {
+    "before.png": "90a8d734b7da83a5b2564131e50173e161483c9e64831c69dbcfa445d0f34347",
+    "touch-after.png": "d53896b453f279b375bb357a24e828c1e7f1a046c99f2e7e4650be2e81fdf5dc",
+    "after.png": "02524cc3cd481b1febd3180fe691769a88de41cc580ba57a0d258de282c5dac9"
+  },
+  "head": "d5f4a850fb8cddb1826cf57c14f17601f314f802",
+  "desktop": {
+    "compact": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "loadedMetadata": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "coldError": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "coldRetry": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "loaded": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "refreshing": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "error": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "paused": {
+      "height": 877.796875,
+      "below": 877.796875
+    },
+    "reads": 5,
+    "maxShift": 0
+  },
+  "touch": {
+    "compact": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "loadedMetadata": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "coldError": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "coldRetry": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "loaded": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "refreshing": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "error": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "paused": {
+      "height": 655.390625,
+      "below": 655.390625
+    },
+    "reads": 5,
+    "maxShift": 0
+  }
+}
