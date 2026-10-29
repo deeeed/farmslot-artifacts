@@ -1,0 +1,229 @@
+{
+  "beforeHead": "bb5fe91c0087cee820ff43717393f2879d086b1b",
+  "afterHead": "68847935b7ce2d72396e78bbc13db17977348396",
+  "scope": "Mounted product UI over an isolated observed-WebSocket fixture; no live-run or native acceptance. No UI/cache/SQLite state injection.",
+  "assets": [
+    {
+      "path": "run-before.mp4",
+      "bytes": 263385,
+      "sha256": "f8c92c7512ca86accb29f929874aeb8be51d3c1fba5290fe95301cab2bfaea70"
+    },
+    {
+      "path": "evals-before.mp4",
+      "bytes": 121495,
+      "sha256": "cbd90f4cfd06264995d04c88ad28c57b68e7b0fe4a08252a749fb8ad5cdf9eb4"
+    },
+    {
+      "path": "run-after-1280.mp4",
+      "bytes": 68469,
+      "sha256": "8ffb572dc838b9e435c8deb4137c257b4ac5b2deb6e5300a01db7a88892b3692"
+    },
+    {
+      "path": "evals-after-1280.mp4",
+      "bytes": 104985,
+      "sha256": "5d20927c487c9e17e19dd32590da9bbbaf92aea69f330a22316d531cf583914c"
+    },
+    {
+      "path": "run-after-414.mp4",
+      "bytes": 58042,
+      "sha256": "5e7c167efbf55bd7410baae1df1b9761b459f83119726f1cf54c93d4c39891ae"
+    },
+    {
+      "path": "evals-after-414.mp4",
+      "bytes": 68207,
+      "sha256": "05580b9292d2f349573c177a23bb535f87938b5dccdf41b37e6f83b0a5303802"
+    },
+    {
+      "path": "run-after-414.png",
+      "bytes": 63899,
+      "sha256": "ecd35f8a03aca5f5f5bf9d1c50609402da223600e05b3882f8e538e549b40b23"
+    },
+    {
+      "path": "evals-after-414.png",
+      "bytes": 86732,
+      "sha256": "6dac73646c9a18772092cd925edaf433d21e0c745e13f1c05f485bbb121a16f9"
+    }
+  ],
+  "geometry": {
+    "before-final/run-refetch.json": {
+      "shiftPx": 1390.640625,
+      "samples": 12
+    },
+    "before-final/evals-refetch.json": {
+      "shiftPx": 23.390625,
+      "samples": 12
+    },
+    "after-final/evals-414-refetch.json": {
+      "shiftPx": 0,
+      "samples": 12
+    },
+    "after-final/run-1280-refetch.json": {
+      "shiftPx": 0,
+      "samples": 12
+    },
+    "after-final/evals-1280-refetch.json": {
+      "shiftPx": 0,
+      "samples": 12
+    },
+    "after-final/run-414-refetch.json": {
+      "shiftPx": 0,
+      "samples": 12
+    }
+  },
+  "sourceDelta": [
+    {
+      "path": "apps/command-center/scripts/probes/refetch-notices.js",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "2f1e2b3a7112ff512afe468403d52c5fd462606ceb34841deff013baa1fa1722",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/scripts/prove-stable-layout.mjs",
+      "beforeExists": true,
+      "beforeSha256": "c380d56f400f0457ff467071deed56e8adc1be697644b1238fd7a35348035bd0",
+      "afterSha256": "66c51c99212d71e2d0404cb93234952fe5c04df9e8b56f7d467c087df7259c4c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/scripts/stable-layout-refetch-proof.mjs",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "40e5d75d3ea81dbbd4ada7518fd8da382bb17b40c6005b9c49937ea7b49403ec",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/CHANGELOG.md",
+      "beforeExists": true,
+      "beforeSha256": "798fb538595efffacb0c3bb7020a376e236409e80098526d994c5a45ba8f1ff0",
+      "afterSha256": "9215f2d83686d4fc57ff003cf71f76c234b98bd8954467479a3096e5705b6376",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/evals/eval-cockpit-candidate-renderer.ts",
+      "beforeExists": true,
+      "beforeSha256": "0b53a5f5834608a343df96764387268c2e2671d64b963883b79395ffa1e13117",
+      "afterSha256": "bd2b0f18e57fcc3ae73e04f739700b27352a1a8338941e53577005ad8ba46479",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/evals/eval-cockpit-shell-renderer.ts",
+      "beforeExists": true,
+      "beforeSha256": "873af5be9526463f72eff201f3bbcde8d629feb9888f392c9785921441970dd9",
+      "afterSha256": "480d4742472dd564c7d87aa92cb553e54e01691532b7a79efd697163e388fe13",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/evals/eval-cockpit-styles.ts",
+      "beforeExists": true,
+      "beforeSha256": "4514c42c68e3981a89f41a1ffcff4f8651fe704680708b9638535299c038446b",
+      "afterSha256": "998dff1267083de1d9c2077417ef693da952d874d4a31d68032160b8f405e1b8",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/evals/eval-cockpit.ts",
+      "beforeExists": true,
+      "beforeSha256": "d9a55ecb43e83fda645b5723913d4aaec4ada8d00201862655a25ca5a052c34b",
+      "afterSha256": "bac1ef423fed5e6b6b6ff1ab76ddfd50d5c8f000c8b558d5fae4135f71f4ee06",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/runs/run-detail.ts",
+      "beforeExists": true,
+      "beforeSha256": "0131fde02a5da296da16f88c4c9a4093d29f1146ee4096b02df889e3dfb16106",
+      "afterSha256": "422be3a10e7f4f48b00cb3db25fbff8b51864ba437a3ae7ff3f85954a631b7fd",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/runs/run-display-resolutions.test.ts",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "3ba78a8294e831074dfb5fb1010901002bfe2d8236836642933c8448a7d01512",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/runs/run-display-resolutions.ts",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "7fcaa55a179af13754adac1fb9830fa4b9251ab99f5db04b80ab8d71bb8c95d2",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/shared/retained-notice.test.ts",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "9a4585d2ad8ef40db6848845b3f5a1faadaac8938a0ed7077a60e32f42f973db",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/shared/retained-notice.ts",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "bbffe0777b66850ca951465929f058c228a20d32f445e848a14e3c3191f28294",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace-notice.test.ts",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "afterSha256": "013ee01df1e983acde98384b969f2352764fe977f28f5129fed2608e6d5aa7d9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace-package-renderers.ts",
+      "beforeExists": true,
+      "beforeSha256": "f3c108e5c5038e0b2826bee634098fd0cc74b79445fcfc4e5beea0d69e89ed46",
+      "afterSha256": "3206e9641e7ac04db8cc26360723245ef01e0ec8b283fc4023293e7dd325cccf",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace-queries.test.ts",
+      "beforeExists": true,
+      "beforeSha256": "57bf9f006b35f688dbd665152450d11ef355e63cba9f22e15c72b97edea9bafb",
+      "afterSha256": "66058bc29dca2f0330c2b0bbdff1db9b233c0cc2700a0bbd23e892edafbcf69f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace-queries.ts",
+      "beforeExists": true,
+      "beforeSha256": "f45db0db6252bc921c7a00f6d27ac3103d15eec1c52292b270b5c5cf413ca866",
+      "afterSha256": "addc890079420d3f90f3c2d9e2daaef7a94b22aa5a8022a444671398b83cd703",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace-review-modal-styles.ts",
+      "beforeExists": true,
+      "beforeSha256": "4d7f42eb51c48efbd726623b20ce0db06752092c933103637005e1cbf267be2f",
+      "afterSha256": "7d6827f6820c1e9d5c57b01407f5a1897b76664e3a87512c9f5d1a109cd302bf",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/components/workspace/ready-workspace.ts",
+      "beforeExists": true,
+      "beforeSha256": "3b544110261da904f8dcba116a6f5e7cd44e152cb9737be47a83c4c427df88a6",
+      "afterSha256": "1bc23ceccd8484f45229eea03ab7c0968d73db9e538954a77e4ebce18bd4f4ca",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/utils/runner-visible-models-loader.ts",
+      "beforeExists": true,
+      "beforeSha256": "3df94f3873020afe60e5dfe1458bcbc88d0edd081efb6995d4172bd3143e7163",
+      "afterSha256": "3eab04172c12ba33fc1b16914e55e3306ae4644a0109df54e8a93bdf65812c7d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/command-center/ui/src/utils/runner-visible-models.test.ts",
+      "beforeExists": true,
+      "beforeSha256": "fd346f20b0ef890707671f1beebe1a8c30f7d520327cb2628e278a9ee7a346d8",
+      "afterSha256": "09e47dcfa091d5fb7d630c70833eff4ac953fde8e5edcea2f0e83144c8190562",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/examples/recipes/farmslot/stable-layout-notifications.recipe.json",
+      "beforeExists": true,
+      "beforeSha256": "1033bd2097c7dcace4de7d936d22781194508311b51e2d430c222dfe3af021c0",
+      "afterSha256": "f702a97988f0690982686a631bcbca0d1975a632fdde8c3f8d65c87aeb5e23bc",
+      "mode": "0o644"
+    }
+  ]
+}
