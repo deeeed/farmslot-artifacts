@@ -1,0 +1,110 @@
+{
+  "head": "fc1e0dd78118ec1365fbabcba0baaa1c7d9af20e",
+  "scope": "Mounted browser presentation over an isolated observed-WebSocket fixture. No native/SDK/device/provider/gateway activation.",
+  "environment": {
+    "host": "macpro",
+    "node": "24.19.0",
+    "limit": "Two failed macwork attempts under load164 are retained; no timeout or assertion was weakened."
+  },
+  "views": [
+    {
+      "phase": "before",
+      "width": 1280,
+      "movementPx": 103.78125,
+      "samples": 5,
+      "outageMs": [],
+      "quietGrace": []
+    },
+    {
+      "phase": "before",
+      "width": 414,
+      "movementPx": 146.78125,
+      "samples": 5,
+      "outageMs": [],
+      "quietGrace": []
+    },
+    {
+      "phase": "after",
+      "width": 1280,
+      "movementPx": 0,
+      "samples": 11,
+      "outageMs": [
+        60801
+      ],
+      "quietGrace": [
+        {
+          "quietMs": 26065,
+          "savedCaption": true,
+          "inputDisabled": true,
+          "sendDisabled": true
+        }
+      ]
+    },
+    {
+      "phase": "after",
+      "width": 414,
+      "movementPx": 0,
+      "samples": 5,
+      "outageMs": [],
+      "quietGrace": []
+    }
+  ],
+  "delayedReplies": [
+    {
+      "at": 1793356695119,
+      "replyScheduledAt": 1793356695119,
+      "replyTimerAt": 1793356695369,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356695622,
+      "replyScheduledAt": 1793356695622,
+      "replyTimerAt": 1793356695873,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356696376,
+      "replyScheduledAt": 1793356696376,
+      "replyTimerAt": 1793356696627,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356697634,
+      "replyScheduledAt": 1793356697634,
+      "replyTimerAt": 1793356697884,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356699890,
+      "replyScheduledAt": 1793356699890,
+      "replyTimerAt": 1793356700141,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356704169,
+      "replyScheduledAt": 1793356704169,
+      "replyTimerAt": 1793356704420,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356712454,
+      "replyScheduledAt": 1793356712454,
+      "replyTimerAt": 1793356712705,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    },
+    {
+      "at": 1793356728784,
+      "replyScheduledAt": 1793356728784,
+      "replyTimerAt": 1793356729034,
+      "replyCode": "RESOURCE_OBSERVATION_CHANGED",
+      "socketReadyState": 1
+    }
+  ]
+}

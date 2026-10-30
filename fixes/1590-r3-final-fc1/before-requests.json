@@ -1,0 +1,429 @@
+[
+  {
+    "at": 1793356628094,
+    "method": "auth.connect",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628110,
+    "method": "chat.history",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628110,
+    "method": "chat.sessions",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628114,
+    "method": "fleet.status",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "resource.observers.replace",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "fleet.status",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "backlog.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "workGraph.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "dispatch.queue.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "config.projects",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628317,
+    "method": "decision.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628318,
+    "method": "run.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628318,
+    "method": "run.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628318,
+    "method": "gateway.status",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628318,
+    "method": "pr.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628521,
+    "method": "runtime.posture.status",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628529,
+    "method": "run.get",
+    "mode": "empty",
+    "revision": 0,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356628530,
+    "method": "run.get",
+    "mode": "empty",
+    "revision": 0,
+    "params": {
+      "runId": "layout-run",
+      "view": "snapshot"
+    }
+  },
+  {
+    "at": 1793356628530,
+    "method": "sources.status",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628530,
+    "method": "native.session.read",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628531,
+    "method": "run.list",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628540,
+    "method": "run.recipeRunsForRun",
+    "mode": "empty",
+    "revision": 0
+  },
+  {
+    "at": 1793356628724,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 1,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356628724,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 1
+  },
+  {
+    "at": 1793356628724,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 1
+  },
+  {
+    "at": 1793356628731,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 1
+  },
+  {
+    "at": 1793356628785,
+    "method": "run.get",
+    "mode": "native-error",
+    "revision": 2,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356628785,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-error",
+    "revision": 2
+  },
+  {
+    "at": 1793356628785,
+    "method": "gateway.status",
+    "mode": "native-error",
+    "revision": 2
+  },
+  {
+    "at": 1793356628931,
+    "method": "native.session.read",
+    "mode": "native-error",
+    "revision": 2
+  },
+  {
+    "at": 1793356628940,
+    "method": "fleet.status",
+    "mode": "native-error",
+    "revision": 2
+  },
+  {
+    "at": 1793356629005,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 3,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356629005,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 3
+  },
+  {
+    "at": 1793356629005,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 3
+  },
+  {
+    "at": 1793356629132,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 3
+  },
+  {
+    "at": 1793356629228,
+    "method": "run.get",
+    "mode": "native-changed",
+    "revision": 4,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356629228,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-changed",
+    "revision": 4
+  },
+  {
+    "at": 1793356629228,
+    "method": "gateway.status",
+    "mode": "native-changed",
+    "revision": 4
+  },
+  {
+    "at": 1793356629332,
+    "method": "native.session.read",
+    "mode": "native-changed",
+    "revision": 4
+  },
+  {
+    "at": 1793356629451,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 5,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356629451,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 5
+  },
+  {
+    "at": 1793356629451,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 5
+  },
+  {
+    "at": 1793356629536,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 5
+  },
+  {
+    "at": 1793356629732,
+    "method": "fleet.status",
+    "mode": "native-ready",
+    "revision": 5
+  },
+  {
+    "at": 1793356630054,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 6,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356630054,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 6
+  },
+  {
+    "at": 1793356630054,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 6
+  },
+  {
+    "at": 1793356630055,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 6
+  },
+  {
+    "at": 1793356630118,
+    "method": "run.get",
+    "mode": "native-error",
+    "revision": 7,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356630118,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-error",
+    "revision": 7
+  },
+  {
+    "at": 1793356630119,
+    "method": "gateway.status",
+    "mode": "native-error",
+    "revision": 7
+  },
+  {
+    "at": 1793356630255,
+    "method": "native.session.read",
+    "mode": "native-error",
+    "revision": 7
+  },
+  {
+    "at": 1793356630345,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 8,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356630345,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 8
+  },
+  {
+    "at": 1793356630345,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 8
+  },
+  {
+    "at": 1793356630456,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 8
+  },
+  {
+    "at": 1793356630563,
+    "method": "fleet.status",
+    "mode": "native-ready",
+    "revision": 8
+  },
+  {
+    "at": 1793356630567,
+    "method": "run.get",
+    "mode": "native-changed",
+    "revision": 9,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356630567,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-changed",
+    "revision": 9
+  },
+  {
+    "at": 1793356630568,
+    "method": "gateway.status",
+    "mode": "native-changed",
+    "revision": 9
+  },
+  {
+    "at": 1793356630657,
+    "method": "native.session.read",
+    "mode": "native-changed",
+    "revision": 9
+  },
+  {
+    "at": 1793356630787,
+    "method": "run.get",
+    "mode": "native-ready",
+    "revision": 10,
+    "params": {
+      "runId": "layout-run"
+    }
+  },
+  {
+    "at": 1793356630787,
+    "method": "run.recipeRunsForRun",
+    "mode": "native-ready",
+    "revision": 10
+  },
+  {
+    "at": 1793356630787,
+    "method": "gateway.status",
+    "mode": "native-ready",
+    "revision": 10
+  },
+  {
+    "at": 1793356630858,
+    "method": "native.session.read",
+    "mode": "native-ready",
+    "revision": 10
+  }
+]

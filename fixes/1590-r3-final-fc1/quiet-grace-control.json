@@ -1,0 +1,25 @@
+{
+  "phases": [
+    {
+      "phase": "quiet-grace",
+      "result": "EXPECTED-FAIL",
+      "seconds": 128.487,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "8dfc21bcb85165218066d09c2de2e28e313581d5722de347456766b874667469",
+      "restoredSha256": "7dd99d55630b261d38c8ae9d388b871aa29b1d64e950ffd9c5b6e42e516f8776"
+    }
+  ],
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "browserProfile": "/tmp/cx-native-panel-98715/browser-profile",
+  "browserPid": 99697,
+  "browserBirth": "Fri Oct 30 18:30:44 2026",
+  "restoredFiles": 6253,
+  "result": "PASS",
+  "ports": {
+    "7922": "",
+    "5218": "",
+    "19324": ""
+  },
+  "cleanup": "PASS"
+}

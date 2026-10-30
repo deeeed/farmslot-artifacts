@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "servedHead": "fc1e0dd78118ec1365fbabcba0baaa1c7d9af20e",
+  "executedHead": "2bf92de1f44e1f6be2a58a88e0ac45b1a14e0a93",
+  "controlledFilesIdenticalToServedHead": true,
+  "phases": [
+    {
+      "phase": "quiet-grace",
+      "result": "EXPECTED-FAIL",
+      "seconds": 128.487,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "8dfc21bcb85165218066d09c2de2e28e313581d5722de347456766b874667469",
+      "restoredSha256": "7dd99d55630b261d38c8ae9d388b871aa29b1d64e950ffd9c5b6e42e516f8776"
+    },
+    {
+      "phase": "terminal-aria",
+      "result": "EXPECTED-FAIL",
+      "seconds": 184.47,
+      "source": "apps/command-center/ui/src/components/runs/run-detail-renderers.ts",
+      "mutatedSha256": "0d776ad0b5e2c20a89692ea0627a885885d552999fb4d47d1d80813d8b68d82a",
+      "restoredSha256": "46cf2924d7dbd528b89bcda3a19e039252338d29fd7861599bda366566741aab"
+    }
+  ],
+  "limits": "Final head adds only a stronger terminal-after-reload assertion; full final-head positive proof reran. Earlier five controls stay at their recorded heads."
+}

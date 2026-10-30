@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "head": "fc1e0dd78118ec1365fbabcba0baaa1c7d9af20e",
+  "sourceFilesBytesModes": 6253,
+  "ownedProfileProcesses": 0,
+  "ports": {
+    "7922": "FREE",
+    "5218": "FREE",
+    "19324": "FREE"
+  },
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "ownedMacproScratchAbsent": 18,
+  "ownedMacworkScratchAbsent": 2
+}

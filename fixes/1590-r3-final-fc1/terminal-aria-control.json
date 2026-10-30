@@ -1,0 +1,25 @@
+{
+  "phases": [
+    {
+      "phase": "terminal-aria",
+      "result": "EXPECTED-FAIL",
+      "seconds": 184.47,
+      "source": "apps/command-center/ui/src/components/runs/run-detail-renderers.ts",
+      "mutatedSha256": "0d776ad0b5e2c20a89692ea0627a885885d552999fb4d47d1d80813d8b68d82a",
+      "restoredSha256": "46cf2924d7dbd528b89bcda3a19e039252338d29fd7861599bda366566741aab"
+    }
+  ],
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "browserProfile": "/tmp/cx-native-panel-20640/browser-profile",
+  "browserPid": 21469,
+  "browserBirth": "Fri Oct 30 18:32:58 2026",
+  "restoredFiles": 6253,
+  "result": "PASS",
+  "ports": {
+    "7922": "",
+    "5218": "",
+    "19324": ""
+  },
+  "cleanup": "PASS"
+}

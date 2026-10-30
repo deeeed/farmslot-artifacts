@@ -1,0 +1,7 @@
+{
+  "compileTestHead": "2bf92de1f44e1f6be2a58a88e0ac45b1a14e0a93",
+  "servedHead": "fc1e0dd78118ec1365fbabcba0baaa1c7d9af20e",
+  "unchangedCompilerAndTestInputs": true,
+  "onlyLaterChange": "apps/command-center/scripts/native-panel-proof.mjs",
+  "change": "One stronger DOM assertion after reload; full final positive proof rerun."
+}
