@@ -1,0 +1,22 @@
+[
+  {
+    "label": "b1-before",
+    "frames": 60,
+    "samples": 89,
+    "disabledSamples": 51,
+    "sendDisabledWithDraft": 50,
+    "bannerSamples": 0,
+    "typed": 51,
+    "kept": 36
+  },
+  {
+    "label": "b1-after",
+    "frames": 134,
+    "samples": 162,
+    "disabledSamples": 0,
+    "sendDisabledWithDraft": 0,
+    "bannerSamples": 0,
+    "typed": 51,
+    "kept": 51
+  }
+]
