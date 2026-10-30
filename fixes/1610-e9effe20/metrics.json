@@ -1,0 +1,64 @@
+[
+  {
+    "label": "collapse-before",
+    "frames": 228,
+    "samples": 79,
+    "collapseShots": {
+      "message": {
+        "before": 120,
+        "after": -493,
+        "visible": false,
+        "scrollTop": 690
+      },
+      "fold": {
+        "before": 120,
+        "after": 120,
+        "visible": true,
+        "scrollTop": 239
+      },
+      "messageNearTop": {
+        "before": 420,
+        "after": -193,
+        "visible": false,
+        "scrollTop": 390
+      },
+      "foldToolAtTop": {
+        "before": 180,
+        "after": 180,
+        "visible": true,
+        "scrollTop": 179
+      }
+    }
+  },
+  {
+    "label": "collapse-after",
+    "frames": 207,
+    "samples": 61,
+    "collapseShots": {
+      "message": {
+        "before": 120,
+        "after": 121,
+        "visible": true,
+        "scrollTop": 76
+      },
+      "fold": {
+        "before": 120,
+        "after": 120,
+        "visible": true,
+        "scrollTop": 239
+      },
+      "messageNearTop": {
+        "before": 420,
+        "after": 197,
+        "visible": true,
+        "scrollTop": 0
+      },
+      "foldToolAtTop": {
+        "before": 180,
+        "after": 180,
+        "visible": true,
+        "scrollTop": 179
+      }
+    }
+  }
+]
