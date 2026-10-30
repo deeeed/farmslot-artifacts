@@ -1,0 +1,92 @@
+{
+  "head": "08f28556227cd18b27bcaeaa6892f0be9f841b12",
+  "recordingHead": "f3ae8df7ec8d2f0bf51fc18669639ee2aaf0d793",
+  "headDelta": "One test synchronization change only; rendered product and recording script bytes are identical.",
+  "beforeUiHead": "a1360f03839361d712d7054ab2c988112a0983b2",
+  "browser": "Chrome 156.0.8078.76 on macpro; isolated headless profile",
+  "node": "24.19.0",
+  "after": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "run",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    }
+  ],
+  "before": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 1404.640625
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 23.390625
+    }
+  ],
+  "trayBeforeShiftPx": 96,
+  "protocolRequests": 268,
+  "owningGatewayPhases": [
+    {
+      "phase": "list-web",
+      "result": "PASS",
+      "seconds": 6.868
+    },
+    {
+      "phase": "detail-web",
+      "result": "PASS",
+      "seconds": 6.807
+    },
+    {
+      "phase": "progress-web",
+      "result": "PASS",
+      "seconds": 30.185
+    },
+    {
+      "phase": "progress-detail-web",
+      "result": "PASS",
+      "seconds": 45.789
+    },
+    {
+      "phase": "dispatch-runs-web",
+      "result": "PASS",
+      "seconds": 11.443
+    },
+    {
+      "phase": "inbox-web",
+      "result": "PASS",
+      "seconds": 35.372
+    },
+    {
+      "phase": "family-web",
+      "result": "PASS",
+      "seconds": 11.208
+    }
+  ],
+  "focusedTests": 31,
+  "testElapsedMs": 1512.0,
+  "typecheckSeconds": {
+    "command-center-typecheck": 22.812,
+    "companion-typecheck": 5.426
+  },
+  "limits": "Recordings prove mounted presentation through an observed-WebSocket fixture. Separate owning-Gateway phases prove actual writes and cold reads. No native acceptance, real gate action, worker/provider or device launch."
+}
