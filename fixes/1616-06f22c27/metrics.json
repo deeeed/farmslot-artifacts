@@ -1,0 +1,124 @@
+[
+  {
+    "label": "g5-before",
+    "frames": 193,
+    "samples": 208,
+    "workingLabels": [
+      "Working \u00b7 0s",
+      "Working \u00b7 1s",
+      "Working \u00b7 2s \u00b7 Bash",
+      "Working \u00b7 3s \u00b7 Bash",
+      "Working \u00b7 4s \u00b7 Bash",
+      "Working \u00b7 5s \u00b7 Bash",
+      "Working \u00b7 6s \u00b7 Bash",
+      "Working \u00b7 7s \u00b7 Bash",
+      "Working \u00b7 7s \u00b7 Bash",
+      "Working \u00b7 8s \u00b7 Bash",
+      "Working \u00b7 8s \u00b7 Bash",
+      "Working \u00b7 9s \u00b7 Bash",
+      "Working \u00b7 10s \u00b7 Bash",
+      "Working \u00b7 11s \u00b7 Bash",
+      "Working \u00b7 11s \u00b7 Bash",
+      "Working \u00b7 12s \u00b7 Bash",
+      "Working \u00b7 13s \u00b7 Bash",
+      "Working \u00b7 14s \u00b7 Bash",
+      "Working \u00b7 14s \u00b7 Bash",
+      "Working \u00b7 15s \u00b7 Bash",
+      "Working \u00b7 16s \u00b7 Bash",
+      "Working \u00b7 17s \u00b7 Bash",
+      "Working \u00b7 18s",
+      "Working \u00b7 19s",
+      "Working \u00b7 20s \u00b7 Read",
+      "Working \u00b7 21s \u00b7 Read",
+      "Working \u00b7 22s \u00b7 Read",
+      "Working \u00b7 23s",
+      "Working \u00b7 24s \u00b7 Write",
+      "Working \u00b7 25s \u00b7 Write",
+      "Working \u00b7 26s \u00b7 Write",
+      "Working \u00b7 27s \u00b7 Write",
+      "Working \u00b7 28s \u00b7 Write",
+      "Working \u00b7 29s \u00b7 Write",
+      "Working \u00b7 29s",
+      "Working \u00b7 30s",
+      "Working \u00b7 31s",
+      "Working \u00b7 32s"
+    ],
+    "toolRows": [
+      "Bash \u00b7 completed",
+      "Read \u00b7 completed",
+      "Write \u00b7 completed"
+    ],
+    "toolRowsReopened": [
+      "Bash \u00b7 completed",
+      "Read \u00b7 completed",
+      "Write \u00b7 completed"
+    ],
+    "commandCard": {
+      "text": "{\n  \"input\": {\n    \"command\": \"seq 1 50\",\n    \"description\": \"Print numbers 1 through 50\"\n  },\n  \"output\": \"1\\n2\\n3\\n4\\n5\\n6\\n7\\n8\\n9\\n10\\n11\\n12\\n13\\n14\\n15\\n16\\n17\\n18\\n19\\n20\\n21\\n22\\n23\\n24\\n25\\n26\\n27\\n28\\n29\\n30\\n31\\n32\\n33\\n34\\n35\\n36\\n37\\n38\\n39\\n40\\n41\\n42\\n43\\n44\\n45\\n46\\n47\\n48\\n49\\n50\"\n}",
+      "fits": true
+    },
+    "commandCardReopened": {
+      "text": "{\n  \"input\": {\n    \"command\": \"seq 1 50\",\n    \"description\": \"Print numbers 1 through 50\"\n  },\n  \"output\": \"1\\n2\\n3\\n4\\n5\\n6\\n7\\n8\\n9\\n10\\n11\\n12\\n13\\n14\\n15\\n16\\n17\\n18\\n19\\n20\\n21\\n22\\n23\\n24\\n25\\n26\\n27\\n28\\n29\\n30\\n31\\n32\\n33\\n34\\n35\\n36\\n37\\n38\\n39\\n40\\n41\\n42\\n43\\n44\\n45\\n46\\n47\\n48\\n49\\n50\"\n}",
+      "fits": true
+    },
+    "approvals": 1
+  },
+  {
+    "label": "g5-after",
+    "frames": 171,
+    "samples": 176,
+    "workingLabels": [
+      "Working \u00b7 0s",
+      "Working \u00b7 1s",
+      "Working \u00b7 2s",
+      "Working \u00b7 3s \u00b7 Run seq 1 50",
+      "Working \u00b7 4s \u00b7 Run seq 1 50",
+      "Working \u00b7 4s \u00b7 Run seq 1 50",
+      "Working \u00b7 5s \u00b7 Run seq 1 50",
+      "Working \u00b7 6s \u00b7 Run seq 1 50",
+      "Working \u00b7 7s \u00b7 Run seq 1 50",
+      "Working \u00b7 8s \u00b7 Run seq 1 50",
+      "Working \u00b7 9s \u00b7 Run seq 1 50",
+      "Working \u00b7 10s \u00b7 Run seq 1 50",
+      "Working \u00b7 11s \u00b7 Run seq 1 50",
+      "Working \u00b7 12s \u00b7 Run seq 1 50",
+      "Working \u00b7 13s \u00b7 Run seq 1 50",
+      "Working \u00b7 13s \u00b7 Run seq 1 50",
+      "Working \u00b7 14s \u00b7 Run seq 1 50",
+      "Working \u00b7 15s \u00b7 Run seq 1 50",
+      "Working \u00b7 16s",
+      "Working \u00b7 17s",
+      "Working \u00b7 18s \u00b7 Read CLAUDE.md",
+      "Working \u00b7 18s",
+      "Working \u00b7 19s",
+      "Working \u00b7 20s",
+      "Working \u00b7 21s \u00b7 Change notes.txt",
+      "Working \u00b7 22s \u00b7 Change notes.txt",
+      "Working \u00b7 23s \u00b7 Change notes.txt",
+      "Working \u00b7 23s \u00b7 Change notes.txt",
+      "Working \u00b7 23s",
+      "Working \u00b7 24s",
+      "Working \u00b7 25s",
+      "Working \u00b7 25s"
+    ],
+    "toolRows": [
+      "Run seq 1 50 \u00b7 completed",
+      "Read CLAUDE.md \u00b7 completed",
+      "Change notes.txt \u00b7 completed"
+    ],
+    "toolRowsReopened": [
+      "Run seq 1 50 \u00b7 completed",
+      "Read CLAUDE.md \u00b7 completed",
+      "Change notes.txt \u00b7 completed"
+    ],
+    "commandCard": {
+      "text": "$ seq 1 50\n\u2026 40 earlier lines\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50",
+      "fits": true
+    },
+    "commandCardReopened": {
+      "text": "$ seq 1 50\n\u2026 40 earlier lines\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50",
+      "fits": true
+    },
+    "approvals": 1
+  }
+]
