@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "head": "0db3ee55b84733469c0aee3f977bf9ecd98a893c",
+  "sourceFilesBytesModes": 6253,
+  "ownedProfileProcesses": 0,
+  "ports": {
+    "7922": "FREE",
+    "5218": "FREE",
+    "19324": "FREE"
+  },
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "stoppedOwnedProfiles": 14
+}

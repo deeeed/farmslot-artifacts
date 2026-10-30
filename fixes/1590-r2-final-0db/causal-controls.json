@@ -1,0 +1,53 @@
+{
+  "result": "PASS",
+  "head": "0db3ee55b84733469c0aee3f977bf9ecd98a893c",
+  "allControlledFilesMatchCurrentHead": true,
+  "phases": [
+    {
+      "phase": "default-open",
+      "result": "EXPECTED-FAIL",
+      "seconds": 46.742,
+      "source": "apps/command-center/ui/src/components/runs/run-worker-panel-preferences.ts",
+      "mutatedSha256": "fe1b43483c2f21f9ae22fde229dfaf926ab1f7993dd42bad5e160106afb0de28",
+      "restoredSha256": "847e3e0353e1de48b5754626b4b19fdd84805ccdb885b2232de2160745219527",
+      "executedHead": "d380bff8a5677637062be3112f439df034591e5d"
+    },
+    {
+      "phase": "raw-error-row",
+      "result": "EXPECTED-FAIL",
+      "seconds": 2.245,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "597e5409a7c3f272de2b2112342c69bf4d09f300d46a6564a99825ffc7a3759c",
+      "restoredSha256": "ed28ca90480c878b5b38b3b9153287016613758d9743ec2cb060a05de4a1f810",
+      "executedHead": "d380bff8a5677637062be3112f439df034591e5d"
+    },
+    {
+      "phase": "family-small-target",
+      "result": "EXPECTED-FAIL",
+      "seconds": 68.004,
+      "source": "apps/command-center/ui/src/components/runs/run-detail-session-renderers.ts",
+      "mutatedSha256": "cd26d98ac80ee4060a5cdc932e2007b5c7bcf933f1ddef518a70b53df247cca6",
+      "restoredSha256": "a13020b4d69350f5343d81f7a13a4cde765581cd1afd558a23020c94de213d14",
+      "executedHead": "0db3ee55b84733469c0aee3f977bf9ecd98a893c"
+    },
+    {
+      "phase": "finished-terminal-restores",
+      "result": "EXPECTED-FAIL",
+      "seconds": 114.892,
+      "source": "apps/command-center/ui/src/components/runs/run-detail-renderers.ts",
+      "mutatedSha256": "bf8f71a62fe9d985233324172b438c9f02294857dbb0fcab7f1a52ec81610ee7",
+      "restoredSha256": "9c3ea997747949f263692a30f328762765179efe16aa77290eb1f148416fec50",
+      "executedHead": "0db3ee55b84733469c0aee3f977bf9ecd98a893c"
+    },
+    {
+      "phase": "unsupported-inventory-hidden",
+      "result": "EXPECTED-FAIL",
+      "seconds": 115.327,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "ccefcc3aeb2f97f0f8cc51db0e4ece39aef8a2ab1d6ec6f0f6e2895f7d28e27b",
+      "restoredSha256": "ed28ca90480c878b5b38b3b9153287016613758d9743ec2cb060a05de4a1f810",
+      "executedHead": "0db3ee55b84733469c0aee3f977bf9ecd98a893c"
+    }
+  ],
+  "limits": "First two controls ran at d380 with identical controlled-file bytes. The final three and full positive proof ran after main merge0db. Original profile-carryover failure remains preserved; subsequent cases used separate profiles."
+}

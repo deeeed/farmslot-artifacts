@@ -1,0 +1,100 @@
+{
+  "tests": [
+    {
+      "name": "a healthy revision change refreshes history without becoming an outage",
+      "milliseconds": 0.641625
+    },
+    {
+      "name": "a real outage becomes unavailable only after 60 seconds, keeping the actual saved age",
+      "milliseconds": 0.110917
+    },
+    {
+      "name": "live observation ages use bounded minutes and hours",
+      "milliseconds": 0.042125
+    },
+    {
+      "name": "a pending retry keeps the outage status until the caller observes recovery",
+      "milliseconds": 0.047
+    },
+    {
+      "name": "a superseded history read shows Refreshing history rather than a source error",
+      "milliseconds": 0.553417
+    },
+    {
+      "name": "the fixed row retains saved-read proof wording and the failure cause",
+      "milliseconds": 0.0835
+    },
+    {
+      "name": "a continuously superseded read gains the canonical saved caption at the shared grace boundary",
+      "milliseconds": 0.085958
+    },
+    {
+      "name": "run detail lists one session row per agent context with a short session id",
+      "milliseconds": 0.421667
+    },
+    {
+      "name": "the row names the slot and tmux target before any copy",
+      "milliseconds": 0.071084
+    },
+    {
+      "name": "copy buttons are labeled as copy, not as execute",
+      "milliseconds": 0.05925
+    },
+    {
+      "name": "Open on host reloads a dead pane only while the run is still live",
+      "milliseconds": 0.041625
+    },
+    {
+      "name": "Open on host refuses transferred or unproved slot ownership",
+      "milliseconds": 0.085583
+    },
+    {
+      "name": "switching runs clears the bound terminal context so the next run cannot inherit it",
+      "milliseconds": 0.202958
+    },
+    {
+      "name": "copy buttons use only the command the gateway built",
+      "milliseconds": 0.039666
+    },
+    {
+      "name": "row state carries the structured liveness the gateway proved",
+      "milliseconds": 0.303584
+    },
+    {
+      "name": "an unsupported runner surfaces its reason and copies nothing",
+      "milliseconds": 0.051292
+    },
+    {
+      "name": "a missing attach command is an error state, never a silent no-op copy",
+      "milliseconds": 0.072
+    },
+    {
+      "name": "a refused clipboard keeps the proved liveness and never reports Copied",
+      "milliseconds": 0.049292
+    },
+    {
+      "name": "a gateway-side failure is not marked as a blocked copy",
+      "milliseconds": 0.034625
+    },
+    {
+      "name": "two same-role reviewer rows stay distinct so each copies its own session",
+      "milliseconds": 0.055417
+    },
+    {
+      "name": "the request guard is keyed per context so one row cannot strand another",
+      "milliseconds": 0.23925
+    },
+    {
+      "name": "slot-free native review rows do not fall back to tmux controls",
+      "milliseconds": 0.043542
+    },
+    {
+      "name": "disclosures default closed and remember choices only for their owner, run and panel",
+      "milliseconds": 0.529416
+    },
+    {
+      "name": "disclosure remains interactive when browser storage refuses both reads and writes",
+      "milliseconds": 0.1425
+    }
+  ]
+}

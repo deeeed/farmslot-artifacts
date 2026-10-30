@@ -1,0 +1,143 @@
+{
+  "head": "0db3ee55b84733469c0aee3f977bf9ecd98a893c",
+  "files": [
+    {
+      "path": "RESULT.json",
+      "sha256": "8c49a3b9e929a12f9708e878ee75347fa2d30b03887302afffeb06621cf9b29d",
+      "mode": 420,
+      "bytes": 484
+    },
+    {
+      "path": "additional-disclosures.json",
+      "sha256": "4e4b12d287c61f3d681e1dd574a73aaa858a8531f8960849d47e3b62955fa8b2",
+      "mode": 420,
+      "bytes": 16516
+    },
+    {
+      "path": "after-result.json",
+      "sha256": "f164d79ade7c95a3695742e2049340f3d2a257d7161b797f8f5f2e46c83601f2",
+      "mode": 420,
+      "bytes": 134629
+    },
+    {
+      "path": "before-result.json",
+      "sha256": "6fba35f445aa0bb7be06861915b267e9268ef4e4d8f5e487fb825aa701d40a44",
+      "mode": 420,
+      "bytes": 101423
+    },
+    {
+      "path": "causal-controls.json",
+      "sha256": "db1ee1c36a4d2c7760524c2ded7de25f56d519be83e3fee183c748b421e35cdb",
+      "mode": 420,
+      "bytes": 2618
+    },
+    {
+      "path": "checks.json",
+      "sha256": "2333bee58e57af45556c88a9d090ead5abf88c6b6f623f467a58e7a80a20d05f",
+      "mode": 420,
+      "bytes": 735
+    },
+    {
+      "path": "cleanup.json",
+      "sha256": "31726bf402867c201d28e98f5868d2e2da6d450dab66a3e6b0c199c549f6fd29",
+      "mode": 420,
+      "bytes": 301
+    },
+    {
+      "path": "focused-tests.log",
+      "sha256": "c454ff06b9de172f6590e50e434f95ff286ad75441566f81964af5a231d29fe0",
+      "mode": 420,
+      "bytes": 5096
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "9f46daa3d5379946e3c66f569622f1079fce9b1e47e717c5858c252b5ed5f41f",
+      "mode": 420,
+      "bytes": 923
+    },
+    {
+      "path": "native-panel-after-1280-timestamps.json",
+      "sha256": "9ee48eea44346b1b3726681a7c1a83f313412c73ca973a4bd0f6214ab201c6ec",
+      "mode": 420,
+      "bytes": 20231
+    },
+    {
+      "path": "native-panel-after-1280.mp4",
+      "sha256": "95f52415dff63243789f708b5bc98107ee65bc8a148dd64888559894bac070d2",
+      "mode": 420,
+      "bytes": 224075
+    },
+    {
+      "path": "native-panel-after-1280.png",
+      "sha256": "2712236057e21a711c614a36e860cd9dc0055fa10065577884696177c31e8f3d",
+      "mode": 420,
+      "bytes": 85038
+    },
+    {
+      "path": "native-panel-after-414-timestamps.json",
+      "sha256": "85836ee94dff0cdd3cc82ffed4ce6a8a2331b135bbfc37bfc884f54b057af7ec",
+      "mode": 420,
+      "bytes": 6181
+    },
+    {
+      "path": "native-panel-after-414.mp4",
+      "sha256": "2d98b2a9fb001308e7a5d722ed41755390d7ffe9f409a7abe000ddaaac394520",
+      "mode": 420,
+      "bytes": 102929
+    },
+    {
+      "path": "native-panel-after-414.png",
+      "sha256": "a1629f78b7092cf0189cfdf3de11cb0090ed202dccfd73d00727ea605d340863",
+      "mode": 420,
+      "bytes": 68106
+    },
+    {
+      "path": "native-panel-before-1280-timestamps.json",
+      "sha256": "3634997b4d045d5a2e2fb02a175781329a47104936aaf96225159a81dd41bfb8",
+      "mode": 420,
+      "bytes": 6436
+    },
+    {
+      "path": "native-panel-before-1280.mp4",
+      "sha256": "d40fef206423a4a9ec0f8fcc1e191b0a2de21f2ea4121cb3380fbf690e7ef15b",
+      "mode": 420,
+      "bytes": 106403
+    },
+    {
+      "path": "native-panel-before-1280.png",
+      "sha256": "d074e9dad61f4d221ef5e28c7798d3b4ad44accbc4e327e59825d6485d9c7939",
+      "mode": 420,
+      "bytes": 73425
+    },
+    {
+      "path": "native-panel-before-414-timestamps.json",
+      "sha256": "200360d5d7ecb7fa3c65b5d42d0d1ea43c0a54ec4d5474a23c1c4dd1fc9d3588",
+      "mode": 420,
+      "bytes": 6410
+    },
+    {
+      "path": "native-panel-before-414.mp4",
+      "sha256": "43952ff673c442b17eafff80f1c57b0903a03fbc0501ecd1b4aed2076036d55d",
+      "mode": 420,
+      "bytes": 101290
+    },
+    {
+      "path": "native-panel-before-414.png",
+      "sha256": "2b73a7690c5512e7d388a2f2ef2417ef9c9627c665b1f2822d50f51d49afe448",
+      "mode": 420,
+      "bytes": 69459
+    },
+    {
+      "path": "scope.md",
+      "sha256": "a802448ca1b5497e5d64a55319bca8e1ec45dce33f3d94e0c2361bf319d0bee1",
+      "mode": 420,
+      "bytes": 913
+    },
+    {
+      "path": "test-durations.json",
+      "sha256": "eeacb0a02760ef5ac3ad6dbe36794b6be055f884a34396532ba3964475c22e1e",
+      "mode": 420,
+      "bytes": 3129
+    }
+  ]
+}
