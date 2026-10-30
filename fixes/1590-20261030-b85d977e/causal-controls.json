@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "head": "b85d977ec2abe000ea9dc4d651ffa7e24a56eedf",
+  "phases": [
+    {
+      "phase": "default-open",
+      "result": "EXPECTED-FAIL",
+      "seconds": 46.841,
+      "source": "apps/command-center/ui/src/components/runs/run-worker-panel-preferences.ts",
+      "mutatedSha256": "178f2a87723509798842d6436572553745204fa5693abf7d52ecdd79d5e4b359",
+      "restoredSha256": "161fa8fbeb2fb3f6fc8695220fbf32a807f092988bb77ae1d2a64f19686c8468"
+    },
+    {
+      "phase": "raw-error-row",
+      "result": "EXPECTED-FAIL",
+      "seconds": 2.403,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "88075d2d385cb41e9cdf401dffb0334b9802628d4c0253254b8f9d4dd10e51d0",
+      "restoredSha256": "d6e5e983a9acce5500e0d7cdb885e6ea8ad4dd79cf3a658592c3ee51c203c760"
+    }
+  ],
+  "restoredSourceFiles": 6243,
+  "cleanup": "PASS",
+  "retainedFailure": "causal-controls-2 reported an unexpected failure label after the first geometry assertion was renamed; actual geometry assertion failed. Original receipt preserved."
+}

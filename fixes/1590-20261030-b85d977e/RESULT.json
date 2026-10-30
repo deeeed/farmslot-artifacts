@@ -1,0 +1,26 @@
+{
+  "phases": [
+    {
+      "phase": "before",
+      "result": "PASS",
+      "seconds": 4.093
+    },
+    {
+      "phase": "after",
+      "result": "PASS",
+      "seconds": 67.48
+    }
+  ],
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "browserProfile": "/tmp/cx-native-panel-34152/browser-profile",
+  "browserPid": 36400,
+  "browserBirth": "Fri Oct 30 15:18:06 2026",
+  "result": "PASS",
+  "ports": {
+    "7922": "",
+    "5218": "",
+    "19324": ""
+  },
+  "cleanup": "PASS"
+}

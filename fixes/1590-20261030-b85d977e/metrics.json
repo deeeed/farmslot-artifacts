@@ -1,0 +1,36 @@
+{
+  "head": "b85d977ec2abe000ea9dc4d651ffa7e24a56eedf",
+  "kind": "Mounted observed-WebSocket presentation proof; no native-host/device/provider or gateway activation.",
+  "views": [
+    {
+      "phase": "before",
+      "width": 1280,
+      "timelineMovementPx": 103.78125,
+      "samples": 5,
+      "outageMs": []
+    },
+    {
+      "phase": "before",
+      "width": 414,
+      "timelineMovementPx": 146.78125,
+      "samples": 5,
+      "outageMs": []
+    },
+    {
+      "phase": "after",
+      "width": 1280,
+      "timelineMovementPx": 0,
+      "samples": 8,
+      "outageMs": [
+        60777
+      ]
+    },
+    {
+      "phase": "after",
+      "width": 414,
+      "timelineMovementPx": 0,
+      "samples": 5,
+      "outageMs": []
+    }
+  ]
+}
