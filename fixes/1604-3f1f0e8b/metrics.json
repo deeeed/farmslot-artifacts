@@ -1,0 +1,56 @@
+[
+  {
+    "label": "g4-before",
+    "frames": 113,
+    "samples": 188,
+    "foldShots": {
+      "watched": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "reopened": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "reopened414": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "expanded": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      }
+    }
+  },
+  {
+    "label": "g4-after",
+    "frames": 122,
+    "samples": 131,
+    "foldShots": {
+      "watched": {
+        "fold": "Worked for 20s · 2 tools",
+        "open": true,
+        "topTools": 0
+      },
+      "reopened": {
+        "fold": "Worked for 20s · 2 tools",
+        "open": false,
+        "topTools": 0
+      },
+      "reopened414": {
+        "fold": "Worked for 20s · 2 tools",
+        "open": false,
+        "topTools": 0
+      },
+      "expanded": {
+        "fold": "Worked for 20s · 2 tools",
+        "open": true,
+        "topTools": 0
+      }
+    }
+  }
+]
