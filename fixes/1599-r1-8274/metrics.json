@@ -1,0 +1,75 @@
+{
+  "head": "8274c36fc5fa5d2ae02ce4490509afbd4319a06f",
+  "base": "5d39ec8f2c7292a733ec8a9546117b9189289693",
+  "cases": {
+    "before-1280": {
+      "unwritten": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-1280",
+        "errorVisible": true
+      },
+      "taskProgressReadsBeforeTaskExists": 2,
+      "written": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "arrivalMovementPx": 0,
+      "collapsedPanelPx": 54,
+      "reservedRowPx": null
+    },
+    "after-1280": {
+      "unwritten": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false
+      },
+      "taskProgressReadsBeforeTaskExists": 0,
+      "written": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "arrivalMovementPx": 0,
+      "collapsedPanelPx": 54,
+      "reservedRowPx": 62
+    },
+    "before-414": {
+      "unwritten": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-414",
+        "errorVisible": true
+      },
+      "taskProgressReadsBeforeTaskExists": 2,
+      "written": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "arrivalMovementPx": 0,
+      "collapsedPanelPx": 54,
+      "reservedRowPx": null
+    },
+    "after-414": {
+      "unwritten": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false
+      },
+      "taskProgressReadsBeforeTaskExists": 0,
+      "written": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "arrivalMovementPx": 0,
+      "collapsedPanelPx": 54,
+      "reservedRowPx": 62
+    }
+  },
+  "durationsSeconds": {
+    "before-1280": 6.84,
+    "after-1280": 6.933,
+    "before-414": 6.677,
+    "after-414": 6.577
+  },
+  "each": "Fresh headless browser profile, distinct run/slot id per case; lifecycle unwritten -> written -> real ledger error -> recovered, never rewound.",
+  "note": "Before recordings also show the resource-store restart notice from the archived base tree. It is not asserted; the read-guard control reproduces the false read on the candidate tree without it.",
+  "limit": "Mounted Command Center over an isolated observed-WebSocket protocol fixture. No gateway, task writer, worker, native host or device is started."
+}

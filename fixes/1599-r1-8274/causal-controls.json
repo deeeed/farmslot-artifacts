@@ -1,0 +1,44 @@
+[
+  {
+    "control": "read-guard",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-detail.ts",
+      "old": "      run && runHasTaskSource(run) && (run.slotId || run.reviewWorkspace)\n",
+      "new": "      run && (run.slotId || run.reviewWorkspace)\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "An unwritten task must not be read",
+    "actual": "false",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "reservation",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-styles.ts",
+      "old": "    min-height: calc(44px + 2 * 4px + 2px + 2 * ${unsafeCSS(spacing.sm)});\n",
+      "new": ""
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "Task criteria arrival must not move the next control",
+    "actual": "62",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "error-suppression",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-detail.ts",
+      "old": "    this.acceptanceStatusError = observation?.error?.message ?? data?.acceptanceStatusError ?? null;\n",
+      "new": "    this.acceptanceStatusError = null;\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "real-read-error",
+    "actual": "undefined",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  }
+]

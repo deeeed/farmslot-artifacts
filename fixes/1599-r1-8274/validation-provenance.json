@@ -1,0 +1,25 @@
+{
+  "head": "8274c36fc5fa5d2ae02ce4490509afbd4319a06f",
+  "checks": [
+    {
+      "name": "cc-types",
+      "command": "yarn typecheck",
+      "seconds": 23.249,
+      "exitCode": 0
+    },
+    {
+      "name": "focused-tests",
+      "command": "node --import tsx --test --test-reporter=tap --test-concurrency=1 apps/command-center/ui/src/components/runs/run-pipeline-model.test.ts apps/command-center/ui/src/components/progress-tracker/acceptance-panel.test.ts",
+      "seconds": 0.451,
+      "exitCode": 0
+    }
+  ],
+  "focusedTests": "28 pass, 0 fail",
+  "sourceTree": "Exact committed tree of head and of the PR base, every file hash and mode verified before each run and after each control rollback.",
+  "activations": {
+    "gateway": 0,
+    "nativeHost": 0,
+    "worker": 0,
+    "device": 0
+  }
+}
