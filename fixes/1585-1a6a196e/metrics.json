@@ -1,0 +1,20 @@
+[
+  {
+    "label": "b1-before",
+    "frames": 106,
+    "samples": 185,
+    "disabledSamples": 44,
+    "bannerSamples": 0,
+    "typed": 51,
+    "kept": 50
+  },
+  {
+    "label": "b1-after",
+    "frames": 96,
+    "samples": 109,
+    "disabledSamples": 0,
+    "bannerSamples": 0,
+    "typed": 51,
+    "kept": 51
+  }
+]
