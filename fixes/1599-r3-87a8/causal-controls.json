@@ -1,0 +1,128 @@
+[
+  {
+    "control": "read-guard",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-detail.ts",
+      "old": "      run && runHasTaskSource(run) && (run.slotId || run.reviewWorkspace)\n",
+      "new": "      run && (run.slotId || run.reviewWorkspace)\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "An unwritten task must not be read",
+    "actual": "false",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "review-workspace-source",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-model.ts",
+      "old": "  return Boolean(run?.taskFile);\n",
+      "new": "  return Boolean(run?.taskFile || (run as Run | null | undefined)?.reviewWorkspace);\n"
+    },
+    "case": "after-1280-review",
+    "result": "EXPECTED-FAIL",
+    "assertion": "unwritten",
+    "actual": "undefined",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "reservation",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-styles.ts",
+      "old": "    min-height: ${unsafeCSS(ACCEPTANCE_PANEL_COLLAPSED_HEIGHT)};\n",
+      "new": ""
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "Task criteria arrival must not move the next control",
+    "actual": "62",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "oversized-reservation",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-styles.ts",
+      "old": "    min-height: ${unsafeCSS(ACCEPTANCE_PANEL_COLLAPSED_HEIGHT)};\n",
+      "new": "    min-height: calc(${unsafeCSS(ACCEPTANCE_PANEL_COLLAPSED_HEIGHT)} + 20px);\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "Task criteria arrival must not move the next control",
+    "actual": "-20",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "written-load-hold",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-model.ts",
+      "old": "(heldRunId === run.id && loading)",
+      "new": "false"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "The row stays held while the written task first loads",
+    "actual": "false",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "error-suppression",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-detail.ts",
+      "old": "    this.acceptanceStatusError = observation?.error?.message ?? data?.acceptanceStatusError ?? null;\n",
+      "new": "    this.acceptanceStatusError = null;\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "real-read-error",
+    "actual": "undefined",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "always-held",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline.ts",
+      "old": "?data-held=${this.acceptanceRowHeld}",
+      "new": "data-held"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "Loaded criteria release the reserved row",
+    "actual": "false",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "unconditional-reservation",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-styles.ts",
+      "old": "  .acceptance-slot[data-held] {\n",
+      "new": "  .acceptance-slot {\n"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "no-criteria",
+    "actual": "undefined",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  },
+  {
+    "control": "first-load-hold",
+    "mutation": {
+      "file": "apps/command-center/ui/src/components/runs/run-pipeline-model.ts",
+      "old": "(heldRunId === run.id && loading)",
+      "new": "loading"
+    },
+    "case": "after-1280",
+    "result": "EXPECTED-FAIL",
+    "assertion": "A run opened after its task exists holds no row",
+    "actual": "62",
+    "restoration": "PASS",
+    "cleanup": "PASS"
+  }
+]

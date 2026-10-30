@@ -1,0 +1,289 @@
+{
+  "head": "87a8ab738b3c21f06a6f817da78bf847869d072d",
+  "base": "5d39ec8f2c7292a733ec8a9546117b9189289693",
+  "cases": {
+    "before-1280": {
+      "writeTaskRunning": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-1280",
+        "errorVisible": true,
+        "taskProgressReads": 2,
+        "heldRowPx": null
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": null,
+        "pipelineChangePx": -77
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": null
+      },
+      "arrivalMovementPx": -19,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": null
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": null,
+        "movementPx": 0
+      }
+    },
+    "after-1280": {
+      "writeTaskRunning": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false,
+        "taskProgressReads": 0,
+        "heldRowPx": 62
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": 62,
+        "pipelineChangePx": 0
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": false
+      },
+      "arrivalMovementPx": 0,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": 0
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": 0,
+        "movementPx": 0
+      }
+    },
+    "before-414": {
+      "writeTaskRunning": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-414",
+        "errorVisible": true,
+        "taskProgressReads": 2,
+        "heldRowPx": null
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": null,
+        "pipelineChangePx": -90.0
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": null
+      },
+      "arrivalMovementPx": -32,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 171.796875
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": null
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": null,
+        "movementPx": 0
+      }
+    },
+    "after-414": {
+      "writeTaskRunning": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false,
+        "taskProgressReads": 0,
+        "heldRowPx": 62
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": 62,
+        "pipelineChangePx": 0.0
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": false
+      },
+      "arrivalMovementPx": 0,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 171.796875
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": 0
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": 0,
+        "movementPx": 0
+      }
+    },
+    "before-1280-review": {
+      "writeTaskRunning": {
+        "acPanel": true,
+        "error": "ledger unreadable: Review checklist is missing: /workspace/task/CHECKLIST.md",
+        "errorVisible": true,
+        "taskProgressReads": 2,
+        "heldRowPx": null
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": null,
+        "pipelineChangePx": -77
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": null
+      },
+      "arrivalMovementPx": -19,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": null
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": null,
+        "movementPx": 0
+      }
+    },
+    "after-1280-review": {
+      "writeTaskRunning": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false,
+        "taskProgressReads": 0,
+        "heldRowPx": 62
+      },
+      "writtenFirstReadInFlight": {
+        "readLoading": true,
+        "heldRowPx": 62,
+        "pipelineChangePx": 0
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillHeld": false
+      },
+      "arrivalMovementPx": 0,
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": 0
+      },
+      "openedAfterTaskExists": {
+        "readLoading": true,
+        "rowPxWhileLoading": 0,
+        "movementPx": 0
+      }
+    }
+  },
+  "repeats": {
+    "repeat2-after-1280": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    },
+    "repeat2-after-1280-review": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    },
+    "repeat2-after-414": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    },
+    "repeat3-after-1280": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    },
+    "repeat3-after-1280-review": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    },
+    "repeat3-after-414": {
+      "arrival": 0,
+      "heldWhileLoadingPx": 62,
+      "openedMovement": 0
+    }
+  },
+  "durationsSeconds": {
+    "before-1280": 9.131,
+    "after-1280": 8.837,
+    "before-414": 8.936,
+    "after-414": 8.909,
+    "before-1280-review": 9.053,
+    "after-1280-review": 9.45
+  },
+  "each": "Fresh headless browser profile and distinct run id per case; slot runs and slot-free reviews. Lifecycle: write-task running, task written with its first read held in flight, criteria shown, real ledger error, recovered, task without criteria, then a second run opened after its task exists with its first read held.",
+  "movement": "Change in the pipeline's height, which contains the criteria row; content loading above and the page scroll limit leave it alone.",
+  "boundaries": [
+    "A real ledger error keeps its existing auto-expanded panel, so that state grows by its error rows.",
+    "A live run whose written task has no criteria releases the held row once its first read settles; nothing can tell earlier.",
+    "A run opened after its task exists holds nothing, so its first criteria arrival behaves as before this change.",
+    "Before recordings also show a resource-store restart notice from the archived base tree; it is not asserted."
+  ],
+  "limit": "Mounted Command Center over an isolated observed-WebSocket protocol fixture. No gateway, task writer, worker, native host or device is started."
+}
