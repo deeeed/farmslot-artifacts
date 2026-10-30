@@ -1,0 +1,36 @@
+[
+  {
+    "label": "g6-before",
+    "frames": 39,
+    "samples": 48,
+    "disabledSamples": 0,
+    "finalFromBottom": 541,
+    "longShots": {
+      "collapsed": {
+        "toggle": null,
+        "userLines": 41
+      },
+      "expanded": {
+        "toggle": null,
+        "userLines": 41
+      }
+    }
+  },
+  {
+    "label": "g6-after",
+    "frames": 35,
+    "samples": 47,
+    "disabledSamples": 0,
+    "finalFromBottom": 0,
+    "longShots": {
+      "collapsed": {
+        "toggle": "Show all · 41 lines",
+        "userLines": 8
+      },
+      "expanded": {
+        "toggle": "Show less",
+        "userLines": 41
+      }
+    }
+  }
+]
