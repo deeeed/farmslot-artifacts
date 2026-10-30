@@ -1,0 +1,174 @@
+[
+  {
+    "side": "before",
+    "message": "Then reply with only the word NEXT.",
+    "typedLater": "and summarise the count",
+    "states": {
+      "running": {
+        "state": "running",
+        "draft": "",
+        "send": "Queue message",
+        "delivery": "Accepted",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "localCommand": false,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "send": "Queue message",
+        "delivery": "Queued for the next turn",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          },
+          {
+            "meta": "You \u00b7 Delivery unconfirmed",
+            "text": "Then reply with only the word NEXT."
+          }
+        ],
+        "localCommand": true,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false,
+            "outcome": null
+          }
+        ]
+      },
+      "closed": {
+        "state": "closed",
+        "draft": "and summarise the count",
+        "send": "Send",
+        "delivery": "Interrupted",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "localCommand": false,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false,
+            "outcome": "interrupted"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "side": "after",
+    "message": "Then reply with only the word NEXT.",
+    "typedLater": "and summarise the count",
+    "states": {
+      "running": {
+        "state": "running",
+        "draft": "",
+        "send": "Queue message",
+        "delivery": "Accepted",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "localCommand": false,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "send": "Queue message",
+        "delivery": "Queued for the next turn",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          },
+          {
+            "meta": "You \u00b7 Queued for the next turn",
+            "text": "Then reply with only the word NEXT."
+          }
+        ],
+        "localCommand": true,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false,
+            "outcome": null
+          }
+        ]
+      },
+      "closed": {
+        "state": "closed",
+        "draft": "Then reply with only the word NEXT.\n\nand summarise the count",
+        "send": "Send",
+        "delivery": "Interrupted",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "localCommand": false,
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false,
+            "outcome": "interrupted"
+          }
+        ]
+      }
+    }
+  }
+]
