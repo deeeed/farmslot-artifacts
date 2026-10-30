@@ -1,0 +1,40 @@
+[
+  {
+    "label": "collapse-before",
+    "frames": 324,
+    "samples": 147,
+    "collapseShots": {
+      "message": {
+        "before": 120,
+        "after": -493,
+        "visible": false,
+        "scrollTop": 690
+      },
+      "fold": {
+        "before": 120,
+        "after": 120,
+        "visible": true,
+        "scrollTop": 239
+      }
+    }
+  },
+  {
+    "label": "collapse-after",
+    "frames": 380,
+    "samples": 118,
+    "collapseShots": {
+      "message": {
+        "before": 120,
+        "after": 121,
+        "visible": true,
+        "scrollTop": 76
+      },
+      "fold": {
+        "before": 120,
+        "after": 120,
+        "visible": true,
+        "scrollTop": 239
+      }
+    }
+  }
+]
