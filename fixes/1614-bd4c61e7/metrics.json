@@ -1,0 +1,214 @@
+[
+  {
+    "label": "g8-before",
+    "frames": 206,
+    "samples": 142,
+    "requestShots": {
+      "responses": [
+        {
+          "id": "6a56ccb0-e3e2-4157-b99a-86a080e80a4e:3dae3041-1367-4457-84eb-7759e50bb97e",
+          "decision": "approve",
+          "title": "Allow runner action?",
+          "detail": "touch g8-approved.txt",
+          "at": 1793379242487
+        },
+        {
+          "id": "6a56ccb0-e3e2-4157-b99a-86a080e80a4e:a7bf0e0b-9dea-4009-8147-3b8fb12de930",
+          "decision": "answer",
+          "title": "Answer runner questions",
+          "detail": "",
+          "at": 1793379252609
+        },
+        {
+          "id": "6a56ccb0-e3e2-4157-b99a-86a080e80a4e:ce87fefe-d688-42d0-a6f0-bb6ddcf6cf18",
+          "decision": "deny",
+          "title": "Allow runner action?",
+          "detail": "touch g8-declined.txt",
+          "at": 1793379257713
+        }
+      ],
+      "pendingShots": [
+        "g8-before-pending-1-1280.png",
+        "g8-before-pending-2-1280.png",
+        "g8-before-pending-3-1280.png"
+      ],
+      "finished": {
+        "texts": [],
+        "styledAsPending": 0
+      },
+      "reopened": {
+        "texts": [],
+        "styledAsPending": 0
+      },
+      "files": {
+        "g8-approved.txt": true,
+        "g8-declined.txt": false
+      }
+    },
+    "hostEvents": [
+      [
+        7,
+        "approval.requested",
+        "2026-10-30T16:54:00.574Z",
+        "",
+        "touch g8-approved.txt",
+        null
+      ],
+      [
+        8,
+        "approval.resolved",
+        "2026-10-30T16:54:02.523Z",
+        "",
+        "touch g8-approved.txt",
+        null
+      ],
+      [
+        11,
+        "question.requested",
+        "2026-10-30T16:54:10.731Z",
+        "",
+        "Answer runner questions",
+        null
+      ],
+      [
+        12,
+        "approval.resolved",
+        "2026-10-30T16:54:12.614Z",
+        "",
+        "Answer runner questions",
+        null
+      ],
+      [
+        15,
+        "approval.requested",
+        "2026-10-30T16:54:15.886Z",
+        "",
+        "touch g8-declined.txt",
+        null
+      ],
+      [
+        16,
+        "approval.resolved",
+        "2026-10-30T16:54:17.719Z",
+        "",
+        "touch g8-declined.txt",
+        null
+      ]
+    ]
+  },
+  {
+    "label": "g8-after",
+    "frames": 198,
+    "samples": 122,
+    "requestShots": {
+      "responses": [
+        {
+          "id": "38bc0807-db46-493f-ae22-2c1de80ab647:e1440e11-b9f4-40f3-8b32-41f1efbe3042",
+          "decision": "approve",
+          "title": "Allow runner action?",
+          "detail": "touch g8-approved.txt",
+          "at": 1793379340236
+        },
+        {
+          "id": "38bc0807-db46-493f-ae22-2c1de80ab647:ddf0fb9c-837b-4aaa-8e4f-fe4bdc16df6d",
+          "decision": "answer",
+          "title": "Answer runner questions",
+          "detail": "",
+          "at": 1793379348115
+        },
+        {
+          "id": "38bc0807-db46-493f-ae22-2c1de80ab647:eb6347f1-7c1c-4322-a75e-3a27338bb8d8",
+          "decision": "deny",
+          "title": "Allow runner action?",
+          "detail": "touch g8-declined.txt",
+          "at": 1793379352251
+        }
+      ],
+      "pendingShots": [
+        "g8-after-pending-1-1280.png",
+        "g8-after-pending-2-1280.png",
+        "g8-after-pending-3-1280.png"
+      ],
+      "finished": {
+        "texts": [
+          "Approved: touch g8-approved.txt",
+          "Answered: Which color should the report use? \u2192 Blue",
+          "Declined: touch g8-declined.txt"
+        ],
+        "styledAsPending": 0
+      },
+      "reopened": {
+        "texts": [
+          "Approved: touch g8-approved.txt",
+          "Answered: Which color should the report use? \u2192 Blue",
+          "Declined: touch g8-declined.txt"
+        ],
+        "styledAsPending": 0
+      },
+      "files": {
+        "g8-approved.txt": true,
+        "g8-declined.txt": false
+      }
+    },
+    "hostEvents": [
+      [
+        7,
+        "approval.requested",
+        "2026-10-30T16:55:38.425Z",
+        "",
+        "touch g8-approved.txt",
+        null
+      ],
+      [
+        8,
+        "approval.resolved",
+        "2026-10-30T16:55:40.241Z",
+        "",
+        "touch g8-approved.txt",
+        {
+          "decision": "approve"
+        }
+      ],
+      [
+        11,
+        "question.requested",
+        "2026-10-30T16:55:46.350Z",
+        "",
+        "Answer runner questions",
+        null
+      ],
+      [
+        12,
+        "approval.resolved",
+        "2026-10-30T16:55:48.122Z",
+        "",
+        "Answer runner questions",
+        {
+          "answers": {
+            "Which color should the report use?": [
+              "Blue"
+            ]
+          }
+        }
+      ],
+      [
+        15,
+        "approval.requested",
+        "2026-10-30T16:55:50.384Z",
+        "",
+        "touch g8-declined.txt",
+        null
+      ],
+      [
+        16,
+        "approval.resolved",
+        "2026-10-30T16:55:52.255Z",
+        "",
+        "touch g8-declined.txt",
+        {
+          "decision": "deny"
+        }
+      ]
+    ]
+  }
+]
