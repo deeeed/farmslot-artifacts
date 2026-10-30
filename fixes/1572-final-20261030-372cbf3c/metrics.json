@@ -1,0 +1,131 @@
+{
+  "head": "372cbf3ceb4485db7e660d21a4a173315410962e",
+  "main": "9d87a0830e10c3745e3f68710475703de3814904",
+  "recordingHead": "3ea52df715481ac0ce11f2c073132932f94f4972",
+  "headDelta": "Only an unmounted native-history module and changelog differ from the recorded head, imported exactly from main. All mounted proof sources and their shared cache inputs match.",
+  "beforeUiHead": "a1360f03839361d712d7054ab2c988112a0983b2",
+  "browser": "Chrome 156.0.8078.76; isolated headless profile",
+  "node": "24.19.0",
+  "after": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "run",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    }
+  ],
+  "before": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 39
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 23.390625
+    }
+  ],
+  "trayBeforeShiftPx": 96,
+  "protocolRequests": 166,
+  "proofContract": "Resolved metadata stays intact in every producer reply. Samples require a newly received owning request and the expected ready revision, or actual error/pending state. Evals measured text is visible.",
+  "settledNegative": {
+    "head": "372cbf3ceb4485db7e660d21a4a173315410962e",
+    "result": "PASS",
+    "expectedFailure": "A ready rendered gate with the wrong revision failed at the first settled sample.",
+    "sourceRestored": true,
+    "cleanup": "PASS"
+  },
+  "owningGatewayPhases": [
+    {
+      "phase": "list-web",
+      "result": "PASS",
+      "seconds": 125.968
+    },
+    {
+      "phase": "detail-web",
+      "result": "PASS",
+      "seconds": 6.712
+    },
+    {
+      "phase": "progress-web",
+      "result": "PASS",
+      "seconds": 30.886
+    },
+    {
+      "phase": "progress-detail-web",
+      "result": "PASS",
+      "seconds": 45.356
+    },
+    {
+      "phase": "dispatch-runs-web",
+      "result": "PASS",
+      "seconds": 11.591
+    },
+    {
+      "phase": "inbox-web",
+      "result": "PASS",
+      "seconds": 35.306
+    },
+    {
+      "phase": "family-web",
+      "result": "PASS",
+      "seconds": 10.631
+    },
+    {
+      "phase": "ready-workspace-web",
+      "result": "PASS",
+      "seconds": 9.707
+    }
+  ],
+  "focusedTests": 60,
+  "perFileSeconds": {
+    "resource-query-controller.test.ts": 0.372,
+    "retained-notice.test.ts": 0.134,
+    "ready-workspace-notice.test.ts": 0.262,
+    "ready-workspace-queries.test.ts": 0.256,
+    "state-reconnect.test.ts": 0.255,
+    "notification-tray-model.test.ts": 0.14,
+    "notification-tray.test.ts": 0.15,
+    "runner-visible-models.test.ts": 0.26,
+    "resource-read-status.test.ts": 0.258,
+    "resource-query-controller-paced.test.ts": 0.261,
+    "resource-query-controller-saved.test.ts": 0.269,
+    "native-session-header.test.ts": 0.14,
+    "decision-inbox.test.ts": 0.27,
+    "run-list-archive.test.ts": 2.246,
+    "dispatch-wizard-helpers.test.ts": 0.295,
+    "state-decision-events.test.ts": 0.258,
+    "state-decision-events-pending.test.ts": 0.296
+  },
+  "typecheckSeconds": {
+    "command-center-typecheck": 22.371,
+    "companion-typecheck": 4.809
+  },
+  "finalCcTypecheck": {
+    "head": "372cbf3ceb4485db7e660d21a4a173315410962e",
+    "name": "command-center-typecheck",
+    "seconds": 22.888,
+    "exitCode": 0
+  },
+  "supersedes": "The previous 08f28556 run-before recording relied on an unsupported metadata-omission fixture. It is historical only. These clips keep resolvedAt intact.",
+  "limits": "Mounted observed-WebSocket presentation proof, plus separate owning-Gateway actual writer/cold-read phases. No real gate action, native acceptance, worker/provider or device launch."
+}
