@@ -1,0 +1,16 @@
+[
+  {
+    "label": "b2-before",
+    "frames": 29,
+    "samples": 94,
+    "finalFromBottom": 2688,
+    "maxFromBottom": 2688
+  },
+  {
+    "label": "b2-after",
+    "frames": 54,
+    "samples": 78,
+    "finalFromBottom": 0,
+    "maxFromBottom": 0
+  }
+]
