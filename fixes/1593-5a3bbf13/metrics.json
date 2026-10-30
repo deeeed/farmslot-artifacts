@@ -1,0 +1,24 @@
+[
+  {
+    "label": "g2-before",
+    "frames": 60,
+    "samples": 180,
+    "jumpLabels": [],
+    "afterJump": {
+      "fromBottom": 6979,
+      "jump": null
+    }
+  },
+  {
+    "label": "g2-after",
+    "frames": 61,
+    "samples": 132,
+    "jumpLabels": [
+      "Latest"
+    ],
+    "afterJump": {
+      "fromBottom": 0,
+      "jump": null
+    }
+  }
+]
