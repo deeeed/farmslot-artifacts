@@ -1,0 +1,86 @@
+[
+  {
+    "label": "links-before",
+    "frames": 47,
+    "samples": 47,
+    "mdShots": {
+      "414": {
+        "items": 0,
+        "links": 3,
+        "codeBlocks": 0,
+        "tables": 0,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": false,
+        "fenceTagShown": false,
+        "nestedAnchors": 0,
+        "emptyLinks": 2,
+        "imageLinks": 1,
+        "linkTargets": [
+          " -> https://example.com/deploys",
+          "Deploy -> https://example.com/deploy.svg",
+          " -> https://example.com/runs"
+        ]
+      },
+      "1280": {
+        "items": 0,
+        "links": 3,
+        "codeBlocks": 0,
+        "tables": 0,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": false,
+        "fenceTagShown": false,
+        "nestedAnchors": 0,
+        "emptyLinks": 2,
+        "imageLinks": 1,
+        "linkTargets": [
+          " -> https://example.com/deploys",
+          "Deploy -> https://example.com/deploy.svg",
+          " -> https://example.com/runs"
+        ]
+      }
+    }
+  },
+  {
+    "label": "links-after",
+    "frames": 53,
+    "samples": 48,
+    "mdShots": {
+      "414": {
+        "items": 0,
+        "links": 2,
+        "codeBlocks": 0,
+        "tables": 0,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": false,
+        "fenceTagShown": false,
+        "nestedAnchors": 0,
+        "emptyLinks": 0,
+        "imageLinks": 0,
+        "linkTargets": [
+          "Deploy -> https://example.com/deploys",
+          "https://example.com/runs -> https://example.com/runs"
+        ]
+      },
+      "1280": {
+        "items": 0,
+        "links": 2,
+        "codeBlocks": 0,
+        "tables": 0,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": false,
+        "fenceTagShown": false,
+        "nestedAnchors": 0,
+        "emptyLinks": 0,
+        "imageLinks": 0,
+        "linkTargets": [
+          "Deploy -> https://example.com/deploys",
+          "https://example.com/runs -> https://example.com/runs"
+        ]
+      }
+    }
+  }
+]
