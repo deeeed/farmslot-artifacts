@@ -1,0 +1,244 @@
+[
+  {
+    "side": "before",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "canSend": false,
+        "draft": "",
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false
+          }
+        ]
+      },
+      "typed": {
+        "state": "running",
+        "canSend": false,
+        "draft": "Then reply with only the word NEXT.",
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          }
+        ]
+      },
+      "pressed": {
+        "state": "running",
+        "canSend": false,
+        "draft": "Then reply with only the word NEXT.",
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          }
+        ]
+      },
+      "end": {
+        "state": "idle",
+        "canSend": true,
+        "draft": "Then reply with only the word NEXT.",
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        1,
+        "session.started",
+        "2026-10-30T19:13:32.276Z",
+        "",
+        ""
+      ],
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T19:45:52.105Z",
+        "proof-1793389552103",
+        "Count from 1 to 2000. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        3,
+        "session.started",
+        "2026-10-30T19:45:52.154Z",
+        "proof-1793389552103",
+        ""
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T19:45:53.482Z",
+        "proof-1793389552103",
+        "Count from 1 to 2000. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T19:45:53.488Z",
+        "proof-1793389552103",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      }
+    ],
+    "replyEnd": "\n800 hat\n801 sun\n802 box"
+  },
+  {
+    "side": "after",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "canSend": false,
+        "draft": "",
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false
+          }
+        ]
+      },
+      "typed": {
+        "state": "running",
+        "canSend": true,
+        "draft": "Then reply with only the word NEXT.",
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          }
+        ]
+      },
+      "pressed": {
+        "state": "running",
+        "canSend": false,
+        "draft": "",
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          },
+          {
+            "state": "pending",
+            "queued": false
+          }
+        ]
+      },
+      "end": {
+        "state": "idle",
+        "canSend": false,
+        "draft": "",
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false
+          },
+          {
+            "state": "completed",
+            "queued": false
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        1,
+        "session.started",
+        "2026-10-30T19:13:32.871Z",
+        "",
+        ""
+      ],
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T19:56:40.536Z",
+        "proof-1793390200532",
+        "Count from 1 to 2000. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        3,
+        "session.started",
+        "2026-10-30T19:56:40.599Z",
+        "proof-1793390200532",
+        ""
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T19:56:42.557Z",
+        "proof-1793390200532",
+        "Count from 1 to 2000. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T19:56:42.563Z",
+        "proof-1793390200532",
+        ""
+      ],
+      [
+        1333,
+        "turn.completed",
+        "2026-10-30T19:57:12.833Z",
+        "proof-1793390200532",
+        ""
+      ],
+      [
+        1334,
+        "command.submitted",
+        "2026-10-30T19:57:12.841Z",
+        "mobile-1793390206148-03z17n7b22zb",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1335,
+        "command.accepted",
+        "2026-10-30T19:57:14.627Z",
+        "mobile-1793390206148-03z17n7b22zb",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1336,
+        "turn.started",
+        "2026-10-30T19:57:14.633Z",
+        "mobile-1793390206148-03z17n7b22zb",
+        ""
+      ],
+      [
+        1338,
+        "turn.completed",
+        "2026-10-30T19:57:14.654Z",
+        "mobile-1793390206148-03z17n7b22zb",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      },
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      }
+    ],
+    "replyEnd": "un\n1999 tub\n2000 vanNEXT"
+  }
+]
