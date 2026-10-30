@@ -1,0 +1,56 @@
+[
+  {
+    "label": "g10-before",
+    "frames": 67,
+    "samples": 53,
+    "mdShots": {
+      "414": {
+        "items": 0,
+        "links": 0,
+        "codeBlocks": 1,
+        "tables": 3,
+        "boldInCode": true,
+        "detailsElement": false,
+        "detailsAsText": true,
+        "fenceTagShown": false
+      },
+      "1280": {
+        "items": 0,
+        "links": 0,
+        "codeBlocks": 1,
+        "tables": 3,
+        "boldInCode": true,
+        "detailsElement": false,
+        "detailsAsText": true,
+        "fenceTagShown": false
+      }
+    }
+  },
+  {
+    "label": "g10-after",
+    "frames": 57,
+    "samples": 53,
+    "mdShots": {
+      "414": {
+        "items": 2,
+        "links": 1,
+        "codeBlocks": 1,
+        "tables": 1,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": true,
+        "fenceTagShown": false
+      },
+      "1280": {
+        "items": 2,
+        "links": 1,
+        "codeBlocks": 1,
+        "tables": 1,
+        "boldInCode": false,
+        "detailsElement": false,
+        "detailsAsText": true,
+        "fenceTagShown": false
+      }
+    }
+  }
+]
