@@ -1,0 +1,26 @@
+{
+  "head": "30d5202371f59196d9a5b37a92414e3ab7f69714",
+  "checks": [
+    {
+      "name": "cc-types",
+      "command": "yarn typecheck",
+      "seconds": 22.514,
+      "exitCode": 0
+    },
+    {
+      "name": "focused-tests",
+      "command": "node --import tsx --test --test-reporter=tap --test-concurrency=1 apps/command-center/ui/src/components/runs/run-pipeline-model.test.ts apps/command-center/ui/src/components/progress-tracker/acceptance-panel.test.ts",
+      "seconds": 0.504,
+      "exitCode": 0
+    }
+  ],
+  "focusedTests": "29 pass, 0 fail",
+  "sourceTree": "Exact committed trees of head and PR base; every file hash and mode verified before each run and after each control rollback.",
+  "earlierControlAttempt": "pending-scope first ran with a mispredicted signature (UNEXPECTED; it failed at the release assertion). Kept privately, rerun with the corrected expectation.",
+  "activations": {
+    "gateway": 0,
+    "nativeHost": 0,
+    "worker": 0,
+    "device": 0
+  }
+}

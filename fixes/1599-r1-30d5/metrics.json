@@ -1,0 +1,148 @@
+{
+  "head": "30d5202371f59196d9a5b37a92414e3ab7f69714",
+  "base": "5d39ec8f2c7292a733ec8a9546117b9189289693",
+  "cases": {
+    "before-1280": {
+      "beforeTaskExists": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-1280",
+        "errorVisible": true,
+        "taskProgressReads": 2,
+        "reservedRowPx": null
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillReserved": null
+      },
+      "arrivalMovementPx": {
+        "next": 0,
+        "pipeline": 19
+      },
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": null
+      }
+    },
+    "after-1280": {
+      "beforeTaskExists": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false,
+        "taskProgressReads": 0,
+        "reservedRowPx": 62
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillReserved": false
+      },
+      "arrivalMovementPx": {
+        "next": 0,
+        "pipeline": 0
+      },
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 134
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": 0
+      }
+    },
+    "before-414": {
+      "beforeTaskExists": {
+        "acPanel": true,
+        "error": "ledger unreadable: No task file for slot fixture-task-before-414",
+        "errorVisible": true,
+        "taskProgressReads": 2,
+        "reservedRowPx": null
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillReserved": null
+      },
+      "arrivalMovementPx": {
+        "next": 0,
+        "pipeline": 32
+      },
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 171.796875
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": null
+      }
+    },
+    "after-414": {
+      "beforeTaskExists": {
+        "acPanel": false,
+        "error": null,
+        "errorVisible": false,
+        "taskProgressReads": 0,
+        "reservedRowPx": 62
+      },
+      "taskWritten": {
+        "counts": "0/1 assessed",
+        "error": null,
+        "collapsedPanelPx": 54,
+        "rowStillReserved": false
+      },
+      "arrivalMovementPx": {
+        "next": 0,
+        "pipeline": 0
+      },
+      "realReadError": {
+        "error": "ledger unreadable: Invalid JSON in artifacts/acceptance-status.json",
+        "visible": true,
+        "expandedPanelPx": 171.796875
+      },
+      "recovered": {
+        "counts": "0/1 assessed",
+        "error": null
+      },
+      "taskWithoutCriteria": {
+        "acPanel": false,
+        "rowPx": 0
+      }
+    }
+  },
+  "durationsSeconds": {
+    "before-1280": 8.259,
+    "after-1280": 8.08,
+    "before-414": 7.97,
+    "after-414": 7.791
+  },
+  "each": "Fresh headless browser profile and distinct run/slot id per case. Lifecycle: write-task running, task written, real ledger error, recovered, task without criteria; never rewound.",
+  "movement": "Measured above the row (pipeline top) and below it (next control top); the page sits at its scroll limit, where a shrink moves content above.",
+  "boundaries": [
+    "A real ledger error keeps its existing auto-expanded panel, so that state grows by its error rows.",
+    "A written task without criteria releases the reserved row once its read settles.",
+    "Before recordings also show a resource-store restart notice from the archived base tree; it is not asserted and the read-guard control reproduces the false read without it."
+  ],
+  "limit": "Mounted Command Center over an isolated observed-WebSocket protocol fixture. No gateway, task writer, worker, native host or device is started."
+}
