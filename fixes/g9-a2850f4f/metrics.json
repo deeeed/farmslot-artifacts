@@ -1,0 +1,244 @@
+[
+  {
+    "side": "before",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          },
+          {
+            "state": "pending",
+            "queued": false
+          }
+        ]
+      },
+      "end": {
+        "state": "idle",
+        "pendingText": null,
+        "userEntries": 1,
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false
+          },
+          {
+            "state": "completed",
+            "queued": false
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T22:23:52.423Z",
+        "proof-1793399032420",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T22:23:54.581Z",
+        "proof-1793399032420",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T22:23:54.589Z",
+        "proof-1793399032420",
+        ""
+      ],
+      [
+        1094,
+        "turn.completed",
+        "2026-10-30T22:24:21.202Z",
+        "proof-1793399032420",
+        ""
+      ],
+      [
+        1095,
+        "command.submitted",
+        "2026-10-30T22:24:21.206Z",
+        "mobile-1793399038156-mqb75lndgwe",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1096,
+        "command.accepted",
+        "2026-10-30T22:24:23.165Z",
+        "mobile-1793399038156-mqb75lndgwe",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1097,
+        "turn.started",
+        "2026-10-30T22:24:23.171Z",
+        "mobile-1793399038156-mqb75lndgwe",
+        ""
+      ],
+      [
+        1099,
+        "turn.completed",
+        "2026-10-30T22:24:23.187Z",
+        "mobile-1793399038156-mqb75lndgwe",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      },
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      }
+    ],
+    "replyEnd": "9 walnut\n1500 yonderNEXT"
+  },
+  {
+    "side": "after",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          },
+          {
+            "state": "pending",
+            "queued": true
+          }
+        ]
+      },
+      "end": {
+        "state": "idle",
+        "pendingText": null,
+        "userEntries": 1,
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false
+          },
+          {
+            "state": "completed",
+            "queued": false
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T22:25:45.018Z",
+        "proof-1793399145015",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T22:25:46.499Z",
+        "proof-1793399145015",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T22:25:46.509Z",
+        "proof-1793399145015",
+        ""
+      ],
+      [
+        1032,
+        "turn.completed",
+        "2026-10-30T22:26:10.833Z",
+        "proof-1793399145015",
+        ""
+      ],
+      [
+        1033,
+        "command.submitted",
+        "2026-10-30T22:26:10.842Z",
+        "mobile-1793399150273-itwnsi6zks",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1034,
+        "command.accepted",
+        "2026-10-30T22:26:12.183Z",
+        "mobile-1793399150273-itwnsi6zks",
+        "Then reply with only the word NEXT."
+      ],
+      [
+        1035,
+        "turn.started",
+        "2026-10-30T22:26:12.187Z",
+        "mobile-1793399150273-itwnsi6zks",
+        ""
+      ],
+      [
+        1037,
+        "turn.completed",
+        "2026-10-30T22:26:12.326Z",
+        "mobile-1793399150273-itwnsi6zks",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      },
+      {
+        "state": "completed",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": "completed"
+      }
+    ],
+    "replyEnd": "9 pillow\n1500 valleyNEXT"
+  }
+]
