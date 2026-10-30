@@ -1,0 +1,24 @@
+[
+  {
+    "label": "links-before",
+    "commandCard": {
+      "text": "$ bash links.sh\nerror: \nfinished",
+      "fits": true
+    },
+    "commandCardReopened": {
+      "text": "$ bash links.sh\nerror: \nfinished",
+      "fits": true
+    }
+  },
+  {
+    "label": "links-after",
+    "commandCard": {
+      "text": "$ bash links.sh\nerror: a.rs:3\nnote: see docs\nfinished",
+      "fits": true
+    },
+    "commandCardReopened": {
+      "text": "$ bash links.sh\nerror: a.rs:3\nnote: see docs\nfinished",
+      "fits": true
+    }
+  }
+]
