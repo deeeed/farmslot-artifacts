@@ -1,0 +1,28 @@
+[
+  {
+    "name": "cc-types",
+    "argv": [
+      "/Users/deeeed/.npm-global/bin/yarn",
+      "typecheck"
+    ],
+    "seconds": 23.047,
+    "exitCode": 0
+  },
+  {
+    "name": "focused-tests",
+    "argv": [
+      "/opt/homebrew/bin/node",
+      "--import",
+      "tsx",
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "apps/command-center/ui/src/components/chat/native-read-status.test.ts",
+      "apps/command-center/ui/src/components/chat/native-session-header.test.ts",
+      "apps/command-center/ui/src/components/runs/run-worker-panel-preferences.test.ts",
+      "apps/command-center/ui/src/components/runs/run-detail-session-renderers.test.ts"
+    ],
+    "seconds": 3.854,
+    "exitCode": 0
+  }
+]

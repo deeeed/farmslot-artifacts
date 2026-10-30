@@ -1,0 +1,44 @@
+{
+  "head": "d380bff8a5677637062be3112f439df034591e5d",
+  "scope": "Mounted observed-WebSocket presentation; no native host/device/provider/gateway activation.",
+  "views": [
+    {
+      "phase": "before",
+      "width": 1280,
+      "movementPx": 103.78125,
+      "samples": 5,
+      "outageMs": []
+    },
+    {
+      "phase": "before",
+      "width": 414,
+      "movementPx": 146.78125,
+      "samples": 5,
+      "outageMs": []
+    },
+    {
+      "phase": "after",
+      "width": 1280,
+      "movementPx": 0,
+      "samples": 8,
+      "outageMs": [
+        60794
+      ]
+    },
+    {
+      "phase": "after",
+      "width": 414,
+      "movementPx": 0,
+      "samples": 5,
+      "outageMs": []
+    }
+  ],
+  "additionalDisclosures": [
+    "family-remember-open",
+    "family-remember-closed",
+    "terminal-remember-open",
+    "terminal-remember-closed",
+    "terminal-finished-no-restore",
+    "unsupported-inventory"
+  ]
+}

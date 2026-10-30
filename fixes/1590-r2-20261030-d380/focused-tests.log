@@ -1,0 +1,154 @@
+TAP version 13
+# Subtest: a healthy revision change refreshes history without becoming an outage
+ok 1 - a healthy revision change refreshes history without becoming an outage
+  ---
+  duration_ms: 0.730584
+  type: 'test'
+  ...
+# Subtest: a real outage becomes unavailable only after 60 seconds, keeping the actual saved age
+ok 2 - a real outage becomes unavailable only after 60 seconds, keeping the actual saved age
+  ---
+  duration_ms: 0.116875
+  type: 'test'
+  ...
+# Subtest: live observation ages use bounded minutes and hours
+ok 3 - live observation ages use bounded minutes and hours
+  ---
+  duration_ms: 0.045041
+  type: 'test'
+  ...
+# Subtest: a pending retry keeps the outage status until the caller observes recovery
+ok 4 - a pending retry keeps the outage status until the caller observes recovery
+  ---
+  duration_ms: 0.046666
+  type: 'test'
+  ...
+# Subtest: a superseded history read shows Refreshing history rather than a source error
+ok 5 - a superseded history read shows Refreshing history rather than a source error
+  ---
+  duration_ms: 0.542917
+  type: 'test'
+  ...
+# Subtest: the fixed row retains saved-read proof wording and the failure cause
+ok 6 - the fixed row retains saved-read proof wording and the failure cause
+  ---
+  duration_ms: 0.081959
+  type: 'test'
+  ...
+# Subtest: a continuously superseded read gains the canonical saved caption at the shared grace boundary
+ok 7 - a continuously superseded read gains the canonical saved caption at the shared grace boundary
+  ---
+  duration_ms: 0.078833
+  type: 'test'
+  ...
+# Subtest: run detail lists one session row per agent context with a short session id
+ok 8 - run detail lists one session row per agent context with a short session id
+  ---
+  duration_ms: 0.428375
+  type: 'test'
+  ...
+# Subtest: the row names the slot and tmux target before any copy
+ok 9 - the row names the slot and tmux target before any copy
+  ---
+  duration_ms: 0.067042
+  type: 'test'
+  ...
+# Subtest: copy buttons are labeled as copy, not as execute
+ok 10 - copy buttons are labeled as copy, not as execute
+  ---
+  duration_ms: 0.05725
+  type: 'test'
+  ...
+# Subtest: Open on host reloads a dead pane only while the run is still live
+ok 11 - Open on host reloads a dead pane only while the run is still live
+  ---
+  duration_ms: 0.041291
+  type: 'test'
+  ...
+# Subtest: Open on host refuses transferred or unproved slot ownership
+ok 12 - Open on host refuses transferred or unproved slot ownership
+  ---
+  duration_ms: 0.076166
+  type: 'test'
+  ...
+# Subtest: switching runs clears the bound terminal context so the next run cannot inherit it
+ok 13 - switching runs clears the bound terminal context so the next run cannot inherit it
+  ---
+  duration_ms: 0.662958
+  type: 'test'
+  ...
+# Subtest: copy buttons use only the command the gateway built
+ok 14 - copy buttons use only the command the gateway built
+  ---
+  duration_ms: 0.044292
+  type: 'test'
+  ...
+# Subtest: row state carries the structured liveness the gateway proved
+ok 15 - row state carries the structured liveness the gateway proved
+  ---
+  duration_ms: 0.306542
+  type: 'test'
+  ...
+# Subtest: an unsupported runner surfaces its reason and copies nothing
+ok 16 - an unsupported runner surfaces its reason and copies nothing
+  ---
+  duration_ms: 0.046459
+  type: 'test'
+  ...
+# Subtest: a missing attach command is an error state, never a silent no-op copy
+ok 17 - a missing attach command is an error state, never a silent no-op copy
+  ---
+  duration_ms: 0.068458
+  type: 'test'
+  ...
+# Subtest: a refused clipboard keeps the proved liveness and never reports Copied
+ok 18 - a refused clipboard keeps the proved liveness and never reports Copied
+  ---
+  duration_ms: 0.044417
+  type: 'test'
+  ...
+# Subtest: a gateway-side failure is not marked as a blocked copy
+ok 19 - a gateway-side failure is not marked as a blocked copy
+  ---
+  duration_ms: 0.03175
+  type: 'test'
+  ...
+# Subtest: two same-role reviewer rows stay distinct so each copies its own session
+ok 20 - two same-role reviewer rows stay distinct so each copies its own session
+  ---
+  duration_ms: 0.054
+  type: 'test'
+  ...
+# Subtest: the request guard is keyed per context so one row cannot strand another
+ok 21 - the request guard is keyed per context so one row cannot strand another
+  ---
+  duration_ms: 0.674
+  type: 'test'
+  ...
+# Subtest: slot-free native review rows do not fall back to tmux controls
+ok 22 - slot-free native review rows do not fall back to tmux controls
+  ---
+  duration_ms: 0.0415
+  type: 'test'
+  ...
+# Subtest: disclosures default closed and remember choices only for their owner, run and panel
+ok 23 - disclosures default closed and remember choices only for their owner, run and panel
+  ---
+  duration_ms: 0.520417
+  type: 'test'
+  ...
+# Subtest: disclosure remains interactive when browser storage refuses both reads and writes
+ok 24 - disclosure remains interactive when browser storage refuses both reads and writes
+  ---
+  duration_ms: 0.120292
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3790.748792

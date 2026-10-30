@@ -1,0 +1,137 @@
+{
+  "head": "d380bff8a5677637062be3112f439df034591e5d",
+  "files": [
+    {
+      "path": "RESULT.json",
+      "sha256": "e84f702345445a5d64a462f5c132e640095e330e5ca4f3666e4502937d2539e7",
+      "mode": 420,
+      "bytes": 485
+    },
+    {
+      "path": "additional-disclosures.json",
+      "sha256": "09340e0a2e594dab31bf48b7d95a18975444128c12c56e4ce26051e732b136af",
+      "mode": 420,
+      "bytes": 16518
+    },
+    {
+      "path": "after-result.json",
+      "sha256": "d82d83b436e66a748c857eb9a72c359dc802cae07c04e2ca5644fad0857b806a",
+      "mode": 420,
+      "bytes": 134645
+    },
+    {
+      "path": "before-result.json",
+      "sha256": "3b50e43f5e433e6772066ab4eaadc3526e1377fef83300187f4826fb8d05b834",
+      "mode": 420,
+      "bytes": 101403
+    },
+    {
+      "path": "causal-controls.json",
+      "sha256": "438a5a6c422b7e15d5fe5fd84df9f0979c70f23f8c5d7d0255ddb712a787438d",
+      "mode": 420,
+      "bytes": 1094
+    },
+    {
+      "path": "checks.json",
+      "sha256": "9c47f413014895c5e92069d913ddea180ade91345a9dee81e2f5a11e2af0603e",
+      "mode": 420,
+      "bytes": 735
+    },
+    {
+      "path": "focused-tests.log",
+      "sha256": "9702bb60fe40cdc48c5b31c5dd662e693877022acf2bfa579c0d58d7231c9d78",
+      "mode": 420,
+      "bytes": 5098
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "58420ee39291485567276841ea131c8ae9108352267111114948dc8fd8c0dfe8",
+      "mode": 420,
+      "bytes": 923
+    },
+    {
+      "path": "native-panel-after-1280-timestamps.json",
+      "sha256": "54336a9127e5d1fd6f35ade7d9245ad67c358a7223a02bb4cc63b2317a6e0175",
+      "mode": 420,
+      "bytes": 20620
+    },
+    {
+      "path": "native-panel-after-1280.mp4",
+      "sha256": "7f23c5bd5c1c683d7690c41717099a01c863319c7acd7ccea26b1bb68ccd0a5e",
+      "mode": 420,
+      "bytes": 221861
+    },
+    {
+      "path": "native-panel-after-1280.png",
+      "sha256": "352cbba900fc4cf67d5200c990d3cb647f0fc777ece185cf33f0e82b4f4ad0cc",
+      "mode": 420,
+      "bytes": 85054
+    },
+    {
+      "path": "native-panel-after-414-timestamps.json",
+      "sha256": "a1335d50912a9fdb4567d363ccf75cbc835c10e7634641790f8e8bb6fb823702",
+      "mode": 420,
+      "bytes": 6175
+    },
+    {
+      "path": "native-panel-after-414.mp4",
+      "sha256": "bff59af781ad725d8854d9cf8d917b55e4f4ef56c6a1333ca1e3ed7bcf8287f4",
+      "mode": 420,
+      "bytes": 102914
+    },
+    {
+      "path": "native-panel-after-414.png",
+      "sha256": "596e119433b8282ecde86eabc5c7573b37d8332df472f156224618b181722015",
+      "mode": 420,
+      "bytes": 68078
+    },
+    {
+      "path": "native-panel-before-1280-timestamps.json",
+      "sha256": "fa28b520f8f7d906d1633af46bb01a44d7747a127fbbab94415843b1f635444a",
+      "mode": 420,
+      "bytes": 8495
+    },
+    {
+      "path": "native-panel-before-1280.mp4",
+      "sha256": "e72280fe581c2507e4fa749daf0d7f876f9b2147dc1ecaad2968c4a315f07970",
+      "mode": 420,
+      "bytes": 104800
+    },
+    {
+      "path": "native-panel-before-1280.png",
+      "sha256": "154b2c38a7c4ab859b3a17194310f8a8a8eae9bb269416a736b52cb164c3b0a4",
+      "mode": 420,
+      "bytes": 73255
+    },
+    {
+      "path": "native-panel-before-414-timestamps.json",
+      "sha256": "10675419f95e63b85429b1c900299a6f937b727d5a5eaf889a0d0c6e76dee9b1",
+      "mode": 420,
+      "bytes": 5491
+    },
+    {
+      "path": "native-panel-before-414.mp4",
+      "sha256": "bcf1cea2f645abc8c9d560b2339f3da4aef452b202276adb82d162872fc7dbcd",
+      "mode": 420,
+      "bytes": 102581
+    },
+    {
+      "path": "native-panel-before-414.png",
+      "sha256": "4f2088e1566e529b84184b8191d8cc7458a417c16c8c62ede01c616803cff15a",
+      "mode": 420,
+      "bytes": 69451
+    },
+    {
+      "path": "scope.md",
+      "sha256": "a802448ca1b5497e5d64a55319bca8e1ec45dce33f3d94e0c2361bf319d0bee1",
+      "mode": 420,
+      "bytes": 913
+    },
+    {
+      "path": "test-durations.json",
+      "sha256": "cccc5d1859e4f5b4842928d3c181dccbea044675362fb5118e2163dcdfe3216b",
+      "mode": 420,
+      "bytes": 3131
+    }
+  ]
+}

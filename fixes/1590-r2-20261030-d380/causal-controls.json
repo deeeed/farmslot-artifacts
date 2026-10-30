@@ -1,0 +1,33 @@
+{
+  "phases": [
+    {
+      "phase": "default-open",
+      "result": "EXPECTED-FAIL",
+      "seconds": 46.742,
+      "source": "apps/command-center/ui/src/components/runs/run-worker-panel-preferences.ts",
+      "mutatedSha256": "fe1b43483c2f21f9ae22fde229dfaf926ab1f7993dd42bad5e160106afb0de28",
+      "restoredSha256": "847e3e0353e1de48b5754626b4b19fdd84805ccdb885b2232de2160745219527"
+    },
+    {
+      "phase": "raw-error-row",
+      "result": "EXPECTED-FAIL",
+      "seconds": 2.245,
+      "source": "apps/command-center/ui/src/components/chat/native-session-view.ts",
+      "mutatedSha256": "597e5409a7c3f272de2b2112342c69bf4d09f300d46a6564a99825ffc7a3759c",
+      "restoredSha256": "ed28ca90480c878b5b38b3b9153287016613758d9743ec2cb060a05de4a1f810"
+    }
+  ],
+  "nativeHostActions": 0,
+  "gatewayActivations": 0,
+  "browserProfile": "/tmp/cx-native-panel-52414/browser-profile",
+  "browserPid": 53698,
+  "browserBirth": "Fri Oct 30 15:57:48 2026",
+  "restoredSourceFiles": 6244,
+  "result": "PASS",
+  "ports": {
+    "7922": "",
+    "5218": "",
+    "19324": ""
+  },
+  "cleanup": "PASS"
+}
