@@ -1,0 +1,72 @@
+[
+  {
+    "label": "g4-before",
+    "frames": 74,
+    "samples": 88,
+    "foldShots": {
+      "openedWhileRunning": {
+        "toolDetailsOpen": 1,
+        "firstToolTop": 109
+      },
+      "afterFinish": {
+        "toolDetailsOpen": 0,
+        "firstToolTop": 109
+      },
+      "watched": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "reopened": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "reopened414": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      },
+      "expanded": {
+        "fold": null,
+        "open": null,
+        "topTools": 2
+      }
+    }
+  },
+  {
+    "label": "g4-after",
+    "frames": 83,
+    "samples": 88,
+    "foldShots": {
+      "openedWhileRunning": {
+        "toolDetailsOpen": 1,
+        "firstToolTop": 109
+      },
+      "afterFinish": {
+        "toolDetailsOpen": 1,
+        "firstToolTop": 109
+      },
+      "watched": {
+        "fold": "Worked for 13s · 2 tools",
+        "open": true,
+        "topTools": 2
+      },
+      "reopened": {
+        "fold": "Worked for 13s · 2 tools",
+        "open": false,
+        "topTools": 0
+      },
+      "reopened414": {
+        "fold": "Worked for 13s · 2 tools",
+        "open": false,
+        "topTools": 0
+      },
+      "expanded": {
+        "fold": "Worked for 13s · 2 tools",
+        "open": true,
+        "topTools": 2
+      }
+    }
+  }
+]
