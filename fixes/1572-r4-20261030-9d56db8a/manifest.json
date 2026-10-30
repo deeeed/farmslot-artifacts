@@ -1,0 +1,110 @@
+{
+  "head": "9d56db8a8b8fa5ee1961845c38712a0f6a91c48b",
+  "files": [
+    {
+      "path": "tray-before.mp4",
+      "bytes": 94966,
+      "sha256": "fde63dad6cceda662167be31d687b76dd1395031940f7d58de16f6bfc1c47238"
+    },
+    {
+      "path": "run-before.mp4",
+      "bytes": 94702,
+      "sha256": "77af5ad779bc098659e795c4e04fd63e53af0e6d74e10805d0d392f51d771893"
+    },
+    {
+      "path": "evals-before.mp4",
+      "bytes": 94891,
+      "sha256": "c883d17a372c7d4fba1164739142ae9c222ac0327b4cc0feb50e3d6d0f6de824"
+    },
+    {
+      "path": "tray-after-1280.mp4",
+      "bytes": 114685,
+      "sha256": "5fe2119559251482a4c52c4140e7c6590cb454ae71f1d323229e0099fe29daa2"
+    },
+    {
+      "path": "tray-after-1280.png",
+      "bytes": 52179,
+      "sha256": "59c3fa69f1b31473c3cc3db2e22a329cde3a6f3d7076546a5e0463e95eb71fc3",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "tray-after-414.mp4",
+      "bytes": 84014,
+      "sha256": "dbb8905114e1bb053ef94017698d6780c397fb6ac6c6cd3aa7e1cd0a6cab3a72"
+    },
+    {
+      "path": "tray-after-414.png",
+      "bytes": 18295,
+      "sha256": "ce580ee8cfc52e0b335301bd327240162265ea2cceb5f6e1f18844023e15bacc",
+      "width": 414,
+      "height": 900
+    },
+    {
+      "path": "tray-after-414-expanded.mp4",
+      "bytes": 77577,
+      "sha256": "dc326b0494f8179a648d4eb770dd0dc7b4de32cdb48baa2e31bef6e085fb2394"
+    },
+    {
+      "path": "tray-after-414-expanded.png",
+      "bytes": 25628,
+      "sha256": "cc19963a444f2870bb695622b0a70ae3724bdcfa8b0043d7d6847b7129fd852d",
+      "width": 414,
+      "height": 900
+    },
+    {
+      "path": "run-after-1280.mp4",
+      "bytes": 60312,
+      "sha256": "4decc9cff655b62da6fa2099a135ece37beb9e07e58563737e4f6d6e369eeea3"
+    },
+    {
+      "path": "run-after-1280.png",
+      "bytes": 77002,
+      "sha256": "00972addf328794e49b12b35659e9629322856f234e5727ec4e33975137298f5",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "run-after-414.mp4",
+      "bytes": 66548,
+      "sha256": "cde56f74b0aa1d00640bdfbff0289a9f8edc6cc0bcb4770ba2abb54a88bd8d55"
+    },
+    {
+      "path": "run-after-414.png",
+      "bytes": 64377,
+      "sha256": "01b1a7e44cce9bbdff8eb2bf400d9632407a60531390d4556ebbb3ec00156615",
+      "width": 414,
+      "height": 900
+    },
+    {
+      "path": "evals-after-1280.mp4",
+      "bytes": 83102,
+      "sha256": "5c3c2e4cbaaed34d1dfab5ab98bf2728e8746d791515736ae186c1c6ff7f70c0"
+    },
+    {
+      "path": "evals-after-1280.png",
+      "bytes": 122743,
+      "sha256": "2cc6035054301ab30394c9225a43c20249c3900651f7fcc0973b59149a2dcb69",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "evals-after-414.mp4",
+      "bytes": 51774,
+      "sha256": "235812e071efc390b0b4d1c531efc672071117a4cfaba4f351f6db8b9376dfc7"
+    },
+    {
+      "path": "evals-after-414.png",
+      "bytes": 79359,
+      "sha256": "4f71865ad95262756ab2db613902e3fd98077c09815f3e9fd948695fd48ca0fd",
+      "width": 414,
+      "height": 900
+    },
+    {
+      "path": "metrics.json",
+      "bytes": 3082,
+      "sha256": "1c9dce62a7649cb2fda5c813ab4726c22c2ebef0cafb5b1c0df8d30664dc431f"
+    }
+  ],
+  "scope": "Mounted observed-WebSocket presentation proof, plus separate owning-Gateway actual writer/cold-read phases. No real gate action, native acceptance, worker/provider or device launch."
+}

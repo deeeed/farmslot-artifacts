@@ -1,0 +1,115 @@
+{
+  "head": "9d56db8a8b8fa5ee1961845c38712a0f6a91c48b",
+  "baseHead": "08f28556227cd18b27bcaeaa6892f0be9f841b12",
+  "patchSha256": "b122b99ca07d057a3d9a6d5df549ad3ff2d66aee9c24a18a6eaed4e693287b1c",
+  "beforeUiHead": "a1360f03839361d712d7054ab2c988112a0983b2",
+  "browser": "Chrome 156.0.8078.76; isolated headless profile",
+  "node": "24.19.0",
+  "after": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "run",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    },
+    {
+      "view": "evals",
+      "width": 414,
+      "shiftPx": 0,
+      "samples": 12
+    }
+  ],
+  "before": [
+    {
+      "view": "run",
+      "width": 1280,
+      "shiftPx": 39
+    },
+    {
+      "view": "evals",
+      "width": 1280,
+      "shiftPx": 23.390625
+    }
+  ],
+  "trayBeforeShiftPx": 96,
+  "protocolRequests": 265,
+  "proofContract": "Resolved metadata stays intact in every producer reply. Samples require a newly received owning request and the expected ready revision, or actual error/pending state. Evals measured text is visible.",
+  "settledNegative": {
+    "result": "PASS",
+    "expectedFailure": "A ready rendered gate with the wrong revision failed at the first settled sample.",
+    "sourceRestored": true,
+    "cleanup": "PASS"
+  },
+  "owningGatewayPhases": [
+    {
+      "phase": "list-web",
+      "result": "PASS",
+      "seconds": 6.683
+    },
+    {
+      "phase": "detail-web",
+      "result": "PASS",
+      "seconds": 6.526
+    },
+    {
+      "phase": "progress-web",
+      "result": "PASS",
+      "seconds": 29.849
+    },
+    {
+      "phase": "progress-detail-web",
+      "result": "PASS",
+      "seconds": 45.594
+    },
+    {
+      "phase": "dispatch-runs-web",
+      "result": "PASS",
+      "seconds": 11.332
+    },
+    {
+      "phase": "inbox-web",
+      "result": "PASS",
+      "seconds": 35.385
+    },
+    {
+      "phase": "family-web",
+      "result": "PASS",
+      "seconds": 10.701
+    },
+    {
+      "phase": "ready-workspace-web",
+      "result": "PASS",
+      "seconds": 9.537
+    }
+  ],
+  "focusedTests": 27,
+  "perFileSeconds": {
+    "resource-query-controller.test.ts": 0.323,
+    "retained-notice.test.ts": 0.15,
+    "ready-workspace-notice.test.ts": 0.269,
+    "ready-workspace-queries.test.ts": 0.266,
+    "state-reconnect.test.ts": 0.26,
+    "notification-tray-model.test.ts": 0.15,
+    "notification-tray.test.ts": 0.15,
+    "runner-visible-models.test.ts": 0.266,
+    "resource-read-status.test.ts": 0.27
+  },
+  "typecheckSeconds": {
+    "command-center-typecheck": 22.357,
+    "companion-typecheck": 5.439
+  },
+  "supersedes": "The previous 08f28556 run-before recording relied on an unsupported metadata-omission fixture. It is historical only. These clips keep resolvedAt intact.",
+  "limits": "Mounted observed-WebSocket presentation proof, plus separate owning-Gateway actual writer/cold-read phases. No real gate action, native acceptance, worker/provider or device launch."
+}
