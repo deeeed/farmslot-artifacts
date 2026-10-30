@@ -1,0 +1,221 @@
+[
+  {
+    "side": "before",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown"
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "pending": true,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted"
+          },
+          {
+            "state": "pending"
+          }
+        ]
+      },
+      "closed": {
+        "state": "closed",
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted"
+          },
+          {
+            "state": "failed"
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        1,
+        "session.started",
+        "2026-10-30T22:40:01.471Z",
+        "",
+        ""
+      ],
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T22:45:40.933Z",
+        "proof-1793400340931",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        3,
+        "session.started",
+        "2026-10-30T22:45:41.019Z",
+        "proof-1793400340931",
+        ""
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T22:45:41.986Z",
+        "proof-1793400340931",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T22:45:41.991Z",
+        "proof-1793400340931",
+        ""
+      ],
+      [
+        330,
+        "session.closed",
+        "2026-10-30T22:45:51.980Z",
+        "proof-1793400340931",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "accepted",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": null
+      },
+      {
+        "state": "failed",
+        "queued": false,
+        "submitted": false,
+        "accepted": false,
+        "outcome": "interrupted"
+      }
+    ]
+  },
+  {
+    "side": "after",
+    "frames": {
+      "running": {
+        "state": "waiting",
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          },
+          {
+            "state": "pending",
+            "queued": true
+          }
+        ]
+      },
+      "closed": {
+        "state": "closed",
+        "draft": "Then reply with only the word NEXT.",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false
+          },
+          {
+            "state": "failed",
+            "queued": false
+          }
+        ]
+      }
+    },
+    "gatewayEvents": [
+      [
+        1,
+        "session.started",
+        "2026-10-30T22:40:01.766Z",
+        "",
+        ""
+      ],
+      [
+        2,
+        "command.submitted",
+        "2026-10-30T22:46:49.144Z",
+        "proof-1793400409142",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        3,
+        "session.started",
+        "2026-10-30T22:46:49.186Z",
+        "proof-1793400409142",
+        ""
+      ],
+      [
+        4,
+        "command.accepted",
+        "2026-10-30T22:46:50.573Z",
+        "proof-1793400409142",
+        "Count from 1 to 1500. Put each number on its own line followed by one short English word. No other text."
+      ],
+      [
+        5,
+        "turn.started",
+        "2026-10-30T22:46:50.577Z",
+        "proof-1793400409142",
+        ""
+      ],
+      [
+        72,
+        "session.closed",
+        "2026-10-30T22:46:59.604Z",
+        "proof-1793400409142",
+        ""
+      ]
+    ],
+    "receipts": [
+      {
+        "state": "accepted",
+        "queued": false,
+        "submitted": true,
+        "accepted": true,
+        "outcome": null
+      },
+      {
+        "state": "failed",
+        "queued": false,
+        "submitted": false,
+        "accepted": false,
+        "outcome": "interrupted"
+      }
+    ]
+  }
+]
