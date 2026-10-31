@@ -1,0 +1,28 @@
+[
+  {
+    "side": "before",
+    "label": "links3-before",
+    "anchor": {
+      "text": "the PR",
+      "target": null,
+      "rel": null
+    },
+    "commandCenterStayed": false,
+    "commandCenterUrlAfter": "https://example.com/pr/1",
+    "newTabs": []
+  },
+  {
+    "side": "after",
+    "label": "links3-after",
+    "anchor": {
+      "text": "the PR",
+      "target": "_blank",
+      "rel": "noopener noreferrer"
+    },
+    "commandCenterStayed": true,
+    "commandCenterUrlAfter": "command-center",
+    "newTabs": [
+      "https://example.com/pr/1"
+    ]
+  }
+]
