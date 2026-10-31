@@ -1,0 +1,216 @@
+[
+  {
+    "side": "before",
+    "states": {
+      "running": {
+        "state": "running",
+        "draft": "",
+        "delivery": "Accepted",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "delivery": "Queued for the next turn",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          },
+          {
+            "meta": "You \u00b7 Queued for the next turn",
+            "text": "Then reply with only the word NEXT."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false,
+            "outcome": null
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      },
+      "after": {
+        "state": "idle",
+        "draft": "",
+        "delivery": "Completed",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          },
+          {
+            "meta": "You",
+            "text": "Then reply with only the word NEXT."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true,
+            "outcome": "completed"
+          },
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true,
+            "outcome": "completed"
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on ",
+          "Then reply with only the word NEXT."
+        ]
+      }
+    }
+  },
+  {
+    "side": "after",
+    "states": {
+      "running": {
+        "state": "running",
+        "draft": "",
+        "delivery": "Accepted",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "draft": "",
+        "delivery": "Queued for the next turn",
+        "edit": "enabled",
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          },
+          {
+            "meta": "You \u00b7 Queued for the next turn",
+            "text": "Then reply with only the word NEXT."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false,
+            "outcome": null
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      },
+      "edited": {
+        "state": "running",
+        "draft": "Then reply with only the word NEXT.",
+        "delivery": "Removed",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true,
+            "outcome": null
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false,
+            "outcome": "cancelled"
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      },
+      "after": {
+        "state": "idle",
+        "draft": "Then reply with only the word NEXT.",
+        "delivery": "Removed",
+        "edit": null,
+        "you": [
+          {
+            "meta": "You",
+            "text": "Count from 1 to 800. Put each number on its own line followed by one short English word. No other text."
+          }
+        ],
+        "receipts": [
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true,
+            "outcome": "completed"
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false,
+            "outcome": "cancelled"
+          }
+        ],
+        "submittedMessages": [
+          "Count from 1 to 800. Put each number on "
+        ]
+      }
+    }
+  }
+]
