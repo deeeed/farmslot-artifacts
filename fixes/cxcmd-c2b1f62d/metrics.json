@@ -1,0 +1,56 @@
+[
+  {
+    "side": "before",
+    "rows": [
+      "Run /bin/zsh -lc 'echo \"one two\" && ls -a' \u00b7 completed",
+      ""
+    ],
+    "reopenedRows": [
+      "Run /bin/zsh -lc 'echo \"one two\" && ls -a' \u00b7 completed",
+      "Raw input and output"
+    ],
+    "workingLabels": [
+      "Working \u00b7 Ns \u00b7 Run /bin/zsh -lc 'echo \"one two\" && ls -a'"
+    ],
+    "commandCard": {
+      "text": "$ /bin/zsh -lc 'echo \"one two\" && ls -a'\none two\n.\n..\n.farm-cache\nauth\nCLAUDE.md\nnative\npackages\nscripts\nservices",
+      "fits": true
+    },
+    "reopenedCommandCard": {
+      "text": "$ /bin/zsh -lc 'echo \"one two\" && ls -a'\none two\n.\n..\n.farm-cache\nauth\nCLAUDE.md\nnative\npackages\nscripts\nservices",
+      "fits": true
+    },
+    "responses": [
+      {
+        "decision": "approve"
+      }
+    ]
+  },
+  {
+    "side": "after",
+    "rows": [
+      "Run echo \"one two\" && ls -a \u00b7 completed",
+      ""
+    ],
+    "reopenedRows": [
+      "Run echo \"one two\" && ls -a \u00b7 completed",
+      "Raw input and output"
+    ],
+    "workingLabels": [
+      "Working \u00b7 Ns \u00b7 Run echo \"one two\" && ls -a"
+    ],
+    "commandCard": {
+      "text": "$ echo \"one two\" && ls -a\none two\n.\n..\n.farm-cache\nauth\nCLAUDE.md\nnative\npackages\nscripts\nservices",
+      "fits": true
+    },
+    "reopenedCommandCard": {
+      "text": "$ echo \"one two\" && ls -a\none two\n.\n..\n.farm-cache\nauth\nCLAUDE.md\nnative\npackages\nscripts\nservices",
+      "fits": true
+    },
+    "responses": [
+      {
+        "decision": "approve"
+      }
+    ]
+  }
+]
