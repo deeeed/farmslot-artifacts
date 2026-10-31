@@ -1,0 +1,245 @@
+[
+  {
+    "side": "before",
+    "states": {
+      "running": {
+        "state": "waiting",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false,
+            "submitted": true
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false
+          }
+        ]
+      },
+      "edit": "not offered",
+      "edited": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false
+          }
+        ]
+      },
+      "after": {
+        "state": "idle",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 1,
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "side": "after",
+    "states": {
+      "running": {
+        "state": "waiting",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false,
+            "submitted": true
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false
+          }
+        ]
+      },
+      "edit": "pressed",
+      "edited": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "Then reply with only the word NEXT.",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false
+          }
+        ]
+      },
+      "after": {
+        "state": "idle",
+        "cancelQueued": null,
+        "draft": "Then reply with only the word NEXT.",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "failed",
+            "queued": false,
+            "submitted": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "side": "after, earlier attempt (b2-after)",
+    "states": {
+      "running": {
+        "state": "waiting",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "unknown",
+            "queued": false,
+            "submitted": true
+          }
+        ]
+      },
+      "queued": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false
+          }
+        ]
+      },
+      "edit": "pressed",
+      "edited": {
+        "state": "running",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": true,
+        "pendingText": "Then reply with only the word NEXT.",
+        "userEntries": 0,
+        "commands": [
+          {
+            "state": "accepted",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "pending",
+            "queued": true,
+            "submitted": false
+          }
+        ]
+      },
+      "after": {
+        "state": "idle",
+        "cancelQueued": null,
+        "draft": "",
+        "pending": false,
+        "pendingText": null,
+        "userEntries": 1,
+        "commands": [
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true
+          },
+          {
+            "state": "completed",
+            "queued": false,
+            "submitted": true
+          }
+        ]
+      }
+    }
+  }
+]
