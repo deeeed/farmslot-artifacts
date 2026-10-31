@@ -1,0 +1,133 @@
+{
+ "commandCenter": {
+  "steer-after": {
+   "offered": true,
+   "afterSend": {
+    "delivery": "Completed",
+    "status": "Live \u00b7 idle"
+   },
+   "finished": {
+    "lastNumber": 191,
+    "steeredReply": true,
+    "users": [
+     "Count from 1 to 300. Put each number on its own line. No other text.",
+     "Stop counting now. Reply with only the word STEERED."
+    ],
+    "delivery": "Completed"
+   }
+  },
+  "steer-before": {
+   "offered": false,
+   "afterSend": {
+    "delivery": "Accepted",
+    "status": "Loading history"
+   },
+   "finished": {
+    "lastNumber": 300,
+    "steeredReply": false,
+    "users": [
+     "Count from 1 to 300. Put each number on its own line. No other text."
+    ],
+    "delivery": "Completed"
+   }
+  }
+ },
+ "companion": {
+  "after": {
+   "running": {
+    "state": "running",
+    "steer": null,
+    "pending": false,
+    "users": 1,
+    "lastNumber": 95,
+    "steered": false,
+    "receipts": [
+     [
+      "accepted",
+      false
+     ]
+    ]
+   },
+   "draft": "typed",
+   "pressed": "Steer",
+   "sent": {
+    "state": "running",
+    "steer": null,
+    "pending": true,
+    "users": 1,
+    "lastNumber": 167,
+    "steered": false,
+    "receipts": [
+     [
+      "accepted",
+      false
+     ]
+    ]
+   },
+   "finished": {
+    "state": "idle",
+    "steer": null,
+    "pending": false,
+    "users": 2,
+    "lastNumber": 439,
+    "steered": true,
+    "receipts": [
+     [
+      "completed",
+      false
+     ],
+     [
+      "completed",
+      false
+     ]
+    ]
+   }
+  },
+  "before": {
+   "running": {
+    "state": "running",
+    "steer": null,
+    "pending": true,
+    "users": 1,
+    "lastNumber": 71,
+    "steered": false,
+    "receipts": [
+     [
+      "accepted",
+      false
+     ]
+    ]
+   },
+   "draft": "not editable while the turn runs",
+   "pressed": "Queue message",
+   "sent": {
+    "state": "running",
+    "steer": null,
+    "pending": true,
+    "users": 1,
+    "lastNumber": 175,
+    "steered": false,
+    "receipts": [
+     [
+      "accepted",
+      false
+     ]
+    ]
+   },
+   "finished": {
+    "state": "idle",
+    "steer": null,
+    "pending": false,
+    "users": 1,
+    "lastNumber": 1000,
+    "steered": false,
+    "receipts": [
+     [
+      "completed",
+      false
+     ]
+    ]
+   }
+  }
+ }
+}
