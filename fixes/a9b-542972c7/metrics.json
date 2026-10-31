@@ -1,0 +1,242 @@
+{
+ "commandCenter": {
+  "plan-after": {
+   "running": {
+    "kind": "checklist",
+    "summary": "Plan \u00b7 0 of 3 steps",
+    "open": true,
+    "steps": [
+     "in-progress:Write a four-line poem about a color",
+     "pending:Write a four-line poem about an animal",
+     "pending:Give both poems a title"
+    ],
+    "copy": null
+   },
+   "finished": {
+    "kind": "checklist",
+    "summary": "Plan \u00b7 3 of 3 steps",
+    "open": true,
+    "steps": [
+     "completed:Write a four-line poem about a color",
+     "completed:Write a four-line poem about an animal",
+     "completed:Give both poems a title"
+    ],
+    "copy": null
+   },
+   "reopened": {
+    "kind": "checklist",
+    "summary": "Plan \u00b7 3 of 3 steps",
+    "open": false,
+    "steps": [
+     "completed:",
+     "completed:",
+     "completed:"
+    ],
+    "copy": null
+   },
+   "reopened414": {
+    "kind": "checklist",
+    "summary": "Plan \u00b7 3 of 3 steps",
+    "open": false,
+    "steps": [
+     "completed:",
+     "completed:",
+     "completed:"
+    ],
+    "copy": null
+   }
+  },
+  "plan-before": {
+   "running": null,
+   "finished": {},
+   "reopened": {},
+   "reopened414": {}
+  },
+  "proposal-after": {
+   "running": null,
+   "finished": {
+    "kind": "proposal",
+    "summary": null,
+    "open": null,
+    "steps": [],
+    "copy": "Copy plan"
+   },
+   "afterCopy": {
+    "kind": "proposal",
+    "summary": null,
+    "open": null,
+    "steps": [],
+    "copy": "Copied"
+   },
+   "reopened": {
+    "kind": "proposal",
+    "summary": null,
+    "open": null,
+    "steps": [],
+    "copy": "Copy plan"
+   },
+   "reopened414": {
+    "kind": "proposal",
+    "summary": null,
+    "open": null,
+    "steps": [],
+    "copy": "Copy plan"
+   }
+  },
+  "proposal-before": {
+   "running": null,
+   "finished": {},
+   "afterCopy": null,
+   "reopened": {},
+   "reopened414": {}
+  }
+ },
+ "companion": {
+  "after-plan": {
+   "running": {
+    "state": "running",
+    "requests": 0,
+    "plans": [
+     "checklist: 0 of 3 steps"
+    ],
+    "kinds": [
+     "user",
+     "plan"
+    ]
+   },
+   "finished": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [
+     "checklist: 3 of 3 steps"
+    ],
+    "kinds": [
+     "user",
+     "plan",
+     "assistant",
+     "status"
+    ]
+   },
+   "reopened": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [
+     "checklist: 3 of 3 steps"
+    ],
+    "kinds": [
+     "user",
+     "plan",
+     "assistant",
+     "status"
+    ]
+   }
+  },
+  "after-proposal": {
+   "finished": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [
+     "proposal: 1. Identify the folder\u2019s purpose from the available context.\n2. Draft a `README."
+    ],
+    "kinds": [
+     "user",
+     "plan",
+     "status"
+    ]
+   },
+   "copy": "pressed",
+   "reopened": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [
+     "proposal: 1. Identify the folder\u2019s purpose from the available context.\n2. Draft a `README."
+    ],
+    "kinds": [
+     "user",
+     "plan",
+     "status"
+    ]
+   }
+  },
+  "before-plan": {
+   "finished": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [],
+    "kinds": [
+     "user",
+     "assistant",
+     "status"
+    ]
+   },
+   "reopened": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [],
+    "kinds": [
+     "user",
+     "assistant",
+     "status"
+    ]
+   }
+  },
+  "before-proposal": {
+   "finished": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [],
+    "kinds": [
+     "user",
+     "status"
+    ]
+   },
+   "reopened": {
+    "state": "idle",
+    "requests": 0,
+    "plans": [],
+    "kinds": [
+     "user",
+     "status"
+    ]
+   }
+  }
+ },
+ "codexPlanEventsAfter": [
+  [
+   "session.started",
+   -9.3
+  ],
+  [
+   "command.submitted",
+   -0.03
+  ],
+  [
+   "command.accepted",
+   -0.01
+  ],
+  [
+   "turn.started",
+   0
+  ],
+  [
+   "plan.updated",
+   1.93
+  ],
+  [
+   "plan.updated",
+   5.5
+  ],
+  [
+   "plan.updated",
+   8.9
+  ],
+  [
+   "plan.updated",
+   12.14
+  ],
+  [
+   "turn.completed",
+   14.13
+  ]
+ ]
+}
