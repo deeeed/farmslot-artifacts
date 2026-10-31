@@ -1,0 +1,141 @@
+{
+ "commit": "9103189dbac456901169064c9b8563e2499a5f36",
+ "runner": "codex 0.166.0",
+ "host": "mini",
+ "run": 78,
+ "before": {
+  "summary": {
+   "mode": "changes",
+   "frames": 68,
+   "samples": 53,
+   "disabledSamples": 0,
+   "bannerSamples": 0,
+   "finalTexts": 4
+  },
+  "changeShots": {
+   "finished": {
+    "shot": "changes-before-finished-1280.png"
+   },
+   "listed": {
+    "shot": "changes-before-listed-1280.png"
+   },
+   "diff": {
+    "shot": "changes-before-diff-1280.png"
+   },
+   "diff414": {
+    "shot": "changes-before-diff-414.png"
+   },
+   "reopened": {
+    "shot": "changes-before-reopened-1280.png"
+   }
+  },
+  "repoAfterTurn": [
+   " M README.md",
+   "?? notes.txt",
+   "1",
+   "refs/heads/main"
+  ],
+  "eventTypes": [
+   "session.started",
+   "command.submitted",
+   "command.accepted",
+   "turn.started",
+   "tool.started",
+   "approval.requested",
+   "approval.resolved",
+   "approval.resolved",
+   "tool.completed",
+   "text.delta",
+   "turn.completed"
+  ]
+ },
+ "after": {
+  "summary": {
+   "mode": "changes",
+   "frames": 50,
+   "samples": 53,
+   "disabledSamples": 0,
+   "bannerSamples": 0,
+   "finalTexts": 4
+  },
+  "changeShots": {
+   "finished": {
+    "summary": "Changed 2 files \u00b7 +3 \u22120",
+    "open": false,
+    "files": [
+     "",
+     ""
+    ],
+    "diff": null,
+    "viewer": false,
+    "shot": "changes-after-finished-1280.png"
+   },
+   "listed": {
+    "summary": "Changed 2 files \u00b7 +3 \u22120",
+    "open": true,
+    "files": [
+     "Changed README.md +1 \u22120",
+     "Added notes.txt +2 \u22120"
+    ],
+    "diff": null,
+    "viewer": false,
+    "shot": "changes-after-listed-1280.png"
+   },
+   "diff": {
+    "summary": "Changed 2 files \u00b7 +3 \u22120",
+    "open": true,
+    "files": [
+     "Changed README.md +1 \u22120",
+     "Added notes.txt +2 \u22120"
+    ],
+    "diff": "notes.txt\nSplit\nUnified\n\t@@ -0,0 +1,2 @@\n\t\u00a0 \n\n\t\u00a0 \n\n\t\u00a0\n1\t+ alpha\n2\t+ beta",
+    "viewer": true,
+    "shot": "changes-after-diff-1280.png"
+   },
+   "diff414": {
+    "summary": "Changed 2 files \u00b7 +3 \u22120",
+    "open": true,
+    "files": [
+     "Changed README.md +1 \u22120",
+     "Added notes.txt +2 \u22120"
+    ],
+    "diff": "notes.txt\nSplit\nUnified\n\t@@ -0,0 +1,2 @@\n\t\u00a0 \n\n\t\u00a0 \n\n\t\u00a0\n1\t+ alpha\n2\t+ beta",
+    "viewer": true,
+    "shot": "changes-after-diff-414.png"
+   },
+   "reopened": {
+    "summary": "Changed 2 files \u00b7 +3 \u22120",
+    "open": false,
+    "files": [
+     "",
+     ""
+    ],
+    "diff": null,
+    "viewer": false,
+    "shot": "changes-after-reopened-1280.png"
+   }
+  },
+  "repoAfterTurn": [
+   " M README.md",
+   "?? notes.txt",
+   "1",
+   "refs/farmslot/native/e35539b9-99d3-46fd-823a-dac05abe5fd4/0mvwvndcd-2cb7246c27de",
+   "refs/farmslot/native/e35539b9-99d3-46fd-823a-dac05abe5fd4/0mvwvnjef-0c3702b81504",
+   "refs/heads/main"
+  ],
+  "eventTypes": [
+   "session.started",
+   "command.submitted",
+   "command.accepted",
+   "turn.started",
+   "tool.started",
+   "approval.requested",
+   "approval.resolved",
+   "approval.resolved",
+   "tool.completed",
+   "text.delta",
+   "turn.completed",
+   "turn.changes"
+  ]
+ }
+}
