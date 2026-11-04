@@ -1,0 +1,21 @@
+{
+  "node": "macpro",
+  "cwd": "/Users/farm",
+  "connected": true,
+  "busy": false,
+  "error": "",
+  "catalogError": "",
+  "inventoryError": "",
+  "selected": "[\"macpro\",\"/Users/farm\"]",
+  "disabled": false,
+  "rect": {
+    "x": 60,
+    "y": 541,
+    "width": 678,
+    "height": 32
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  }
+}

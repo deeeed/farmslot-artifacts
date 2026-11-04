@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "before": {
+        "width": 390,
+        "panelWidth": 342,
+        "clipped": [],
+        "createY": 1067,
+        "statusHeight": 56,
+        "error": "",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      },
+      "after": {
+        "width": 390,
+        "panelWidth": 342,
+        "clipped": [],
+        "createY": 1067,
+        "statusHeight": 56,
+        "error": "Session start was not confirmed. Check Sessions before trying again.",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      }
+    },
+    {
+      "before": {
+        "width": 1000,
+        "panelWidth": 952,
+        "clipped": [],
+        "createY": 919,
+        "statusHeight": 56,
+        "error": "",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      },
+      "after": {
+        "width": 1000,
+        "panelWidth": 952,
+        "clipped": [],
+        "createY": 919,
+        "statusHeight": 56,
+        "error": "Session start was not confirmed. Check Sessions before trying again.",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      }
+    },
+    {
+      "before": {
+        "width": 1440,
+        "panelWidth": 1392,
+        "clipped": [],
+        "createY": 841,
+        "statusHeight": 56,
+        "error": "",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      },
+      "after": {
+        "width": 1440,
+        "panelWidth": 1392,
+        "clipped": [],
+        "createY": 841,
+        "statusHeight": 56,
+        "error": "Session start was not confirmed. Check Sessions before trying again.",
+        "advancedOpen": false,
+        "advancedHasProfile": true,
+        "advancedHasMode": true
+      }
+    }
+  ],
+  "runtimeErrors": []
+}

@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "newTargetRestored": true,
+  "initial": {
+    "home": "/Users/native-person",
+    "node": "macwork"
+  },
+  "session": {
+    "id": "macwork-session",
+    "node": "macwork",
+    "owner": "existing-node-owner",
+    "requester": "arthur",
+    "generation": 1,
+    "cwd": "/Users/native-person/ui-custom"
+  },
+  "restored": {
+    "cwd": "/Users/native-person/ui-custom",
+    "node": "macwork",
+    "custom": true,
+    "model": "custom-provider-model",
+    "selects": 0
+  },
+  "targetHomes": [
+    {
+      "node": "macwork",
+      "cwd": "/Users/native-person"
+    },
+    {
+      "node": "macpro",
+      "cwd": "/Users/farm"
+    },
+    {
+      "node": "mini",
+      "cwd": "/Volumes/Data/operator"
+    }
+  ],
+  "promptSentOnce": true,
+  "commandId": "4d79552e-ed2b-4dea-ad64-e7c31e0e0271",
+  "isolation": "private gateway, fixture identity and synthetic execution nodes"
+}
