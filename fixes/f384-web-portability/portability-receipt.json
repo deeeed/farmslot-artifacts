@@ -9,14 +9,29 @@
   "changesOnlyPackJsonAndRecipe": true,
   "recipePassed": 6,
   "recipeTotal": 6,
-  "durationMs": 14465,
+  "durationMs": 7681,
   "contraryTitleFailedAt": "title",
   "doctorConformance": "pass",
-  "video": "portable-proof/videos/recipe-run.mp4",
+  "video": "options-mdn/videos/recipe-run.mp4",
   "secondServerAndBrowserStopped": true,
-  "controllerSha256": "1e740f046e27a8ba63c7db0eb7ca7ee4ceea5f04eb143bc8f3f98154871ff49d",
-  "providerSha256": "16cc56e0f414f34ffd5ae85027bb7c3ccbe9566cd8fcb12dd25eb0fea0291a74",
+  "controllerSha256": "aae77f766ff0c19c0d2538778894a70439df912c9784d8ab056ed612523615d1",
+  "providerSha256": "3458cd7735c6e2935969e1812f5c53a455fc1328068ad61cacb6bd57de1aaff4",
   "siteedRecipePassed": 9,
   "siteedRecipeTotal": 9,
-  "siteedDurationMs": 12526
+  "siteedDurationMs": 11999,
+  "sourceHead": "71f0d25ac6dc03ab6bad155429a4909ca697d2ed",
+  "siteedFinalRun": {
+    "recipeRunId": "c97956de-d1be-4a53-bffa-046125cdf006",
+    "status": "pass",
+    "passed": 9,
+    "total": 9
+  },
+  "secondFinalRun": {
+    "recipeRunId": "4dc344b7-9d34-4097-9da5-8fcfc895a2c5",
+    "status": "pass",
+    "passed": 6,
+    "total": 6
+  },
+  "flagOnlyHostedLaunch": "pass, no selected pool slot; watcher17891/CDP17892",
+  "siteedVideo": "options-siteed/videos/recipe-run.mp4"
 }
