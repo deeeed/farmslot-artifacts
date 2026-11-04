@@ -1,0 +1,77 @@
+{
+  "status": "PASS",
+  "budgetAdmissions": [
+    {
+      "origin": "opened",
+      "cap": 1000,
+      "storedBytes": 600
+    },
+    {
+      "origin": "prefetch",
+      "cap": 500,
+      "storedBytes": 300
+    }
+  ],
+  "applicationTabs": [
+    {
+      "diagnostics": {
+        "storage": "opfs-sahpool",
+        "databaseName": "/resources.sqlite",
+        "integrity": "ok",
+        "schemaVersion": 5,
+        "storeCount": 1
+      },
+      "queries": 28
+    },
+    {
+      "diagnostics": {
+        "storage": "opfs-sahpool",
+        "databaseName": "/resources.sqlite",
+        "integrity": "ok",
+        "schemaVersion": 5,
+        "storeCount": 1
+      },
+      "queries": 28
+    }
+  ],
+  "sharedReadsAndWrites": true,
+  "binaryContent": 65536,
+  "conformance": [
+    "atomic snapshots, byte totals and deleted-incarnation fencing",
+    "content bytes, presence, aliases, origin and recency, byte totals and deletion fencing",
+    "row-backed entries: atomic merges, replacement, cascades and deletion fencing",
+    "row merges apply deletes before upserts",
+    "verified content storage, aliases, opened marking and owner fencing",
+    "stale hydration, observation age and same-epoch reconnect",
+    "request sharing and read/write races",
+    "roles scope deletion",
+    "workspaceAccess scope deletion",
+    "principalGeneration scope deletion",
+    "role-set comparison",
+    "sign-out deletion",
+    "principal-change deletion",
+    "session-ended deletion",
+    "credential-refused deletion",
+    "network preservation",
+    "access-token-expired preservation",
+    "token-refresh preservation",
+    "AUTH_FORBIDDEN read failure",
+    "NOT_FOUND read failure",
+    "TIMEOUT read failure",
+    "late-response fencing after disposal"
+  ],
+  "parallelWrites": 12,
+  "parallelMs": 40,
+  "reloadPersists": true,
+  "firstTabClosePersists": true,
+  "scopedDeletion": true,
+  "isolation": true,
+  "notices": [],
+  "diagnostics": {
+    "storage": "opfs-sahpool",
+    "databaseName": "/resources.sqlite",
+    "integrity": "ok",
+    "schemaVersion": 5,
+    "storeCount": 5
+  }
+}
