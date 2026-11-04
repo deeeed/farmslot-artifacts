@@ -19,7 +19,7 @@
   "siteedRecipePassed": 9,
   "siteedRecipeTotal": 9,
   "siteedDurationMs": 11999,
-  "sourceHead": "71f0d25ac6dc03ab6bad155429a4909ca697d2ed",
+  "sourceHead": "020febe3402e3bfcfbabe0c626b7bbf48cd4c3e3",
   "siteedFinalRun": {
     "recipeRunId": "c97956de-d1be-4a53-bffa-046125cdf006",
     "status": "pass",
@@ -33,5 +33,6 @@
     "total": 6
   },
   "flagOnlyHostedLaunch": "pass, no selected pool slot; watcher17891/CDP17892",
-  "siteedVideo": "options-siteed/videos/recipe-run.mp4"
+  "siteedVideo": "options-siteed/videos/recipe-run.mp4",
+  "testLoaderFollowup": "Three child argv entries only; production adapter/provider/controller bytes match the live proof."
 }
