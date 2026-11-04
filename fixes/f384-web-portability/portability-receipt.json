@@ -1,0 +1,22 @@
+{
+  "secondSite": "https://github.com/mdn/beginner-html-site-styled",
+  "head": "6c7a360ddb4a0d75be06044bf8a914f260ff10c7",
+  "framework": "Static HTML/CSS, Python HTTP server; no application package.json",
+  "adapterChanged": false,
+  "adapterModuleSha256": "e9de8d6944c1a07520104cca1f8d6edaa4359e181f3a857fd7c40dba0526ceb8",
+  "bothProjectsSameAdapterBytes": true,
+  "bothPacksSameControllerAndProviderBytes": true,
+  "changesOnlyPackJsonAndRecipe": true,
+  "recipePassed": 6,
+  "recipeTotal": 6,
+  "durationMs": 14465,
+  "contraryTitleFailedAt": "title",
+  "doctorConformance": "pass",
+  "video": "portable-proof/videos/recipe-run.mp4",
+  "secondServerAndBrowserStopped": true,
+  "controllerSha256": "1e740f046e27a8ba63c7db0eb7ca7ee4ceea5f04eb143bc8f3f98154871ff49d",
+  "providerSha256": "16cc56e0f414f34ffd5ae85027bb7c3ccbe9566cd8fcb12dd25eb0fea0291a74",
+  "siteedRecipePassed": 9,
+  "siteedRecipeTotal": 9,
+  "siteedDurationMs": 12526
+}
