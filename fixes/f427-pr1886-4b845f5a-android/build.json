@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-06T17:03:00.142009+00:00",
+  "head": "4b845f5a26472be3317525a2274002f341cd3583",
+  "dirty": "",
+  "apkSha256": "08635f8d80b0a7f1591d6562a3cf248dbda5a022ce87fb22ab53e38439b3a93c",
+  "apkBytes": 94607838,
+  "variant": "development",
+  "buildType": "release",
+  "device": "29071JEGR20638",
+  "model": "Pixel 6a"
+}
