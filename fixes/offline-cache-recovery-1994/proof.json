@@ -1,0 +1,197 @@
+{
+  "recovered": {
+    "sync": "Synced",
+    "connection": "connected",
+    "runsStatus": "ready",
+    "observedAt": 1794333834718,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 64,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "run.list",
+        "status": "ready"
+      }
+    ]
+  },
+  "cached": {
+    "sync": "Cached from 11/11/2026, 2:03:54 AM",
+    "connection": "disconnected",
+    "runsStatus": "stale",
+    "observedAt": 1794333834718,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 67,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "run.list",
+        "status": "stale"
+      }
+    ]
+  },
+  "reconnected": {
+    "sync": "Synced",
+    "connection": "connected",
+    "runsStatus": "ready",
+    "observedAt": 1794333838101,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 72,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "run.list",
+        "status": "ready"
+      }
+    ]
+  },
+  "refreshed": {
+    "sync": "Synced",
+    "connection": "connected",
+    "runsStatus": "ready",
+    "observedAt": 1794333879086,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 59,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "run.list",
+        "status": "ready"
+      }
+    ]
+  },
+  "native": {
+    "sync": "Synced",
+    "connection": "connected",
+    "runsStatus": "ready",
+    "observedAt": 1794333879086,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 63,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "native.session.list",
+        "status": "ready"
+      },
+      {
+        "method": "native.session.catalog",
+        "status": "ready"
+      }
+    ]
+  },
+  "nativeCached": {
+    "sync": "Cached from 11/11/2026, 2:04:40 AM",
+    "connection": "disconnected",
+    "runsStatus": "stale",
+    "observedAt": 1794333879086,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 64,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "native.session.list",
+        "status": "stale"
+      },
+      {
+        "method": "native.session.catalog",
+        "status": "stale"
+      }
+    ]
+  },
+  "compare": {
+    "sync": "Synced",
+    "connection": "connected",
+    "runsStatus": "ready",
+    "observedAt": 1794333911534,
+    "fault": {
+      "injected": true,
+      "workers": 2,
+      "successfulWrites": 107,
+      "connections": []
+    },
+    "runCount": 299,
+    "primaryReads": [
+      {
+        "method": "run.get",
+        "status": "ready"
+      },
+      {
+        "method": "run.get",
+        "status": "ready"
+      }
+    ]
+  },
+  "gatewayIdsMatch": true,
+  "consoleErrors": [],
+  "schemaProof": {
+    "status": "PASS",
+    "scenario": "schema-fence",
+    "isolatedDatabase": "/offline-cache-schema-proof.sqlite",
+    "cases": [
+      {
+        "sameScope": false,
+        "priorRead": true,
+        "replacementRetained": true
+      },
+      {
+        "sameScope": true,
+        "priorRead": false,
+        "replacementRetained": true
+      }
+    ]
+  },
+  "vfsProof": {
+    "failure": "SQLITE_IOERR: sqlite3 result code 10: disk I/O error",
+    "saved": {
+      "id": "proof",
+      "observedAt": 2,
+      "accessedAt": 2,
+      "bytes": 9,
+      "data": "recovered"
+    },
+    "diagnostics": {
+      "storage": "opfs-sahpool",
+      "databaseName": "/offline-cache-io-proof.sqlite",
+      "integrity": "ok",
+      "schemaVersion": 5,
+      "storeCount": 1
+    },
+    "failures": [
+      {
+        "id": 2,
+        "ok": false,
+        "message": "SQLITE_IOERR: sqlite3 result code 10: disk I/O error",
+        "resultCode": 10,
+        "fatal": true
+      }
+    ],
+    "injected": true,
+    "workers": 2,
+    "retired": 2
+  },
+  "limitations": "The original environmental I/O trigger remains unknown. Controlled OPFS page-write failure demonstrates result code 10 and recovery.",
+  "source": "Production contribution unchanged by rebase; proof source aa1868c79, rebased signed head 48a5a5f9cb4b6f1633dec40f172dc612655f0c7c."
+}
