@@ -1,0 +1,27 @@
+{
+  "scenario": "two real SQLite auto-aborts on one foreground gateway connection",
+  "injections": 2,
+  "workers": 3,
+  "retired": 2,
+  "successfulMerges": 17,
+  "timeOriginBefore": 1794405232885.4,
+  "timeOriginAfter": 1794405232885.4,
+  "connectionIdBefore": 1,
+  "connectionIdAfter": 1,
+  "noReloadOrReconnect": true,
+  "freshRunCount": 128,
+  "gatewayIdsStatusAndTimestampsMatch": true,
+  "storeNotice": null,
+  "sync": "Synced",
+  "status": "ready",
+  "integrity": "ok",
+  "consoleErrors": [],
+  "failedResponses": [],
+  "dataSaverEmulatedBeforeStartup": true,
+  "teardown": {
+    "removed": [
+      "/rollback-recovery-proof.sqlite"
+    ],
+    "remaining": []
+  }
+}
