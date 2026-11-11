@@ -1,0 +1,30 @@
+{
+  "selected": {
+    "runId": "db7219ca-6edb-4b25-a09a-c7c988f0325b",
+    "slotId": "mini-mmt-1",
+    "contextId": "fix-bug",
+    "stepIndex": 4,
+    "stepTitle": "4. Implement the minimal fix",
+    "detail": "- Before changing N call sites the same way, put the shared derivation in one helper next to the existing hook/util and call it; never paste the same calculation or parsing into two places. That helper is part of the change, not a refactor; leave duplication the change doesn't touch alone.",
+    "attempts": [
+      {
+        "runId": "db7219ca-6edb-4b25-a09a-c7c988f0325b",
+        "slotId": "mini-mmt-1",
+        "markdownBytes": 9992,
+        "detailFound": true
+      }
+    ]
+  },
+  "renderedRunId": "db7219ca-6edb-4b25-a09a-c7c988f0325b",
+  "collapsed": {
+    "open": false,
+    "text": "4. Implement the minimal fix"
+  },
+  "expanded": {
+    "open": true,
+    "detail": "- Before changing N call sites the same way, put the shared derivation in one helper next to the existing hook/util and call it; never paste the same calculation or parsing into two places. That helper is part of the change, not a refactor; leave duplication the change doesn't touch alone.",
+    "visibleHeight": 50
+  },
+  "closedAgain": false,
+  "pageErrors": []
+}

@@ -1,0 +1,10 @@
+{
+  "runId": "55bed137-704c-4c9e-86c8-d0e6dcb5e172",
+  "endpoint": "ws://127.0.0.1:17801",
+  "isolated": true,
+  "realRetainedChecklist": true,
+  "taskSteps": 17,
+  "matchedStructuredDetails": 6,
+  "projectionRemovalFailsCommittedProof": true,
+  "restoredProjectionPassesCommittedProof": true
+}
