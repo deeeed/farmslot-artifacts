@@ -1,0 +1,296 @@
+{
+  "baseline": false,
+  "partialOutage": true,
+  "faultMode": "transaction-abort",
+  "artifactGapAccepted": true,
+  "pageErrors": [],
+  "failed": {
+    "fault": {
+      "workers": 2,
+      "retired": 1,
+      "injected": true,
+      "failures": [
+        {
+          "id": 50,
+          "ok": false,
+          "message": "SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+          "resultCode": 1811,
+          "fatal": true
+        }
+      ],
+      "successfulMerges": 0,
+      "healthyWrites": 5,
+      "repeatArmed": false,
+      "injections": 1,
+      "before": {
+        "timeOrigin": 1794408395573.6,
+        "connectionId": 1
+      }
+    },
+    "timeOrigin": 1794408395573.6,
+    "connectionId": 1,
+    "dataSaver": true,
+    "notice": "Cached data will not survive a restart: SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+    "sync": "Syncing",
+    "runsStatus": "stale",
+    "runIds": [],
+    "diagnostics": {
+      "storage": "opfs-sahpool",
+      "databaseName": "/rollback-recovery-proof.sqlite",
+      "integrity": "ok",
+      "schemaVersion": 5,
+      "storeCount": 1
+    }
+  },
+  "recovered": {
+    "fault": {
+      "workers": 2,
+      "retired": 2,
+      "injected": true,
+      "failures": [
+        {
+          "id": 50,
+          "ok": false,
+          "message": "SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+          "resultCode": 1811,
+          "fatal": true
+        },
+        {
+          "id": 182,
+          "ok": false,
+          "message": "SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+          "resultCode": 1811,
+          "fatal": true
+        }
+      ],
+      "successfulMerges": 0,
+      "healthyWrites": 15,
+      "repeatArmed": false,
+      "injections": 2,
+      "before": {
+        "timeOrigin": 1794408395573.6,
+        "connectionId": 1
+      }
+    },
+    "timeOrigin": 1794408395573.6,
+    "connectionId": 1,
+    "dataSaver": true,
+    "notice": "Cached data will not survive a restart: SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+    "sync": "Synced",
+    "runsStatus": "ready",
+    "observedAt": 1794408473129,
+    "runIds": [
+      "00a5a655-b9bd-4dc3-8847-4c436d5ba516",
+      "02e44826-13af-4cc7-b225-39c6a99149c7",
+      "031971e9-9170-4f5b-87f5-5915b12094d5",
+      "04ffe17c-4091-4e59-8ba9-beac9d76d8d1",
+      "06d76fea-0138-4011-84fa-3e3b2ad2376c",
+      "09407259-23d5-4c87-be4a-a13113af51b0",
+      "17444981-1da7-4862-9f1c-3f84d7dcb722",
+      "28da5919-1bab-4ddf-bd69-1096411c2c60",
+      "31a47c91-2a62-4c4b-a9d7-76cf4288edf9",
+      "3784cf14-2598-4bd5-bf22-6b7f596a1f73",
+      "3e434597-35e4-4c70-8a75-a6bfd4fee828",
+      "3e8f9b69-b6b6-4aae-946d-af6e2d900585",
+      "3f011779-2524-4a96-93bd-0a03874c59a0",
+      "3fa7d513-93af-46c3-9272-3f09d35dc707",
+      "44dd6e06-5b70-4551-95e6-a44a015c0718",
+      "4eeea148-558c-49d1-8c77-9c53756d4a9d",
+      "53ac836e-5099-412c-a4cf-fe27a60f4d45",
+      "55bed137-704c-4c9e-86c8-d0e6dcb5e172",
+      "56f1a579-58dd-4a79-a30c-baccd9ca7df2",
+      "5954ae03-b2f5-49ec-bdc2-258eda94ab81",
+      "5a758ec9-304c-439f-a714-09f8ce2b2591",
+      "5b0b8651-cf5a-4e5e-b801-58d27da10d8e",
+      "60fb5fca-20d2-491b-956b-b67a96bf1932",
+      "646415a7-4c02-44c3-95ff-ef2036317c36",
+      "6ae37c17-efd5-499b-b3fd-a40684d15126",
+      "6e2975a0-a57e-4494-8c64-f1cc99958ac4",
+      "78401424-6c15-4013-98ba-c1976c923c12",
+      "78c2a468-a915-4324-8045-c8ec3e9ac9f4",
+      "7afbb00a-d0be-4afc-bf2e-f7b215e42201",
+      "7cd7d8bb-2b4f-4843-8519-ba444d146717",
+      "8340713f-bd0c-4042-9f61-698c9acbece0",
+      "92ce8a67-0769-4da0-a2c5-9047b88583e5",
+      "95a11cb7-f2da-4207-a9ff-034ee2bb4cd5",
+      "9cef96e8-7f19-474e-b17c-ea4efe3c8e48",
+      "9f42052f-ce38-4f37-b51e-d7f41ec7ae7d",
+      "9fcdc3e8-171d-430e-b22d-457ca0b7f63a",
+      "a0056280-96b8-4e47-962d-c8f50f6e9f30",
+      "a22186a3-06f7-4484-88a9-a0aaa17b9e1f",
+      "a32f2523-5f5c-4de8-b519-1c7186383199",
+      "a65e9a6a-0b0a-4100-b57a-6eabf1f961d2",
+      "a9387214-64c0-4560-a293-35d031ab20bb",
+      "aab4028f-81d6-41c4-8008-168ff62b89f5",
+      "aae17950-f36a-4ed2-b91d-d11bf7ee0f05",
+      "ab12ae97-423c-4bd2-bb57-6a1bf6a849ff",
+      "ab357f35-023e-4e98-8bb6-76d6d95996dd",
+      "ad919776-d066-469a-9633-880f2e65446a",
+      "b072218a-2c9e-4c6a-9daa-00d4255911f7",
+      "b1ac14d9-5385-4a00-aa02-d5df05103f1d",
+      "bc888124-412c-49e3-bb42-f8c09756cfc5",
+      "bd08cd3e-a1f8-44fb-a563-53b1f9fcc51a",
+      "bef5c128-e43c-413e-89ba-58ba6032dd03",
+      "c204bc7a-44db-4fad-a87b-bd1a6df1efe3",
+      "c838e826-6228-42cf-b3e9-59b5ef985da3",
+      "c876c43b-058e-4554-9aaf-8edfb854d190",
+      "c87ca86b-e061-44cc-aa97-d2648297164d",
+      "c8ce397f-39db-47f4-b6e2-c893b4000212",
+      "ca9ee397-7d7b-44a3-a080-a8c7c440d545",
+      "cac19217-f34f-4f2d-bc54-82a077f315c0",
+      "cb315a20-cac8-4f01-866d-954fd935df69",
+      "ccbb7833-a6ea-463d-bca2-42199c4686ec",
+      "ce1c5583-dd9f-4664-87f2-b64f02941ee7",
+      "ce20ac99-36ab-429f-a23d-fa22ce28d23b",
+      "ced9e261-7dc6-4cce-ae4c-73dda5fe669f",
+      "ceda2afc-38bb-4138-8df9-b1bc5b225e4b",
+      "d0571e6a-a703-4039-af81-1271632ed3ca",
+      "d0b73273-527b-4e01-9ee6-815862a48738",
+      "d1095dc7-c00f-4f90-9369-687cba5646db",
+      "d15f4781-98be-4957-80ee-64d707ec3bd6",
+      "d17eaeb3-8dd8-4543-b073-ae6854d944fd",
+      "d1cd5186-1989-41d8-a256-cb3214c24413",
+      "d1ea92e9-ee46-4bd3-9db8-dc440cdc122b",
+      "d22d84e6-55c8-42e5-a656-14d603ad128b",
+      "d23affe4-f650-44b5-bdbd-d7751266f7b5",
+      "d28726a4-4623-4c37-8341-964aca8357c2",
+      "d2de6dda-c6fd-456c-96a7-0e524b446fa5",
+      "d33c03a2-0ee2-429b-8e8d-d7cf1e6082c9",
+      "d4072f77-a881-4aa7-ab61-07930761623e",
+      "d4fe7931-7a14-4708-be01-6816b0f8d140",
+      "d4ffe3ea-ee65-480d-8de6-7162c5b6b5df",
+      "d50be898-0811-4219-96da-42966b9a22c4",
+      "d528e5ce-30df-4c01-a9c8-b6dae625b82b",
+      "d9244120-64f1-4ed6-9b17-a175ffabd582",
+      "d980f73c-4195-400b-b7bf-a309ceb6e65f",
+      "d9fb05c1-484c-4413-87ca-5677ea6ad2e4",
+      "db10fddb-5aaf-4250-bd45-03993644b458",
+      "db18632e-6c1c-4261-8b19-78ea2f7ee05f",
+      "db7219ca-6edb-4b25-a09a-c7c988f0325b",
+      "db86d8ee-60ba-4815-8842-3a3b2990651b",
+      "dc18b08a-f0f2-4755-a586-e9522d78892e",
+      "dc759c46-b3b9-465b-a524-0f57356449f8",
+      "dd214041-e6d8-4983-9629-bc98e9cb6e56",
+      "dd7c83c7-7b3b-4bd1-a249-e5256b361be8",
+      "de61721e-92a0-4280-95fd-514b910cc647",
+      "df5f7a2d-3a17-43f7-8ad7-91042c3bf572",
+      "e01ca0cb-459f-4ac5-bc0a-19f7e1fda37d",
+      "e06e1414-6dc5-4032-9cfa-5e0bfa245493",
+      "e08d399e-09ff-4ee0-8b2b-f557df416935",
+      "e10d4c57-c6b8-4f4d-950c-e997dcf4ce59",
+      "e29f5a2b-1d67-4ba6-b8ea-e3bcc85c6678",
+      "e7cc584c-4c58-438c-a6ab-af32d66d1403",
+      "e93dcdac-3e97-475f-9071-7d6601cd102f",
+      "e947ef51-5c12-49f6-9961-4edd80d737b4",
+      "eb401703-cb9b-4bc2-b73b-2d3d3eac7bba",
+      "eb56f6f8-fa94-4508-9026-da7649356eee",
+      "ebdab9ba-2aa4-437d-bfac-9ea66077c431",
+      "efed9784-6cb1-4d4f-9a8e-c7e7244eb366",
+      "f0cf381c-3aca-4a7a-96d8-6b240d874bb6",
+      "f163a282-31ce-4673-9a23-6436c02938db",
+      "f263852d-e108-4938-83cc-28aad864d74a",
+      "f27d2313-6d7d-45ce-922a-812947459053",
+      "f390b0ce-1450-4a3b-a24c-e509813bd93d",
+      "f3f48aa8-abbf-4f48-9162-3a296d333775",
+      "f413de59-e312-4ab6-9c9f-c5fc4d853bf0",
+      "f45171d9-3e84-4878-b64a-1b7dbb03b3bf",
+      "f4746c12-9707-47e9-ab02-1e1ad9ff01a8",
+      "f49257a7-3a68-4f67-9fcc-a6ed3bc7cde5",
+      "f6810113-a362-4b41-9438-62dd53860277",
+      "f7cd69d8-08d2-421f-a4a0-42d0e4b058eb",
+      "f8a1b845-21b6-4e60-beb2-27a53e206fe9",
+      "fa049d83-9727-42c8-97b0-0b058ed914fd",
+      "fab799c5-c71a-4ede-9a1d-2b7b6755a5c7",
+      "fbaf3614-abf2-4a06-a730-bdf2c48d348f",
+      "fc0c535b-583a-4976-9f36-f7752a9584ad",
+      "fc324f59-ee43-4f9a-bc9b-fc892b557f0c",
+      "fcd3b0e0-96ec-4391-8dbf-b6a78fd68119",
+      "fceb9861-048c-4f00-9bc7-baf99dc458c7",
+      "fd3f3177-2238-40e1-af53-a598f56a2384",
+      "fd766283-5998-455d-9252-bca6342022ea",
+      "fd90b6c3-9ae9-4fe9-960d-41d2c647a465",
+      "fd98c83e-d7bd-4847-a515-d4a2506d28ef",
+      "fdf6473e-2957-42fb-87d5-8c15cc723336"
+    ],
+    "diagnostics": {
+      "storage": "memory"
+    },
+    "gatewayMatches": true
+  },
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "failedResponses": [
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=06d76fea-0138-4011-84fa-3e3b2ad2376c&path=artifacts%2Fpipeline-review-loop-2%2Ffix-delta-stat.json&bundleDigest=55d87a718886eae973537f7fc3f1f79935e95be642842ca3027c2574dfa00f03",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=06d76fea-0138-4011-84fa-3e3b2ad2376c&path=artifacts%2Fpipeline-review-loop-2%2Freview-diff-stat.json&bundleDigest=55d87a718886eae973537f7fc3f1f79935e95be642842ca3027c2574dfa00f03",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=06d76fea-0138-4011-84fa-3e3b2ad2376c&path=artifacts%2Freview-result.rev-codex-native-53f4052c7bcd-a7812cf7.json&bundleDigest=55d87a718886eae973537f7fc3f1f79935e95be642842ca3027c2574dfa00f03",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=3e434597-35e4-4c70-8a75-a6bfd4fee828&path=artifacts%2Fpipeline-review-loop-1%2Freview-diff-stat.json&bundleDigest=c70614c36e945dee1888c8ebcb3479ed36b31f2a96ea13ea7cf0e257aed7a115",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=3e434597-35e4-4c70-8a75-a6bfd4fee828&path=artifacts%2Fpipeline-review-loop-2%2Freview-diff-stat.json&bundleDigest=c70614c36e945dee1888c8ebcb3479ed36b31f2a96ea13ea7cf0e257aed7a115",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=3e434597-35e4-4c70-8a75-a6bfd4fee828&path=artifacts%2Fpipeline-review-loop-2%2Ffix-delta-stat.json&bundleDigest=c70614c36e945dee1888c8ebcb3479ed36b31f2a96ea13ea7cf0e257aed7a115",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=3e434597-35e4-4c70-8a75-a6bfd4fee828&path=artifacts%2Fpipeline-review-loop-3%2Ffix-delta-stat.json&bundleDigest=c70614c36e945dee1888c8ebcb3479ed36b31f2a96ea13ea7cf0e257aed7a115",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=3e434597-35e4-4c70-8a75-a6bfd4fee828&path=artifacts%2Fpipeline-review-loop-3%2Freview-diff-stat.json&bundleDigest=c70614c36e945dee1888c8ebcb3479ed36b31f2a96ea13ea7cf0e257aed7a115",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=a9387214-64c0-4560-a293-35d031ab20bb&path=artifacts%2Freview-result.rev-codex-native-fdec31d75f93-5ba77fa6.json&bundleDigest=e0f370bcce3b5186729e1da6d0a904f206aabd2e8abc7d64e566ae39767973ec",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=a9387214-64c0-4560-a293-35d031ab20bb&path=artifacts%2Fpipeline-review-loop-1%2Freview-diff-stat.json&bundleDigest=e0f370bcce3b5186729e1da6d0a904f206aabd2e8abc7d64e566ae39767973ec",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=a9387214-64c0-4560-a293-35d031ab20bb&path=artifacts%2Fpipeline-review-loop-2%2Ffix-delta-stat.json&bundleDigest=e0f370bcce3b5186729e1da6d0a904f206aabd2e8abc7d64e566ae39767973ec",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:5175/api/run-artifact?runId=a9387214-64c0-4560-a293-35d031ab20bb&path=artifacts%2Fpipeline-review-loop-2%2Freview-diff-stat.json&bundleDigest=e0f370bcce3b5186729e1da6d0a904f206aabd2e8abc7d64e566ae39767973ec",
+      "status": 404
+    }
+  ],
+  "firstIdentity": {
+    "timeOrigin": 1794408395573.6,
+    "connectionId": 1
+  },
+  "subsequentNavigations": [],
+  "noReloadOrReconnect": true,
+  "teardown": {
+    "removed": [
+      "/rollback-recovery-proof.sqlite"
+    ],
+    "remaining": []
+  }
+}

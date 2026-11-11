@@ -1,0 +1,68 @@
+{
+  "browser-r3-final": {
+    "injections": 2,
+    "workers": 3,
+    "retired": 2,
+    "healthyWrites": 103,
+    "store": "opfs-sahpool",
+    "sync": "Synced",
+    "status": "ready",
+    "noticePresent": false,
+    "freshRunCount": 131,
+    "gatewayMatches": true,
+    "firstIdentity": {
+      "timeOrigin": 1794408295791.4,
+      "connectionId": 1
+    },
+    "noReloadOrReconnect": true,
+    "subsequentNavigations": [],
+    "pageErrors": [],
+    "artifact404s": 13,
+    "rawConsoleErrors": 13,
+    "artifactGapAccepted": true,
+    "teardown": {
+      "removed": [
+        "/rollback-recovery-proof.sqlite"
+      ],
+      "remaining": []
+    }
+  },
+  "browser-r3-partial-final": {
+    "injections": 2,
+    "workers": 2,
+    "retired": 2,
+    "healthyWrites": 15,
+    "store": "memory",
+    "sync": "Synced",
+    "status": "ready",
+    "noticePresent": true,
+    "freshRunCount": 131,
+    "gatewayMatches": true,
+    "firstIdentity": {
+      "timeOrigin": 1794408395573.6,
+      "connectionId": 1
+    },
+    "noReloadOrReconnect": true,
+    "subsequentNavigations": [],
+    "pageErrors": [],
+    "artifact404s": 12,
+    "rawConsoleErrors": 12,
+    "artifactGapAccepted": true,
+    "teardown": {
+      "removed": [
+        "/rollback-recovery-proof.sqlite"
+      ],
+      "remaining": []
+    }
+  },
+  "browser-r3-negative-reload": {
+    "expectedFailure": "Page reloaded during recovery",
+    "verified": true,
+    "teardownVerified": true
+  },
+  "browser-r3-negative-partial": {
+    "expectedFailure": "Partial outage caused an unbounded reopen",
+    "verified": true,
+    "teardownVerified": true
+  }
+}
