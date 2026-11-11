@@ -1,0 +1,16 @@
+{
+  "scenario": "actual SQLite auto-abort inside browser OPFS row merge",
+  "noReloadOrReconnect": true,
+  "workers": 2,
+  "retired": 1,
+  "successfulMerges": 10,
+  "freshRunCount": 139,
+  "gatewayIdsStatusAndTimestampsMatch": true,
+  "storeNotice": null,
+  "sync": "Synced",
+  "runsStatus": "ready",
+  "integrity": "ok",
+  "consoleErrors": [],
+  "failedResponses": [],
+  "scope": "task-owned proof DB only; live gateway read-only"
+}
