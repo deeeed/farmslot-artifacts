@@ -1,0 +1,34 @@
+{
+  "selected": {
+    "runId": "55bed137-704c-4c9e-86c8-d0e6dcb5e172",
+    "slotId": "macpro-mmt-2",
+    "contextId": "review-fix",
+    "stepIndex": 4,
+    "stepTitle": "4. Changed-file CI",
+    "detail": "Append `## Self-Review Fixes` to `temp/tasks/feat/tat-4575-1110-184950/artifacts/report.md`.",
+    "attempts": [
+      {
+        "runId": "db7219ca-6edb-4b25-a09a-c7c988f0325b",
+        "readFailure": "Command failed: /opt/homebrew/Cellar/node/26.4.0/bin/node /Users/deeeed/dev/farmslot/apps/command-center/scripts/cdp.mjs gateway task.progress {\"slotId\":\"mini-mmt-1\",\"runId\":\"db7219ca-6edb-4b25-a09a-c7c988f0325b\"}\ncdp.mjs: gateway RPC timeout after 5000ms\n"
+      },
+      {
+        "runId": "55bed137-704c-4c9e-86c8-d0e6dcb5e172",
+        "slotId": "macpro-mmt-2",
+        "markdownBytes": 8768,
+        "detailFound": true
+      }
+    ]
+  },
+  "renderedRunId": "55bed137-704c-4c9e-86c8-d0e6dcb5e172",
+  "collapsed": {
+    "open": false,
+    "text": "4. Changed-file CI"
+  },
+  "expanded": {
+    "open": true,
+    "detail": "Append `## Self-Review Fixes` to `temp/tasks/feat/tat-4575-1110-184950/artifacts/report.md`.",
+    "visibleHeight": 32
+  },
+  "closedAgain": false,
+  "pageErrors": []
+}
