@@ -1,0 +1,65 @@
+{
+  "browser-r4-transient": {
+    "workers": 3,
+    "retired": 2,
+    "injections": 2,
+    "successfulPageRows": [
+      19,
+      18,
+      16,
+      10,
+      19,
+      19,
+      19,
+      12,
+      19,
+      18,
+      16,
+      10,
+      19,
+      19,
+      19,
+      12
+    ],
+    "freshRunCount": 132,
+    "gatewayMatches": true,
+    "noticePresent": false,
+    "store": "opfs-sahpool",
+    "noReloadOrReconnect": true,
+    "pageErrors": [],
+    "acceptedArtifact404s": 11,
+    "cleanup": {
+      "removed": [
+        "/rollback-recovery-proof.sqlite"
+      ],
+      "remaining": []
+    }
+  },
+  "browser-r4-later-page-retry": {
+    "workers": 2,
+    "retired": 2,
+    "injections": 2,
+    "successfulPageRows": [
+      19,
+      19
+    ],
+    "freshRunCount": 132,
+    "gatewayMatches": true,
+    "noticePresent": true,
+    "store": "memory",
+    "noReloadOrReconnect": true,
+    "pageErrors": [],
+    "acceptedArtifact404s": 0,
+    "cleanup": {
+      "removed": [
+        "/rollback-recovery-proof.sqlite"
+      ],
+      "remaining": []
+    }
+  },
+  "negativeR3perPageConfirm": {
+    "verified": true,
+    "reason": "Partial outage caused an unbounded reopen",
+    "workers": 3
+  }
+}

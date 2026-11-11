@@ -1,0 +1,59 @@
+{
+  "message": "Partial outage caused an unbounded reopen",
+  "consoleErrors": [],
+  "failedResponses": [],
+  "firstIdentity": {
+    "timeOrigin": 1794410204845.9,
+    "connectionId": 1
+  },
+  "subsequentNavigations": [],
+  "state": {
+    "fault": {
+      "workers": 3,
+      "retired": 2,
+      "injected": true,
+      "failures": [
+        {
+          "id": 39,
+          "ok": false,
+          "message": "SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+          "resultCode": 1811,
+          "fatal": true
+        },
+        {
+          "id": 23,
+          "ok": false,
+          "message": "SQLITE_CONSTRAINT_TRIGGER: sqlite3 result code 1811: Proof: automatic transaction abort; rollback failed: SQLITE_ERROR: sqlite3 result code 1: cannot rollback - no transaction is active",
+          "resultCode": 1811,
+          "fatal": true
+        }
+      ],
+      "successfulMerges": 2,
+      "healthyWrites": 15,
+      "completedPageRows": [
+        19,
+        19
+      ],
+      "repeatArmed": false,
+      "injections": 2,
+      "before": {
+        "timeOrigin": 1794410204845.9,
+        "connectionId": 1
+      }
+    },
+    "timeOrigin": 1794410204845.9,
+    "connectionId": 1,
+    "dataSaver": true,
+    "notice": null,
+    "sync": "Syncing",
+    "runsStatus": "stale",
+    "runIds": [],
+    "diagnostics": {
+      "storage": "opfs-sahpool",
+      "databaseName": "/rollback-recovery-proof.sqlite",
+      "integrity": "ok",
+      "schemaVersion": 5,
+      "storeCount": 1
+    }
+  }
+}
