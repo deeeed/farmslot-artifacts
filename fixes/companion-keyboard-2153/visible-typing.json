@@ -1,0 +1,258 @@
+{
+  "status": "pass",
+  "samples": [
+    {
+      "at": "2026-11-14T08:01:43.487Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Message to agent"
+    },
+    {
+      "at": "2026-11-14T08:01:45.545Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "V"
+    },
+    {
+      "at": "2026-11-14T08:01:47.512Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Vi"
+    },
+    {
+      "at": "2026-11-14T08:01:50.041Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Vis"
+    },
+    {
+      "at": "2026-11-14T08:01:51.814Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visi"
+    },
+    {
+      "at": "2026-11-14T08:01:53.489Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visib"
+    },
+    {
+      "at": "2026-11-14T08:01:56.005Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visibl"
+    },
+    {
+      "at": "2026-11-14T08:01:59.113Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible"
+    },
+    {
+      "at": "2026-11-14T08:02:01.637Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible "
+    },
+    {
+      "at": "2026-11-14T08:02:03.653Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible k"
+    },
+    {
+      "at": "2026-11-14T08:02:05.730Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible ke"
+    },
+    {
+      "at": "2026-11-14T08:02:07.941Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible key"
+    },
+    {
+      "at": "2026-11-14T08:02:10.198Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyb"
+    },
+    {
+      "at": "2026-11-14T08:02:12.721Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keybo"
+    },
+    {
+      "at": "2026-11-14T08:02:15.526Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboa"
+    },
+    {
+      "at": "2026-11-14T08:02:18.159Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboar"
+    },
+    {
+      "at": "2026-11-14T08:02:20.807Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard"
+    },
+    {
+      "at": "2026-11-14T08:02:22.990Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard "
+    },
+    {
+      "at": "2026-11-14T08:02:24.628Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard c"
+    },
+    {
+      "at": "2026-11-14T08:02:27.194Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard ch"
+    },
+    {
+      "at": "2026-11-14T08:02:29.345Z",
+      "rect": {
+        "x": 21,
+        "y": 1166,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard che"
+    },
+    {
+      "at": "2026-11-14T08:02:31.315Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard chec"
+    },
+    {
+      "at": "2026-11-14T08:02:32.638Z",
+      "rect": {
+        "x": 21,
+        "y": 1167,
+        "width": 1038,
+        "height": 126
+      },
+      "imeTop": 1491,
+      "text": "Visible keyboard check"
+    }
+  ]
+}
