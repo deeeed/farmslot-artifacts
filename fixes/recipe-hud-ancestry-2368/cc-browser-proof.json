@@ -65,6 +65,15 @@
   {
     "name": "failure",
     "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested/read",
+    "text": [
+      "Fixture step · Composed flow fixture › First invocation › Inspect state › Read shared state",
+      "error: observe.stdout does not contain \"MISSING\"."
+    ]
+  },
+  {
+    "name": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
     "activeId": null,
     "text": [
       "Recipe finished"
