@@ -1,0 +1,1274 @@
+[
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested/observe",
+    "progress": {
+      "current": 5,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested/observe",
+    "progress": {
+      "current": 5,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested/read",
+    "progress": {
+      "current": 6,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested/read",
+    "progress": {
+      "current": 6,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested",
+    "progress": {
+      "current": 6,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/leaf",
+    "progress": {
+      "current": 7,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/leaf",
+    "progress": {
+      "current": 7,
+      "completed": 7,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/release",
+    "progress": {
+      "current": 8,
+      "completed": 7,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/release",
+    "progress": {
+      "current": 8,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second",
+    "progress": {
+      "current": 8,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "pick",
+    "progress": {
+      "current": 9,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "pick",
+    "progress": {
+      "current": 9,
+      "completed": 9,
+      "total": 11,
+      "remaining": 2,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "accept",
+    "progress": {
+      "current": 10,
+      "completed": 9,
+      "total": 11,
+      "remaining": 2,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "accept",
+    "progress": {
+      "current": 10,
+      "completed": 10,
+      "total": 11,
+      "remaining": 1,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 11,
+      "completed": 10,
+      "total": 11,
+      "remaining": 1,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 11,
+      "completed": 11,
+      "total": 11,
+      "remaining": 0,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": null,
+    "progress": {
+      "current": 11,
+      "completed": 11,
+      "total": 11,
+      "remaining": 0,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested/observe",
+    "progress": {
+      "current": 5,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested/observe",
+    "progress": {
+      "current": 5,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested/read",
+    "progress": {
+      "current": 6,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested/read",
+    "progress": {
+      "current": 6,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested",
+    "progress": {
+      "current": 6,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/leaf",
+    "progress": {
+      "current": 7,
+      "completed": 6,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/leaf",
+    "progress": {
+      "current": 7,
+      "completed": 7,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/release",
+    "progress": {
+      "current": 8,
+      "completed": 7,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/release",
+    "progress": {
+      "current": 8,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second",
+    "progress": {
+      "current": 8,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "pick",
+    "progress": {
+      "current": 9,
+      "completed": 8,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "pick",
+    "progress": {
+      "current": 9,
+      "completed": 9,
+      "total": 12,
+      "remaining": 3,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "reject",
+    "progress": {
+      "current": 10,
+      "completed": 9,
+      "total": 12,
+      "remaining": 3,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "reject",
+    "progress": {
+      "current": 10,
+      "completed": 10,
+      "total": 12,
+      "remaining": 2,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "reject_extra",
+    "progress": {
+      "current": 11,
+      "completed": 10,
+      "total": 12,
+      "remaining": 2,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "reject_extra",
+    "progress": {
+      "current": 11,
+      "completed": 11,
+      "total": 12,
+      "remaining": 1,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 12,
+      "completed": 11,
+      "total": 12,
+      "remaining": 1,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 12,
+      "completed": 12,
+      "total": 12,
+      "remaining": 0,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": null,
+    "progress": {
+      "current": 12,
+      "completed": 12,
+      "total": 12,
+      "remaining": 0,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/release",
+    "progress": {
+      "current": 3,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first/release",
+    "progress": {
+      "current": 3,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first",
+    "progress": {
+      "current": 3,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 4,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": null,
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 0,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested/observe",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested/read",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/nested",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/leaf",
+    "progress": {
+      "current": 3,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 3,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first/release",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first",
+    "progress": {
+      "current": 4,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 5,
+      "completed": 4,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 5,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": null,
+    "progress": {
+      "current": 5,
+      "completed": 5,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "terminal",
+    "recipeRunId": "c9a5fa46-8aa9-45f4-a505-4887a1901f1a",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "terminal",
+    "recipeRunId": "c9a5fa46-8aa9-45f4-a505-4887a1901f1a",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "terminal",
+    "recipeRunId": "c9a5fa46-8aa9-45f4-a505-4887a1901f1a",
+    "activeId": null,
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "resolution",
+    "recipeRunId": "3fabe827-345c-4366-a420-cfc1859bcbaa",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "resolution",
+    "recipeRunId": "3fabe827-345c-4366-a420-cfc1859bcbaa",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "resolution",
+    "recipeRunId": "3fabe827-345c-4366-a420-cfc1859bcbaa",
+    "activeId": null,
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "cancelled",
+    "recipeRunId": "e805119b-2413-4713-a1be-5a11e87228c3",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "cancelled",
+    "recipeRunId": "e805119b-2413-4713-a1be-5a11e87228c3",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "cancelled",
+    "recipeRunId": "e805119b-2413-4713-a1be-5a11e87228c3",
+    "activeId": null,
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": "work",
+    "progress": {
+      "current": 1,
+      "completed": 0,
+      "total": 2,
+      "remaining": 2,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": "work",
+    "progress": {
+      "current": 1,
+      "completed": 1,
+      "total": 2,
+      "remaining": 1,
+      "qualification": "exact"
+    }
+  },
+  {
+    "scenario": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 2,
+      "completed": 1,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": "cleanup",
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  },
+  {
+    "scenario": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": null,
+    "progress": {
+      "current": 2,
+      "completed": 2,
+      "total": null,
+      "remaining": null,
+      "qualification": "unknown"
+    }
+  }
+]

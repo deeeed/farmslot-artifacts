@@ -1,0 +1,159 @@
+[
+  {
+    "name": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "first/nested/observe",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › First invocation › Inspect state › Observe fixture output"
+    ]
+  },
+  {
+    "name": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": "second/nested/observe",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Repeated invocation › Inspect state › Observe fixture output"
+    ]
+  },
+  {
+    "name": "yes",
+    "recipeRunId": "27f9c9ba-a1e7-446f-b9bd-4d7513282975",
+    "activeId": null,
+    "text": [
+      "Recipe finished",
+      "11/11"
+    ]
+  },
+  {
+    "name": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "first/nested/observe",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › First invocation › Inspect state › Observe fixture output"
+    ]
+  },
+  {
+    "name": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": "second/nested/observe",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Repeated invocation › Inspect state › Observe fixture output"
+    ]
+  },
+  {
+    "name": "no",
+    "recipeRunId": "74e55c40-7d18-494f-89f9-94f3991bd7f9",
+    "activeId": null,
+    "text": [
+      "Recipe finished",
+      "12/12"
+    ]
+  },
+  {
+    "name": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": "first",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › First invocation"
+    ]
+  },
+  {
+    "name": "failure",
+    "recipeRunId": "6dce2fd5-9c71-4c2b-8ba5-f1d53dbef7f2",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  },
+  {
+    "name": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": "first",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › First invocation"
+    ]
+  },
+  {
+    "name": "partial",
+    "recipeRunId": "a5bc2602-fde0-4cf8-a804-680f28e4e398",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  },
+  {
+    "name": "terminal",
+    "recipeRunId": "c9a5fa46-8aa9-45f4-a505-4887a1901f1a",
+    "activeId": "cleanup",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Clean up root resources"
+    ]
+  },
+  {
+    "name": "terminal",
+    "recipeRunId": "c9a5fa46-8aa9-45f4-a505-4887a1901f1a",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  },
+  {
+    "name": "resolution",
+    "recipeRunId": "3fabe827-345c-4366-a420-cfc1859bcbaa",
+    "activeId": "cleanup",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Clean up root resources"
+    ]
+  },
+  {
+    "name": "resolution",
+    "recipeRunId": "3fabe827-345c-4366-a420-cfc1859bcbaa",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  },
+  {
+    "name": "cancelled",
+    "recipeRunId": "e805119b-2413-4713-a1be-5a11e87228c3",
+    "activeId": "cleanup",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Clean up root resources"
+    ]
+  },
+  {
+    "name": "cancelled",
+    "recipeRunId": "e805119b-2413-4713-a1be-5a11e87228c3",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  },
+  {
+    "name": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": "work",
+    "text": [
+      "Fixture step",
+      "Composed flow fixture › Use observed fixture data",
+      "1/2"
+    ]
+  },
+  {
+    "name": "hud_failure",
+    "recipeRunId": "fba945b7-df09-4328-ad7c-b7568ac4f71d",
+    "activeId": null,
+    "text": [
+      "Recipe finished"
+    ]
+  }
+]
