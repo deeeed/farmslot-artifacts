@@ -1,0 +1,9 @@
+{
+  "reviewedSourceHead": "a14b0a873c74c3a240a952e8b1cb77a2a6091e81",
+  "publishedFixtureCases": 23,
+  "nonDefaultCallLinkRestores": true,
+  "backResetsDefault": true,
+  "forwardRestoresCall": true,
+  "crossRecordingSeekMs": 700,
+  "retainedMultiClaimBindings": true
+}
