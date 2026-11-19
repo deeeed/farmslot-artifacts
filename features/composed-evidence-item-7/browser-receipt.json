@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "case": "yes",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "no",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "failure",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "partial",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "terminal",
+      "rows": 4,
+      "flow": true
+    },
+    {
+      "case": "resolution",
+      "rows": 5,
+      "flow": true
+    },
+    {
+      "case": "cancelled",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "hud_failure",
+      "rows": 5,
+      "flow": true
+    },
+    {
+      "case": "legacy-no-flow",
+      "rows": 0,
+      "flow": false
+    },
+    {
+      "case": "nested-active",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "same-trace-running",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "same-trace-complete",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "same-trace-evidence",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "shared-work",
+      "rows": 3,
+      "flow": true
+    },
+    {
+      "case": "measured-cue-contract",
+      "rows": 4,
+      "flow": true
+    },
+    {
+      "case": "untimed-cue-contract",
+      "rows": 4,
+      "flow": true
+    },
+    {
+      "case": "pending-terminal-outcome",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "pending-prior-recording",
+      "rows": 4,
+      "flow": true
+    },
+    {
+      "case": "pending-first-hud",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "retained-index-collision",
+      "rows": 4,
+      "flow": true
+    },
+    {
+      "case": "pending-execution-mismatch",
+      "rows": 0,
+      "flow": false
+    },
+    {
+      "case": "pending-ledger-no-execution",
+      "rows": 26,
+      "flow": true
+    },
+    {
+      "case": "retained-no-invocation",
+      "rows": 4,
+      "flow": true
+    }
+  ],
+  "seconds": 0.2,
+  "errors": []
+}
