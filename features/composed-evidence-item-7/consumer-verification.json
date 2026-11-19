@@ -1,9 +1,12 @@
 {
-  "reviewedSourceHead": "a14b0a873c74c3a240a952e8b1cb77a2a6091e81",
+  "sourceHead": "a72b2ef75f4d120c6dcfff5db9fb0500771afa47",
   "publishedFixtureCases": 23,
   "nonDefaultCallLinkRestores": true,
   "backResetsDefault": true,
   "forwardRestoresCall": true,
+  "backWhenLoadingOrFailed": true,
+  "completionSelectorPreserved": true,
+  "initialNoRunSafe": true,
   "crossRecordingSeekMs": 700,
   "retainedMultiClaimBindings": true
 }
